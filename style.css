@@ -484,7 +484,7 @@ i:hover {
 
 .account-username {
     font-size: 20px;
-    color: #222222;
+    color: #eeeeee;
     margin: 10px 0 0;
     line-height: 1.2;
 }
@@ -500,7 +500,8 @@ i:hover {
 }
 
 .account_edit-avatar {
-    color: #222224;
+    margin-top: 5px;
+    color: #808085;
     text-align: center;
     text-decoration: underline;
 }
