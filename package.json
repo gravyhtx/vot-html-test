@@ -1,0 +1,23 @@
+{
+  "name": "vot-html-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "FAQ.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gravyhtx/vot-html-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gravyhtx/vot-html-test/issues"
+  },
+  "homepage": "https://github.com/gravyhtx/vot-html-test#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
