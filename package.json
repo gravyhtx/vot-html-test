@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/gravyhtx/vot-html-test#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "gun": "^0.2020.1235"
   }
 }
