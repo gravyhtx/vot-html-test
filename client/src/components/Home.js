@@ -5,8 +5,14 @@ import Header from "./Header";
 export default class Home extends Component {
     // constructor(props){
     //     super(props);
-    // this.state = { value: true };
+    //     this.state = { value: true };
     // }
+    componentDidMount() {
+    }
+  
+    componentWillUnmount() {
+    }
+
     render(){
         return (
           <div>

@@ -6,6 +6,12 @@ export default class NavDesktop extends Component {
     //     super(props);
     //     this.state = { value: true };
     // }
+    componentDidMount() {
+    }
+  
+    componentWillUnmount() {
+    }
+    
     render() {
 
         window.addEventListener('wheel', checkScrollDirection);

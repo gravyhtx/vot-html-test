@@ -5,8 +5,14 @@ import  Logo from "../images/vot_txt-logo_white.svg";
 export default class Header extends Component {
     // constructor(props){
     //     super(props);
-    // this.state = { value: true };
+    //     this.state = { value: true };
     // }
+    componentDidMount() {
+    }
+  
+    componentWillUnmount() {
+    }
+
     render() {
         return (
           <header id="header" className="site-header">

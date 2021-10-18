@@ -5,9 +5,15 @@ export default class Policy extends Component {
     //     super(props);
     //     this.state = { value: true };
     // }
+    componentDidMount() {
+    }
+  
+    componentWillUnmount() {
+    }
+    
     render() {
         return (
-            true
+            <div></div>
         )      
     }
 }

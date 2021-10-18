@@ -4,8 +4,14 @@ import React, {Component} from "react";
 export default class Footer extends Component {
     // constructor(props){
     //     super(props);
-    // this.state = { bool: true };
+    //     this.state = { value: true };
     // }
+    componentDidMount() {
+    }
+  
+    componentWillUnmount() {
+    }
+    
     render() {
       return (
         <div className="footer animate__animated animate__fadeIn">
