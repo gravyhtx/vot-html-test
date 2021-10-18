@@ -3,8 +3,7 @@
 import './styles/style.css'
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import { NavBar, Footer, Home, About, Faq } from "./components";
-import Header from "./components/Header"
+// import Header from "./components/Header"
 import Home from "./components/Home"
 import About from "./components/About"
 import Footer from "./components/Footer"
@@ -16,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
         {/* <NavMobile /> */}
         <Switch>
           <Route path="/" exact component={() => <Home />} />

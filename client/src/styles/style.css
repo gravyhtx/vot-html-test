@@ -524,7 +524,7 @@ i:hover {
     bottom: 0;
     height: 125px;
     color: #a0a0a0;
-    font-size: 10px;
+    font-size: 12.5px;
     background-color: #222222;
     border-top: 1px solid #666666;
     box-shadow: 1px 1px 25px rgba(192, 240, 240, 0.15);
@@ -532,10 +532,10 @@ i:hover {
 }
 
 .copyright {
-    font-size: 8px;
+    font-size: 12px;
     color: #696969;
     position: relative;
-    bottom: -50px;
+    bottom: -40px;
 }
 
 .s12 {

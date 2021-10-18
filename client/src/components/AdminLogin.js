@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 
-export default class NavMobile extends Component {
+export default class AdminLogin extends Component {
     // constructor(props){
     //     super(props);
-    //     this.state = { value: true };
+    // this.state = { bool: true };
     // }
     render() {
         return (
