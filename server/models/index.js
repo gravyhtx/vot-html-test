@@ -1,3 +1,6 @@
 module.exports = {
-  User: require('./User')
+  User: require('./User'),
+  Product: require('./Product'),
+  NFT: require('./NFT'),
+  Order: require('./Order')
 }
