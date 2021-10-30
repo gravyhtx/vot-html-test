@@ -21,6 +21,7 @@ export default class AdminDashboard extends Component {
                 <AdminStats />
                 <div className="spacer" />
                 <AdminOrders />
+                <br/><br/><br/>
             </div>
         )      
     }

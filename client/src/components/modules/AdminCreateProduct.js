@@ -25,7 +25,7 @@ const AdminCreateProduct = (props) => {
     let colors = props.color
     let sizes = props.size
     let gender = props.gender
-    let physical = true
+    let isDigital = false
 
 
     const submitProductHandler = (e) => {
@@ -37,7 +37,7 @@ const AdminCreateProduct = (props) => {
             colors: colors,
             sizes: sizes,
             gender: gender,
-            physical: physical
+            isDigital: isDigital
         }
         
         props.setProductLine([
@@ -47,7 +47,7 @@ const AdminCreateProduct = (props) => {
                 colors: colors,
                 sizes: sizes,
                 gender: gender,
-                physical: physical
+                isDigital: isDigital
             }
         ])
         console.log(props.productLine)
@@ -56,6 +56,17 @@ const AdminCreateProduct = (props) => {
         // productLines.map(productLine => {
 
         // })
+    function isDigitalCheck() {
+        if (isDigital) {
+            isDigital = false
+            document.getElementById("isDigital-digital_switch").removeAttribute("checked");
+            console.log(isDigital)
+        } else {
+            isDigital = true
+            document.getElementById("isDigital-digital_switch").setAttribute("checked", "");
+            console.log(isDigital)
+        }
+    }
     
 
     return (
@@ -165,7 +176,7 @@ const AdminCreateProduct = (props) => {
                                         Navy Blue
                                     </option>
                                     <option value="5">
-                                        Green
+                                        Aqua
                                     </option>
                                 </Select>
                             </div>
@@ -174,9 +185,9 @@ const AdminCreateProduct = (props) => {
                             <div className="col s4 center create-row2 black phys-dig">
                                 <Switch
                                     className="black"
-                                    id="physical-digital_switch"
+                                    id="isDigital-digital_switch"
                                     offLabel="Physical"
-                                    onChange={function noRefCheck(){}}
+                                    onChange={isDigitalCheck}
                                     onLabel="Digital"
                                 />
                             </div>
@@ -210,13 +221,13 @@ const AdminCreateProduct = (props) => {
                                     >
                                         
                                     </option>
-                                    <option value="1">
+                                    <option value="U">
                                         Unisex
                                     </option>
-                                    <option value="2">
+                                    <option value="M">
                                         Men's
                                     </option>
-                                    <option value="3">
+                                    <option value="W">
                                         Women's
                                     </option>
                                 </Select>
@@ -252,16 +263,15 @@ const AdminCreateProduct = (props) => {
                                 />
                             </div>
                         </div>
-                        <div className="spacer row" />
                         <div className="submit-new-product row">
-                            <div className="col s5 add-product" />
-                            <Button
-                                onClick={submitProductHandler}
-                                className="col s2 center-text black admin_add-product"
-                                type="submit">
-                            ADD PRODUCT
-                            </Button>
-                            <div className="col s5" />
+                            <div className="col s4 add-product" />
+                                <Button
+                                    onClick={submitProductHandler}
+                                    className="col s4 waves center-text black admin_add-product"
+                                    type="submit">
+                                ADD PRODUCT
+                                </Button>
+                            <div className="col s4" />
                         </div>
 
                     </form>

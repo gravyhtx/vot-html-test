@@ -5,7 +5,7 @@ import AdminCreateInventory from './modules/AdminCreateInventory'
 
 const AdminCreateDrop = () => {
 
-        const props = { 
+        const product = { 
           collections: 1,
           vendors: "VoT",
           types: ["Tee", "Hoodie", "Long Sleeve", "Sweatshirt", "Women's Tee"],
@@ -16,7 +16,7 @@ const AdminCreateDrop = () => {
 
         // let physical = true;
 
-        const [vendorName, setVendorName] = useState("Add New Product");
+        const [vendorName, setVendorName] = useState("Create New Product");
         const [designName, setDesignName] = useState("");
         const [typeName, setTypeName] = useState("");
         const [productLine, setProductLine] = useState([
@@ -36,15 +36,15 @@ const AdminCreateDrop = () => {
                   setTypeName = {setTypeName}
                   productLine = {productLine}
                   setProductLine = {setProductLine}
-                  vendor = {props.vendors}
-                  type = {props.types}
-                  size = {props.sizes}
-                  color = {props.colors}
-                  gender = {props.gender}
-                  collections = {props.collections}
+                  vendor = {product.vendors}
+                  type = {product.types}
+                  size = {product.sizes}
+                  color = {product.colors}
+                  gender = {product.gender}
+                  collections = {product.collections}
                 />
                 <AdminCreateInventory
-                  collections = {props.collections}
+                  collections = {product.collections}
                 />
                 <br/><br/><br/>
             </div>

@@ -191,14 +191,8 @@ i:hover {
     animation: flicker 3s linear infinite; */
 }
 
-.editable-text {
-    margin: 0 !important;
-    color: white !important;
-    background-color: var(--theme-primary-dark-color) !important;
-    width: 100% !important;
-    border-bottom: solid 1px darkgray !important;
-    font-family: 'Roboto Condensed';
-    text-align: center;
+input:focus {
+    border-bottom: 1px solid rgb(127, 204, 228) !important;
 }
 
 i {
@@ -248,6 +242,16 @@ i {
 .vot-header {
     font-size: 2.5rem;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.editable-text {
+    margin: 0 !important;
+    color: white !important;
+    background-color: var(--theme-primary-dark-color) !important;
+    width: 100% !important;
+    border-bottom: solid 1px darkgray !important;
+    font-family: 'Roboto Condensed';
+    text-align: center;
 }
 
 /* HEADER */
@@ -709,9 +713,12 @@ i {
 /* Dashboard */
 .admin-dashboard {
     margin: 0;
+    background-color: #1a1a1a !important;
 }
 .admin-dashboard_navbar {
     padding: 0 25px;
+    border-bottom: 1px solid #9ab2c5;
+    /* box-shadow: 0px 2px 20px #9ab2c550; */
 }
 .admin-dashboard_navbar-header {
     font-size: var(--theme-font-size-lg);
@@ -737,17 +744,15 @@ i {
     /* box-shadow: 5px 5px 0 #111111; */
     text-align: center;
     /* color:#9ab2c5; */
+    color: #b8ccd4;
     margin-top: 10px;
-    box-shadow: 0 0 20px #9ab2c525;
+    box-shadow: 0 0 15px #ffffff25;
 }
 .create-row1 {
     padding: 10px 2px !important;
 }
 .create-row2 {
     padding: 10px 2px !important;
-}
-.admin_add-product:hover {
-    box-shadow: 0 0 15px #ffffff50;
 }
 .phys-dig {
     height: 77px;
@@ -757,7 +762,16 @@ i {
 }
 
 .admin_add-product {
+    color: #a1b7c0;
+    border: 1px solid rgb(127, 204, 228);
+    font-size: 16px;
+    font-weight: 600;
+    /* box-shadow: 0 0 15px #ffffff50; */
+}
+.admin_add-product:hover {
+    color: white;
     border: 1px solid white;
+    box-shadow: 0 0 25px rgba(127, 204, 228, 0.5);
 }
 /* .admin-dashboard_stats-container{
     padding: 10px;
@@ -810,9 +824,10 @@ i {
     .select-wrapper {
         padding: 0px 10px !important;
     }
+
     .create-sizes-check {
         height: 75px;
-        padding: 25px !important;
+        padding: 25px 0 !important;
     }
 
     [type="checkbox"].filled-in:checked+span:not(.lever):after {
