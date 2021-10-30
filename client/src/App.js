@@ -1,15 +1,14 @@
-// import logo from './logo.svg';
-// import './App.css';
-import './styles/style.css'
 import React from "react";
+import './styles/style.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Header from "./components/Header"
 import Home from "./components/Home"
 import About from "./components/About"
-import Footer from "./components/Footer"
 import Faq from "./components/Faq"
-import NavMobile from "./components/NavMobile"
-import NavDesktop from "./components/NavDesktop"
+
+import AdminLogin from "./components/AdminLogin";
+import AdminDashboard from "./components/AdminDashboard";
+import AdminOrderPage from "./components/AdminOrderPage";
+import AdminCreateDrop from "./components/AdminCreateDrop";
 
 function App() {
   return (
@@ -17,12 +16,14 @@ function App() {
       <Router>
         {/* <NavMobile /> */}
         <Switch>
+          <Route path="/admin/login" exact component={() => <AdminLogin />} />
+          <Route path="/admin/dashboard" exact component={() => <AdminDashboard />} />
+          <Route path="/admin/orders" exact component={() => <AdminOrderPage />} />
+          <Route path="/admin/drop" exact component={() => <AdminCreateDrop />} />
           <Route path="/" exact component={() => <Home />} />
           <Route path="/about" exact component={() => <About />} />
           <Route path="/contact" exact component={() => <Faq />} />
         </Switch>
-        <NavDesktop />
-        <Footer />
       </Router>
     </div>
   );

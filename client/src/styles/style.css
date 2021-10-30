@@ -34,7 +34,7 @@
     --responsive-font-size-xs:   0.1vw;
     --responsive-font-size-sm:   1.0vw;
     --responsive-font-size-md:   1.2vw;
-    --responsive-font-sze-lg:    1.8vw;
+    --responsive-font-size-lg:    1.8vw;
     --responsive-font-size-xl:   2.4vw;
     --responsive-font-size-xxl:  3.5vw;
     --responsive-font-size-xxxl: 4.2vw;
@@ -191,12 +191,63 @@ i:hover {
     animation: flicker 3s linear infinite; */
 }
 
+.editable-text {
+    margin: 0 !important;
+    color: white !important;
+    background-color: var(--theme-primary-dark-color) !important;
+    width: 100% !important;
+    border-bottom: solid 1px darkgray !important;
+    font-family: 'Roboto Condensed';
+    text-align: center;
+}
+
+i {
+    cursor: default;
+}
+
+.delete-product-line {
+    padding: 12px 0;
+    color:#666666 !important;
+}
+
+.gender-product-line {
+    padding: 12px 0;
+    color: white !important;
+}
+
+.checked_physical-product-line {
+    cursor: default;
+    padding: 12px 0;
+    color: #111111 !important;
+    text-align: center;
+}
+
+/* NIFTY ASS CSS */
+
 .hide {
     display: none;
 }
 
 .show {
     display: block;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+/* VOT CSS */
+.vot-container {
+    padding: 15px;
+    background-color: #151515;
+    border: 1px solid rgb(180, 180, 180);
+    box-shadow: 5px 5px 0px #111111;
+    /* border-radius: 10px; */
+}
+
+.vot-header {
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 /* HEADER */
@@ -626,6 +677,10 @@ i:hover {
     padding: 0px !important;
 }
 
+.padding-25 {
+    padding: 25px !important;
+}
+
 .offline {
     text-align: center;
     vertical-align: middle;
@@ -644,23 +699,80 @@ i:hover {
     opacity: 0.67;
 }
 
-/* ABOUT PAGE */
-.about-card {
-    padding: 15px;
-    background-color: #151515;
-    border: 1px solid rgb(180, 180, 180);
-    /* border-radius: 10px; */
-}
-
-.about-header {
-    font-size: 2.5rem;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
 
 /* FAQ PAGE */
 
-/* OVERWRITE MATERIALIZE STYLES */
+/* ----------- */
+/* -- ADMIN -- */
+/* ----------- */
+
+/* Dashboard */
+.admin-dashboard {
+    margin: 0;
+}
+.admin-dashboard_navbar {
+    padding: 0 25px;
+}
+.admin-dashboard_navbar-header {
+    font-size: var(--theme-font-size-lg);
+}
+.drop-form_header {
+    font-weight: 800;
+    font-size: var(--theme-font-size-md);
+    border: 1px solid white;
+    text-align: center !important;
+}
+.create-product-row {
+
+}
+.create-product-container {
+    background-color:#000000;
+    border: 1px solid #9ab2c5;
+    padding: 20px;
+}
+.create-product-header {
+    padding: 10px;
+    background-color: #090909;
+    border: 2px solid #2e2e2e;
+    /* box-shadow: 5px 5px 0 #111111; */
+    text-align: center;
+    /* color:#9ab2c5; */
+    margin-top: 10px;
+    box-shadow: 0 0 20px #9ab2c525;
+}
+.create-row1 {
+    padding: 10px 2px !important;
+}
+.create-row2 {
+    padding: 10px 2px !important;
+}
+.admin_add-product:hover {
+    box-shadow: 0 0 15px #ffffff50;
+}
+.phys-dig {
+    height: 77px;
+}
+.droid_icon {
+    height: 30px;
+}
+
+.admin_add-product {
+    border: 1px solid white;
+}
+/* .admin-dashboard_stats-container{
+    padding: 10px;
+    border: solid 1px white
+} */
+/* Orders */
+
+/* Create New Drop */
+
+
+
+
+
+
+/* OVERWRITE EXTERNAL STYLES */
 
     /* COLLAPSIBLE */
     .faq-container.collapsible-header {
@@ -671,3 +783,99 @@ i:hover {
         background-color: #ffffff05;
         text-align: left;
     }
+
+    .input-field {
+        margin: 0 !important;
+        width: 100% !important;
+        font-family: 'Roboto Condensed' !important;
+    }
+    
+    .selected {
+        border: none !important;
+        color: black;
+    }
+
+    .selected label {
+        color: #2e2e2e !important;
+    }
+    
+    .select-wrapper input.select-dropdown {
+        /* padding: 0 10px; */
+        color: white !important;
+        font-family: 'Roboto Condensed' !important;
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    .select-wrapper {
+        padding: 0px 10px !important;
+    }
+    .create-sizes-check {
+        height: 75px;
+        padding: 25px !important;
+    }
+
+    [type="checkbox"].filled-in:checked+span:not(.lever):after {
+        background-color: white;
+        border-color: #2e2e2e;
+    }
+    [type="checkbox"].filled-in:checked+span:not(.lever):before {
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    
+    [type="checkbox"]:checked+span:not(.lever):before {
+    
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+
+    .switch {
+        padding: 16px;
+    }
+
+    .switch label .lever {
+        border: 1px solid white;
+    }
+
+    .switch label input[type=checkbox]:checked+.lever:after {
+        background-color: var(--button-bg-focus);
+        border: 1px solid white;
+    }
+    .switch label input[type=checkbox]:checked+.lever {
+        background-color: white;
+    }
+
+    .dropdown-content li>a, .dropdown-content li>span {
+        color: black !important;
+    }
+
+    .create-row2.switch label  {
+        color: red !important;
+    }
+
+    [type="checkbox"]+span:not(.lever) {
+        padding-left: 30px;
+    }
+
+    .box-85 {
+        color: white !important;
+        width: 85% !important;
+        /* border-bottom: solid 1px white !important; */
+        padding: 0px 10px !important;
+        font-family: 'Roboto Condensed';
+    }
+
+    @media only screen and (max-width: 992px) {
+        .brand-logo {
+            /* position: static !important; */
+            width: 100% !important;
+            font-size: 12px !important;
+            text-align: right;
+        }
+        .admin-dashboard_navbar-header {
+            font-size: 1rem !important;
+        }
+    }
+    
+/* MADE WITH LOVE BY GRÄVY DESIGN CO. */

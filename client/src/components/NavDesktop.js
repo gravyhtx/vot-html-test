@@ -15,9 +15,11 @@ export default class NavDesktop extends Component {
     render() {
 
         window.addEventListener('wheel', checkScrollDirection);
+        
         let wheelDelta = (e) => {return e.wheelDelta}
         let deltaY = (e) => {return e.deltaY}
         let moveNav = false;
+
 
         function checkScrollDirection(e) {
             if (checkScrollDirectionIsUp(e)) {;
@@ -28,6 +30,7 @@ export default class NavDesktop extends Component {
                 console.log("moveNav", moveNav);
             }
         }
+
         
         function checkScrollDirectionIsUp(e) {
             if (e.wheelDelta) {
@@ -35,6 +38,7 @@ export default class NavDesktop extends Component {
             }
             return deltaY(e) < 0;
         }
+
 
         return (
             <div className="fixed-action-btn toolbar">

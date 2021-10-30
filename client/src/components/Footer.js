@@ -15,7 +15,7 @@ export default class Footer extends Component {
     render() {
       return (
         <div className="footer animate__animated animate__fadeIn">
-          <footer className="page-footer" id="online">
+          <div className="page-footer" id="online">
             <div className="footer-container container-fluid center">
               <div className="links-list" id="links-list">
                 <div><b>ABOUT</b>&emsp;//&emsp;<b>TERMS OF SERVICE</b>&emsp;//&emsp;<b>SHIPPING</b>&emsp;//&emsp;<b>RETURNS</b></div>
@@ -24,7 +24,7 @@ export default class Footer extends Component {
               <div className="copyright container center">Copyright &copy; 2021 // Village of Thousands</div>
               <br/>
             </div>
-          </footer>
+          </div>
         </div>
       );    
     }
