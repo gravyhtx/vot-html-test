@@ -1,3 +1,12 @@
+<!---
+////////////////////////////
+//    MADE WITH LOVE BY   //
+//     GRAVY DESIGN CO.   //
+//       [@gravyhtx]      //
+//------------------------//
+// https://gravydesign.co //
+////////////////////////////
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,8 +16,25 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Village of Thousands is an apparel company based out of Houston, TX to promote wellness driven by an environmentally concscious lifestyle"
     />
+    <!-- MATERIALIZE ICONS (https://materializecss.com/icons.html) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- MATERIALIZE // CDN + JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- MODERNIZR (https://modernizr.com/docs/) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <!-- ANIMATE CSS (https://animate.style/) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- AOS // CDN + JS (https://michalsnik.github.io/aos/) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- GOOGLE SHIZ (https://google.com/search?q=google+shiz) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Roboto+Condensed|&display=swap" rel="stylesheet">
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,7 +50,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+        <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/20587663.js"></script>
+
+    <!-- HOLY SHIZ (https://villageofthousands.io) -->
+    <title>Village of Thousands</title>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -40,4 +71,51 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <!-- AOS Init -->
+  <script>
+    AOS.init();
+  </script>
+  <!-- SITE JS -->
+  <script>
+
+
+    ////////////////////
+    // INITIALIZE APP //
+    ////////////////////
+    init = () => {
+
+        // MATERIALIZE JS //
+        document.addEventListener('DOMContentLoaded', function() {  // Float button click set to open a bottom nav //
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {
+                hoverEnabled: false,
+                toolbarEnabled: true
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.materialboxed');
+            var instances = M.Materialbox.init(elems);
+        });
+        document.addEventListener('DOMContentLoaded', function() { // Enable parallax //
+            var elems = document.querySelectorAll('.parallax');
+            var instances = M.Parallax.init(elems);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems);
+        });
+
+    }
+
+    // INITIALIZE APP //
+    init();
+  </script>
 </html>
