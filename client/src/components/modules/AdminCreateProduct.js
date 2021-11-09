@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Select, Switch, Checkbox} from 'react-materialize';
+const { createProduct } = require('../../utils/API');
 
 const AdminCreateProduct = (props) => {
 
@@ -28,7 +29,7 @@ const AdminCreateProduct = (props) => {
     let isDigital = false
 
 
-    const submitProductHandler = (e) => {
+    const submitProductHandler = async (e) => {
         e.preventDefault()
         let data = {
             productId: productId,
@@ -39,18 +40,26 @@ const AdminCreateProduct = (props) => {
             gender: gender,
             isDigital: isDigital
         }
+
+        try {
+            const response = await createProduct(data)
+
+            if(!response.ok) throw new Error('Something went wrong.')
+        } catch (err) {
+            console.log(err)
+        }
         
-        props.setProductLine([
-            ...props.productLine, {
-                title: title,
-                filename: filename,
-                colors: colors,
-                sizes: sizes,
-                gender: gender,
-                isDigital: isDigital
-            }
-        ])
-        console.log(props.productLine)
+        // props.setProductLine([
+        //     ...props.productLine, {
+        //         title: title,
+        //         filename: filename,
+        //         colors: colors,
+        //         sizes: sizes,
+        //         gender: gender,
+        //         isDigital: isDigital
+        //     }
+        // ])
+        // console.log(props.productLine)
     }
 
         // productLines.map(productLine => {
