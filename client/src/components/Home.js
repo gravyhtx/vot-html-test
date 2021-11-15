@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import Hero from "./modules/Hero"
 import Header from "./Header";
-import Footer from './Footer'
-import NavDesktop from "./NavDesktop"
+import Footer from './Footer';
+import NavDesktop from "./NavDesktop";
 
 export default class Home extends Component {
     // constructor(props){

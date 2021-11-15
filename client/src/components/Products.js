@@ -1,19 +1,8 @@
-import React, {Component} from 'react'
+import Reac from 'react'
 
-export default class Products extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = { value: true };
-    // }
-    componentDidMount() {
-    }
-  
-    componentWillUnmount() {
-    }
-    
-    render() {
-        return (
-            <div></div>
-        )      
-    }
+const Products = () =>  {
+    return (
+        <div></div>
+    )      
 }
+export default Products;

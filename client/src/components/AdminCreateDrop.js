@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import AdminNav from './modules/AdminNav';
 import AdminCreateProduct from './modules/AdminCreateProduct'
 import AdminCreateInventory from './modules/AdminCreateInventory'
-import { createProduct } from '../utils/API';
 
 const AdminCreateDrop = () => {
 

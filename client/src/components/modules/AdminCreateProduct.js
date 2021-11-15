@@ -1,6 +1,5 @@
 import React from 'react';
 import {Button, Select, Switch, Checkbox} from 'react-materialize';
-const { createProduct } = require('../../utils/API');
 
 const AdminCreateProduct = (props) => {
 
@@ -20,7 +19,7 @@ const AdminCreateProduct = (props) => {
         props.setTypeName(e.target.value)
     }
 
-    let productId = 0
+    // let productId = 0
     let title = props.vendorName + " " + props.designName + " " + props.typeName
     let filename = props.vendorName.toLowerCase() + "_" + props.designName.toLowerCase() + "_" + props.typeName.toLowerCase()
     let colors = props.color
@@ -29,37 +28,29 @@ const AdminCreateProduct = (props) => {
     let isDigital = false
 
 
-    const submitProductHandler = async (e) => {
+    const submitProductHandler = (e) => {
         e.preventDefault()
-        let data = {
-            productId: productId,
-            title: title,
-            filename: filename,
-            colors: colors,
-            sizes: sizes,
-            gender: gender,
-            isDigital: isDigital
-        }
-
-        try {
-            const response = await createProduct(data)
-
-            if(!response.ok) throw new Error('Something went wrong.')
-        } catch (err) {
-            console.log(err)
-        }
+        // let data = {
+        //     productId: productId,
+        //     title: title,
+        //     filename: filename,
+        //     colors: colors,
+        //     sizes: sizes,
+        //     gender: gender,
+        //     isDigital: isDigital
+        // }
         
-        // props.setProductLine([
-        //     ...props.productLine, {
-        //         title: title,
-        //         filename: filename,
-        //         colors: colors,
-        //         sizes: sizes,
-        //         gender: gender,
-        //         isDigital: isDigital
-        //     }
-        // ])
-        // console.log(props.productLine)
+        props.setProductLine([
+            ...props.productLine, {
+                title: title,
+                filename: filename,
+                colors: colors,
+                sizes: sizes,
+                gender: gender,
+                isDigital: isDigital
+            }
+        ])
+        console.log(props.productLine)
     }
 
         // productLines.map(productLine => {
