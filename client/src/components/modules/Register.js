@@ -6,13 +6,16 @@ const Register = () =>  {
         <div className="register-cointainer">
             <div className="login-header">Register</div>
             <div>
-                <div className="login-input-container">
-                    <div>First Name</div>
-                    <TextInput id="login-user" />
-                </div>
-                <div className="login-input-container">
-                    <div>Last Name</div>
-                    <TextInput className="login-input" id="login-user" placeholder="(optional)" />
+                <div className="row">
+                    <div className="login-input-container login-col col s5">
+                        <div>First Name</div>
+                        <TextInput id="login-user" />
+                    </div>
+                    <div className="col s1" />
+                    <div className="login-input-container login-col col s6">
+                        <div>Last Name</div>
+                        <TextInput className="login-input" id="login-user" placeholder="(optional)" />
+                    </div>
                 </div>
                 <div className="login-input-container">
                     <div>Email</div>
