@@ -2,6 +2,14 @@ import React from 'react';
 import { TextInput, Button } from 'react-materialize';
 
 const Register = () =>  {
+    // let a =  [
+    //     {name: "dude", id: 0},
+    //     {name: "pisster", id: 1},
+    //     {name: "kreat", id: 2}
+    // ]
+    // const el = a.map(b => {
+    //     return <div className={`col${b.id}`}>{b.name}</div>
+    // })
     return (
         <div className="register-cointainer">
             <div className="login-header">Register</div>
@@ -26,16 +34,17 @@ const Register = () =>  {
                     <TextInput className="login-input" id="login-user" />
                 </div>
                 <div>
-                <Button
-                    node="button"
-                    style={{
-                    marginRight: '5px'
-                    }}
-                    waves="light"
-                >
-                    Create Account
-                </Button>
+                    <Button
+                        node="button"
+                        style={{
+                        marginRight: '5px'
+                        }}
+                        waves="light"
+                    >
+                        Create Account
+                    </Button>
                 </div>
+                {/* <div>{el}</div> */}
             </div>
         </div>
     )      

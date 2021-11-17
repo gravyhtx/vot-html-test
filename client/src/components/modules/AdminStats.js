@@ -21,7 +21,7 @@ render() {
                     <div className="vot-container darken-3">
                         <div className="inner-card left-align">
                             <section>
-                                <h1 className="about-header">//VOT STATS//</h1>
+                                <h1 className="about-header">{"//"}VOT STATS{"//"}</h1>
                                 <div className="spacer" />
                                 <div className="">
                                 lorem

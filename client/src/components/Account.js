@@ -1,19 +1,9 @@
-import React, {Component} from 'react'
+import React from 'react';
 
-export default class Account extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = { value: true };
-    // }
-    componentDidMount() {
-    }
-  
-    componentWillUnmount() {
-    }
-    
-    render() {
-        return (
-            <div></div>
-        )      
-    }
+const Account = () => {
+    return (
+        <div></div>
+    )      
 }
+
+export default Account;

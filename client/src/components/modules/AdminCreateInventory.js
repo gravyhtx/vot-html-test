@@ -6,9 +6,9 @@ export default function AdminCreateInventory(props) {
     let dropNumber = props.collections;
 
     if (dropNumber < 10) {
-        dropNumber = '00' + dropNumber;
+        dropNumber = `00${dropNumber}`;
     } else if (dropNumber < 100) {
-        dropNumber = '0' + dropNumber;
+        dropNumber = `0${dropNumber}`;
     }
 
     return (
@@ -19,7 +19,7 @@ export default function AdminCreateInventory(props) {
                     <div className="vot-container darken-3">
                         <div className="inner-card left-align">
                             <section>
-                                <h1 className="about-header">//DROP #{dropNumber}//</h1>
+                                <h1 className="about-header">{"//"}DROP #{dropNumber}{"//"}</h1>
                                 <div className="spacer" />
                                 <div className="row no-margin">
 
@@ -71,11 +71,11 @@ export default function AdminCreateInventory(props) {
                                     <div className="col s1 center black">
                                         {/* <input readOnly className="editable-text" type="text" name="name" placeholder="U" /> */}
                                         <div className="editable-text">
-                                            <i class="material-icons gender-product-line">all_inclusive</i>
+                                            <i className="material-icons gender-product-line">all_inclusive</i>
                                         </div>
                                         {/* <input readOnly className="editable-text" type="text" name="name" placeholder="U" /> */}
                                         <div className="editable-text">
-                                            <i class="material-icons gender-product-line">all_inclusive</i>
+                                            <i className="material-icons gender-product-line">all_inclusive</i>
                                         </div>
                                     </div>
 

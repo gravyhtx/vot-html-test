@@ -367,10 +367,10 @@ i {
 
 .login-cointainer,
 .register-cointainer {
-    border: 2px solid var(--theme-primary-medium-color);
+    border: 3px solid var(--theme-primary-medium-color);
     border-radius: 25px;
     padding: 50px;
-    box-shadow: 2px 2px 1px var(--blue-glow);
+    box-shadow: 2px 2px 2px var(--blue-glow);
 }
 
 .login-header {
@@ -784,12 +784,10 @@ i {
     padding: 10px;
     background-color: #090909;
     border: 2px solid #2e2e2e;
-    /* box-shadow: 5px 5px 0 #111111; */
     text-align: center;
-    /* color:#9ab2c5; */
     color: #b8ccd4;
     margin-top: 10px;
-    box-shadow: 0 0 15px #ffffff25;
+    box-shadow: 0 0 20px #ffffff10;
 }
 .create-row1 {
     padding: 10px 2px !important;
