@@ -3,6 +3,7 @@ import './styles/style.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import UserLogin from "./components/UserLogin";
+import UserRegistration from "./components/UserRegistration";
 
 import Home from "./components/Home"
 import About from "./components/About"
@@ -27,6 +28,7 @@ function App() {
           <Route path="/admin/drop" exact component={() => <AdminCreateDrop />} />
         {/* USERS */}
           <Route path="/login" exact component={() => <UserLogin />} />
+          <Route path="/complete-signup" exact component={() => <UserRegistration />} />
         {/* SITE */}
           <Route path="/" exact component={() => <Home />} />
           <Route path="/about" exact component={() => <About />} />

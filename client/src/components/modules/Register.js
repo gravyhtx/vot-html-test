@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TextInput, Button } from 'react-materialize';
 
 const Register = () =>  {
@@ -34,6 +35,7 @@ const Register = () =>  {
                     <TextInput className="login-input" id="login-user" />
                 </div>
                 <div>
+                <Link to="/complete-signup">
                     <Button
                         node="button"
                         style={{
@@ -43,6 +45,7 @@ const Register = () =>  {
                     >
                         Create Account
                     </Button>
+                </Link>
                 </div>
                 {/* <div>{el}</div> */}
             </div>
