@@ -2,16 +2,6 @@ import React, {Component} from "react";
 import { Button, Icon } from 'react-materialize';
 
 export default class NavDesktop extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = { value: true };
-    // }
-    componentDidMount() {
-    }
-  
-    componentWillUnmount() {
-    }
-    
     render() {
 
         window.addEventListener('wheel', checkScrollDirection);
@@ -19,15 +9,17 @@ export default class NavDesktop extends Component {
         let wheelDelta = (e) => {return e.wheelDelta}
         let deltaY = (e) => {return e.deltaY}
         let moveNav = false;
+        let scrollCount = 0;
 
 
         function checkScrollDirection(e) {
-            if (checkScrollDirectionIsUp(e)) {;
+            if (checkScrollDirectionIsUp(e) && scrollCount < 20) {
                 moveNav = true;
-                console.log("moveNav", moveNav);
-            } else {;
-                moveNav = false
-                console.log("moveNav", moveNav);
+                console.log("moveNav", "up");
+                
+            } else {
+                moveNav = false;
+                console.log("moveNav", "down");
             }
         }
 
@@ -41,7 +33,7 @@ export default class NavDesktop extends Component {
 
 
         return (
-            <div className="fixed-action-btn toolbar">
+            <div className="fixed-action-btn toolbar desktop">
                 <Button
                     className="btn-floating btn-large action-nav waves-effect waves-light pulse z-depth-1"
                     fab={{
@@ -83,4 +75,3 @@ export default class NavDesktop extends Component {
         );
     }
 }
-

@@ -1,31 +1,59 @@
-import React, {Component} from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 // make array to loop for "links-list"
-export default class Footer extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = { value: true };
-    // }
-    componentDidMount() {
-    }
-  
-    componentWillUnmount() {
-    }
-    
-    render() {
-      return (
-        <div className="footer animate__animated animate__fadeIn">
-          <div className="page-footer" id="online">
-            <div className="footer-container container-fluid center">
-              <div className="links-list" id="links-list">
-                <div><b>ABOUT</b>&emsp;//&emsp;<b>TERMS OF SERVICE</b>&emsp;//&emsp;<b>SHIPPING</b>&emsp;//&emsp;<b>RETURNS</b></div>
-                <div><b>NEWSLETTER</b>&emsp;//&emsp;<b>FAQ</b>&emsp;//&emsp;<b>CONTACT US</b></div>
+const Footer = () => {
+    return (
+      <div className="footer animate__animated animate__fadeIn">
+        <div className="page-footer" id="online">
+          <div className="footer-container container-fluid center">
+            <div className="links-list disable-highlight" id="links-list">
+              <div>
+                <Link to="/about">
+                  <span className="footer-link">
+                    ABOUT
+                  </span>
+                </Link> &emsp;//&emsp;
+                <Link to="/terms">
+                  <span className="footer-link">
+                    TERMS OF SERVICE
+                  </span>
+                </Link>&emsp;//&emsp;
+                <Link to="/shipping">
+                  <span className="footer-link">
+                    SHIPPING
+                  </span>
+                </Link>
               </div>
-              <div className="copyright container center">Copyright &copy; 2021 // Village of Thousands</div>
-              <br/>
+              <div>
+                <Link to="/returns">
+                  <span className="footer-link">
+                    RETURNS
+                  </span>
+                </Link>&emsp;//&emsp;
+                <Link to="/news">
+                  <span className="footer-link">
+                    NEWS
+                  </span>&emsp;//&emsp;
+                </Link>
+                <Link to="/faq">
+                  <span className="footer-link">
+                    FAQ
+                  </span>
+                </Link>&emsp;//&emsp;
+                <Link to="/contact">
+                  <span className="footer-link">
+                    CONTACT US
+                  </span>
+                </Link>
+                </div>
             </div>
+            <div className="copyright container center">Copyright &copy; 2021 // Village of Thousands</div>
+            <br/>
           </div>
         </div>
-      );    
-    }
+      </div>
+    );    
 }
+
+export default Footer;

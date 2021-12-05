@@ -9,8 +9,23 @@ const AdminCreateProduct = (props) => {
             
         // }
     // }
+
+    // let productId = 0
+    let vendorName = props.vendorName;
+    let designName = props.designName;
+    let typeName = props.typeName
+    let title = vendorName + " " + designName + " " + typeName;
+    let filename = props.vendorName.toLowerCase() + "_" + props.designName.toLowerCase() + "_" + props.typeName.toLowerCase();
+    let colors = props.color;
+    let sizes = props.size;
+    let gender = props.gender;
+    let isDigital = false;
+
     const vendorInputTextHandler = (e) => {
         props.setVendorName(e.target.value)
+        if(vendorName === "") {
+
+        }
     }
     const designInputTextHandler = (e) => {
         props.setDesignName(e.target.value)
@@ -18,14 +33,6 @@ const AdminCreateProduct = (props) => {
     const typeInputTextHandler = (e) => {
         props.setTypeName(e.target.value)
     }
-
-    // let productId = 0
-    let title = props.vendorName + " " + props.designName + " " + props.typeName
-    let filename = props.vendorName.toLowerCase() + "_" + props.designName.toLowerCase() + "_" + props.typeName.toLowerCase()
-    let colors = props.color
-    let sizes = props.size
-    let gender = props.gender
-    let isDigital = false
 
 
     const submitProductHandler = (e) => {
@@ -117,17 +124,17 @@ const AdminCreateProduct = (props) => {
                                     <option name="VoT" value="VoT">
                                         VoT
                                     </option>
-                                    </Select>
+                                </Select>
                             </div>
                         
                             <div className="col s3 center black create-row1">
                             <div>NAME</div>
-                            <input onChange={designInputTextHandler} className="box-85 center" type="text" placeholder="" name="name" />
+                            <input onChange={designInputTextHandler} className="input-field box-85 center" type="text" placeholder="" name="name" />
                             </div>
 
                             <div className="col s3 center black create-row1">
                             <div>TYPE</div>
-                            <input onChange={typeInputTextHandler} className="box-85 center" type="text" placeholder="" name="name" />
+                            <input onChange={typeInputTextHandler} className="input-field box-85 center" type="text" placeholder="" name="name" />
                             </div>
 
                             <div className="col s4 center black create-row1">
@@ -173,7 +180,7 @@ const AdminCreateProduct = (props) => {
                                         Red
                                     </option>
                                     <option value="4">
-                                        Navy Blue
+                                        Navy
                                     </option>
                                     <option value="5">
                                         Aqua
@@ -267,7 +274,8 @@ const AdminCreateProduct = (props) => {
                             <div className="col s4 add-product" />
                                 <Button
                                     onClick={submitProductHandler}
-                                    className="col s4 waves center-text black admin_add-product"
+                                    className="col s4 center-text black admin_add-product"
+                                    waves="light"
                                     type="submit">
                                 ADD PRODUCT
                                 </Button>

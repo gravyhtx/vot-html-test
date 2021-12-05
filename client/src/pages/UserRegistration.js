@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button } from 'react-materialize';
-import Header from "./Header";
-import Footer from './Footer';
-import NavDesktop from "./NavDesktop";
-import AddressForm from './modules/AddressForm';
-import NewWallet from './modules/NewWallet';
-import CompleteUserRegistration from './modules/CompleteUserRegistration';
+import Header from "../components/Header";
+import Footer from '../components/Footer';
+import NavDesktop from "../components/NavDesktop";
+import AddressForm from '../components/modules/AddressForm';
+import NewWallet from '../components/modules/NewWallet';
+import CompleteUserRegistration from '../components/modules/CompleteUserRegistration';
 
 const UserRegistration = () => {
     

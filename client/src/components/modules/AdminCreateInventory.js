@@ -23,32 +23,32 @@ export default function AdminCreateInventory(props) {
                                 <div className="spacer" />
                                 <div className="row no-margin">
 
-                                    <div className="col s4 center black">
+                                    <div className="col s4 center black admin_drop-header">
                                         <div className="drop-form_header">TITLE</div>
                                     </div>
 
-                                    <div className="col s2 center black">
+                                    <div className="col s2 center black admin_drop-header">
                                         <div className="drop-form_header">COLOR</div>
                                     </div>
 
-                                    <div className="col s1 center black">
+                                    <div className="col s1 center black admin_drop-header">
                                         <div className="drop-form_header">SIZE</div>
                                     </div>
 
-                                    <div className="col s1 center drop-form_header droid_icon black">
-                                        <i className="material-icons">person</i>
+                                    <div className="col s1 center drop-form_header droid_icon black admin_drop-header">
+                                        <i className="material-icons drop-form_header-icon">person</i>
                                     </div>
 
-                                    <div className="col s1 center black drop-form_header droid_icon">
+                                    <div className="col s1 center black drop-form_header droid_icon admin_drop-header">
                                         {/* <div className="drop-form_header">PHYS</div> */}
-                                        <i className="material-icons">android</i>
+                                        <i className="material-icons drop-form_header-icon">android</i>
                                     </div>
 
-                                    <div className="col s2 center black">
+                                    <div className="col s2 center black admin_drop-header">
                                         <div className="drop-form_header">QTY</div>
                                     </div>
 
-                                    <div className="col s1 center black">
+                                    <div className="col s1 center black admin_drop-header">
                                         <div className="drop-form_header">X</div>
                                     </div>
                                 </div>
