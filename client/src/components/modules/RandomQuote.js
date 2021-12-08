@@ -18,8 +18,6 @@ const RandomQuote = ({ type, className }) => {
         '"Error Quote 03"'
     ];
 
-    console.log(type)
-
     let output;
     
     if (type === "zen") {
@@ -29,8 +27,6 @@ const RandomQuote = ({ type, className }) => {
     } else {
         output = errorMessage;
     };
-
-    console.log(output)
     
     let len = output.length
     let sel = Math.floor(Math.random()*len)

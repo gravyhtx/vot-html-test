@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const NotificationBar = ( {text} ) =>  {
+const NotificationBar = ({ text }) =>  {
     return (
         <Link className="nav-link" to="/login">
             <div className="notify">

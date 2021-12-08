@@ -4,32 +4,32 @@ import { Button, Icon } from 'react-materialize';
 export default class NavDesktop extends Component {
     render() {
 
-        window.addEventListener('wheel', checkScrollDirection);
+        // window.addEventListener('wheel', checkScrollDirection);
         
-        let wheelDelta = (e) => {return e.wheelDelta}
-        let deltaY = (e) => {return e.deltaY}
-        let moveNav = false;
-        let scrollCount = 0;
+        // let wheelDelta = (e) => {return e.wheelDelta}
+        // let deltaY = (e) => {return e.deltaY}
+        // let moveNav = false;
+        // let scrollCount = 0;
 
 
-        function checkScrollDirection(e) {
-            if (checkScrollDirectionIsUp(e) && scrollCount < 20) {
-                moveNav = true;
-                console.log("moveNav", "up");
+        // function checkScrollDirection(e) {
+        //     if (checkScrollDirectionIsUp(e) && scrollCount < 20) {
+        //         moveNav = true;
+        //         console.log("moveNav", "up");
                 
-            } else {
-                moveNav = false;
-                console.log("moveNav", "down");
-            }
-        }
+        //     } else {
+        //         moveNav = false;
+        //         console.log("moveNav", "down");
+        //     }
+        // }
 
         
-        function checkScrollDirectionIsUp(e) {
-            if (e.wheelDelta) {
-                return wheelDelta(e) > 0;
-            }
-            return deltaY(e) < 0;
-        }
+        // function checkScrollDirectionIsUp(e) {
+        //     if (e.wheelDelta) {
+        //         return wheelDelta(e) > 0;
+        //     }
+        //     return deltaY(e) < 0;
+        // }
 
 
         return (

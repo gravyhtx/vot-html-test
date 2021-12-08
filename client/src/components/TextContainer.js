@@ -15,8 +15,8 @@ const TextContainer = ( { containerClasses, header, headerClasses, text, textCla
     }
     return (
         <div className={border ? "text-container borders"+cClass : "text-container"+cClass}>
-            {header ? <div className={"text-container_header"+hClass}>{header}</div> : ""}
-            {text ?  <article className={"text-container_text"+tClass}>{text}</article> : ""}
+            {header ? <header className={"text-container_header"+hClass}>{header}</header> : ""}
+            {text ? <div className={"text-container_text"+tClass}>{text}</div> : ""}
         </div>
     )
 }

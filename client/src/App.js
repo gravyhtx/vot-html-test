@@ -2,13 +2,13 @@ import React from "react";
 import './styles/style.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
-import UserLogin from "./pages/UserLoginCollapsible";
+import UserLogin from "./pages/UserLogin";
 import UserRegistration from "./pages/UserRegistration";
 
 import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
-import About from "./components/About";
-import Faq from "./components/Faq";
+import About from "./pages/About";
+import Faq from "./pages/Faq";
 
 import PageNotFound from "./pages/404.js"
 
@@ -21,26 +21,30 @@ import AdminCreateDrop from "./components/AdminCreateDrop";
 
 function App() {
 
-  const drop = "001";
-  const szn = "Winter 2021"
+  const website = {
+    name: "Village of Thousands",
+    drop: "001",
+    szn: "Winter 2021"
+  }
+  
 
   return (
     <div className="App">
       <Router>
         <Switch>
         {/* ADMIN */}
-          <Route path="/admin/login" exact component={() => <AdminLogin />} />
-          <Route path="/admin/dashboard" exact component={() => <AdminDashboard />} />
-          <Route path="/admin/orders" exact component={() => <AdminOrderPage />} />
-          <Route path="/admin/drop" exact component={() => <AdminCreateDrop />} />
+          <Route path="/admin/login" exact component={() => <AdminLogin website={website} />} />
+          <Route path="/admin/dashboard" exact component={() => <AdminDashboard website={website} />} />
+          <Route path="/admin/orders" exact component={() => <AdminOrderPage website={website} />} />
+          <Route path="/admin/drop" exact component={() => <AdminCreateDrop website={website} />} />
         {/* USERS */}
-          <Route path="/login" exact component={() => <UserLogin />} />
-          <Route path="/complete-signup" exact component={() => <UserRegistration />} />
+          <Route path="/login" exact component={() => <UserLogin website={website} />} />
+          <Route path="/complete-signup" exact component={() => <UserRegistration website={website} />} />
         {/* SITE */}
-          <Route path="/" exact component={() => <Home />} />
-          <Route path="/products" exact component={() => <ProductsPage drop={drop} szn={szn} />} />
-          <Route path="/about" exact component={() => <About />} />
-          <Route path="/contact" exact component={() => <Faq />} />
+          <Route path="/" exact component={() => <Home website={website} />} />
+          <Route path="/products" exact component={() => <ProductsPage website={website} />} />
+          <Route path="/about" exact component={() => <About website={website} />} />
+          <Route path="/faq" exact component={() => <Faq website={website} />} />
         {/* QR Redirect */}
           <Route exact path="/qr">
             <Redirect to="/" />

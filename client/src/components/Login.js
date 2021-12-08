@@ -46,24 +46,29 @@ const Login = () =>  {
         // <div className="login-cointainer">
         <>
             {/* <div className="login-header disable-highlight">Login</div> */}
-                <div className="login-input-container">
-                    <div>Email</div>
-                    <TextInput 
-                    className="input-field" 
-                    id="login-user"
-                    name="email"
-                    onChange={handleInputChange}
-                    value={userFormData.email} />
+                <div className="login-input-container" id="user-login-container">
+                    <div id="user-login-email">Email</div>
+                    <TextInput
+                        email
+                        className="input-field" 
+                        id="user-login-email_input"
+                        aria-labelledby="user-login-email"
+                        name="email"
+                        onChange={handleInputChange}
+                        value={userFormData.email}
+                    />
                 </div>
-                <div className="login-input-container">
-                    <div>Password</div>
+                <div className="login-input-container" id="user-login-container">
+                    <div id="user-login-password">Password</div>
                     <TextInput 
-                    className="input-field" 
-                    id="login-user"
-                    type="password"
-                    name="password"
-                    onChange={handleInputChange}
-                    value={userFormData.password} />
+                        className="input-field" 
+                        id="user-login-password_input"
+                        aria-labelledby="user-login-email"
+                        type="password"
+                        name="password"
+                        onChange={handleInputChange}
+                        value={userFormData.password}
+                    />
                 </div>
                 <div className="center-text">
                     <Button
