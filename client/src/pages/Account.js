@@ -1,5 +1,5 @@
 import React from "react";
-import { Collapsible,  CollapsibleItem } from "react-materialize";
+import { Button } from "react-materialize";
 
 import Header from "../components/Header";
 import NavDesktop from "../components/NavDesktop";
@@ -8,13 +8,7 @@ import Footer from "../components/Footer";
 
 // import ImageContainer from "../components/ImageContainer";
 
-const userData = {
-    firstName: "",
-    lastName: "",
-
-}
-
-const Account = () => {
+const Account = ( userData ) => {
     return(
         <div className="animate__animated animate__fadeIn">
         <Header />
@@ -25,7 +19,29 @@ const Account = () => {
             <div id="account-info-name">Name</div>
                 
             </div>
+            <Button
+                node="button"
+                style={{
+                marginRight: '5px',
+                width: '250px'
+                }}
+                waves="light"
+                className="account-wallet-btn"
+            >
+                ADD WALLET
+            </Button>
         </div>
+        <Button
+            node="button"
+            style={{
+            marginRight: '5px',
+            width: '250px'
+            }}
+            waves="light"
+            className="logout-btn"
+        >
+            LOG OUT
+        </Button>
         <NavDesktop />
         <Footer />
         </div>
