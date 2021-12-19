@@ -3,9 +3,9 @@ import { Button } from 'react-materialize';
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import NavDesktop from "../components/NavDesktop";
-import AddressForm from '../components/modules/AddressForm';
-import NewWallet from '../components/modules/NewWallet';
-import CompleteUserRegistration from '../components/modules/CompleteUserRegistration';
+import AddressForm from '../components/AddressForm';
+// import NewWallet from '../components/modules/NewWallet';
+import CompleteUserRegistration from '../components/CompleteUserRegistration';
 
 const UserRegistration = () => {
     
@@ -43,9 +43,9 @@ const UserRegistration = () => {
                         city={user.city}
                         state={user.state}
                         zipCode={user.zipCode} />
-                    <NewWallet
+                    {/* <NewWallet
                         walletProvider={user.walletProvider}
-                        walletHash={user.walletHash} />
+                        walletHash={user.walletHash} /> */}
                     <CompleteUserRegistration />
                     <Button className="user-registration-skip">SKIP</Button>
                 </div>

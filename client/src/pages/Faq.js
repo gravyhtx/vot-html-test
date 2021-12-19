@@ -1,52 +1,69 @@
 import React from "react";
+import { Collapsible,  CollapsibleItem } from "react-materialize";
+
 import Header from "../components/Header";
 import NavDesktop from "../components/NavDesktop";
 import NavMobile from "../components/NavMobile";
-import Footer from "../components/Footer"
-import { Collapsible,  CollapsibleItem } from "react-materialize";
-import Questions from "../components/modules/FaqModule"
+import Footer from "../components/Footer";
+
+import ImageContainer from "../components/ImageContainer";
+import Questions from "../components/modules/FaqModule";
+import RandomQuote from "../components/modules/RandomQuote";
+
+import Cartas from "../images/art/cartas.png";
+
+import CryptoConverter from "../components/modules/CryptoConverter";
 
 const Faq = () => {
     const questions = Questions()
+    const checkId = window.location.hash ? window.location.hash.substring(1) : "";
 
-    console.log(questions.length)
+    // GET 'ETH' + 'BTC' PRICES //
+    CryptoConverter(40);
+    // UPDATE COIN PRICES //
+    setInterval(() => {CryptoConverter(40)}, 15000);
 
+    // useEffect needed for "scrollIntoView({ behavior: 'smooth' })"
     const question = () => {
-        let number = 1
-        if(number<10){number="00"+number}
-        else if(number<100){number="0"+number}
-        for(let i=0; i < questions.length; i++) {
-            const header  = <div className="faq-question-header">{number+"//"}&emsp;{questions[i].question}</div>;
-            const content = questions[i].answer.map( a => <p key={i}>{a}</p> )
-            number++
-            return (
-                <CollapsibleItem expanded={false} header={header}><div>
-                    {content}
-                </div></CollapsibleItem>
+        return (
+            questions.map((q, index) =>
+                <CollapsibleItem
+                    expanded={false}
+                    className={checkId === q.id ? "active" : ""}
+                    id={"header-"+q.id}
+                    header={
+                        <div className="faq-question-header" key={"q-"+index}>
+                            {(index+1) < 10 ? ("00"+(index+1)+"//") : ("0"+(index+1)+"//")}&emsp;{q.question}
+                        </div>}
+                    key={index}>
+                        <div>
+                            {q.answer.map((a, index) => <div className="faq-answer p-style" key={index}>{a}</div>)}
+                        </div>
+                </CollapsibleItem>
             )
-        }
+        )
     }
-
-    console.log(question())
-
     return(
-        <>
+        <div className="animate__animated animate__fadeIn">
         <Header />
         <NavMobile />
         <div className="faq-container animate__animated animate__fadeIn" id="faq-container">
             <br />
-            <h1 className="faq-header center">FAQ</h1>
-            <br />
+            <ImageContainer imgClasses="faq-image" description="Cartas" src={Cartas} />
+            <h1 className="faq-header center italics thin">frequently ask questions...</h1>
             <div className="faq-collapsible container">
-                <Collapsible>
-                    {question()}
-                </Collapsible>
-            </div>
             <br />
+            <Collapsible>
+                {question()}
+            </Collapsible>
+            </div>
         </div>
+        <br/><br/>
+        <RandomQuote className={"center faq-quote italics"} type={"rap"} />
+        <br/><br/>
         <NavDesktop />
         <Footer />
-        </>
+        </div>
     )
 }
 

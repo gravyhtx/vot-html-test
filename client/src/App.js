@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './styles/style.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import UserLogin from "./pages/UserLogin";
 import UserRegistration from "./pages/UserRegistration";
+import Account from "./pages/Account";
 
 import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
 import About from "./pages/About";
 import Faq from "./pages/Faq";
+import FaqActive from "./pages/FaqActive";
+import Policy from "./pages/Policy";
+import Cart from "./pages/Cart";
 
-import PageNotFound from "./pages/404.js"
+import PageNotFound from "./pages/404"
 
 import AdminLogin from "./components/AdminLogin";
 import AdminDashboard from "./components/AdminDashboard";
@@ -22,11 +26,23 @@ import AdminCreateDrop from "./components/AdminCreateDrop";
 function App() {
 
   const website = {
-    name: "Village of Thousands",
-    drop: "001",
-    szn: "Winter 2021"
+    name: process.env.REACT_APP_COMPANY_NAME,
+    drop: process.env.REACT_APP_CURRENT_DROP,
+    szn: process.env.REACT_APP_CURRENT_SZN
   }
-  
+  const userData = {
+    firstName: "Andrew",
+    lastName: "Richard",
+    email: "andrew@gravydesign.co",
+
+  }
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+  document.addEventListener('load', scrollToTop())
 
   return (
     <div className="App">
@@ -40,12 +56,17 @@ function App() {
         {/* USERS */}
           <Route path="/login" exact component={() => <UserLogin website={website} />} />
           <Route path="/complete-signup" exact component={() => <UserRegistration website={website} />} />
+          <Route path="/account" exact component={() => <Account website={website} userData={userData} />} />
         {/* SITE */}
           <Route path="/" exact component={() => <Home website={website} />} />
           <Route path="/products" exact component={() => <ProductsPage website={website} />} />
           <Route path="/about" exact component={() => <About website={website} />} />
           <Route path="/faq" exact component={() => <Faq website={website} />} />
-        {/* QR Redirect */}
+          <Route path="/faq/active" exact component={() => <FaqActive website={website} />} />
+          <Route path="/shipping" exact component={() => <Policy website={website} />} />
+        {/* CART/CHECKOUT */}
+          <Route path="/cart" exact component={() => <Cart website={website} />} />
+        {/* QR */}
           <Route exact path="/qr">
             <Redirect to="/" />
           </Route>

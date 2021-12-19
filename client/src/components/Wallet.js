@@ -1,19 +1,9 @@
 import React, {Component} from 'react'
 
-export default class Wallet extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = { value: true };
-    // }
-    componentDidMount() {
-    }
-  
-    componentWillUnmount() {
-    }
-    
-    render() {
-        return (
-            <div></div>
-        )      
-    }
+const Wallet = () => {
+    return (
+        <div></div>
+    )
 }
+
+export default Wallet;

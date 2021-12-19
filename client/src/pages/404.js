@@ -1,17 +1,41 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Button } from "react-materialize";
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import NavDesktop from "../components/NavDesktop";
 import NavMobile from "../components/NavMobile";
+
+import SiteImage from "../components/SiteImage";
 import RandomQuote from "../components/modules/RandomQuote";
-import CopError from "../images/szn/001/cop_error.png";
-import FallError from "../images/szn/001/fall_error.png";
+
 
 const PageNotFound = () => {
 
-    let imageSelect = Math.floor(Math.random() * 2);
-    let image = imageSelect === 0 ? CopError : FallError;
+    const header = [
+        <>Hey, broh...</>,
+        <>Oh, hi, Mark...</>,
+        <>Uhhhhh...</>,
+        <>Yo, dawg...</>
+    ]
+    const text = [
+        <>Sorry to inform you, but this page does not exist.
+        Don't give up now. We all get lost sometimes.</>,
+        <>There are many paths to take in life. Unfortunately,
+        this is not one of them.</>,
+        <>Well, this is awkward. Pretty sure the page you were
+        hoping to find isn't this one.</>,
+        <>If you think our developers made a mistake, please
+        call our emergency hotline:<br/><b>(719) 266-2837</b></>,
+        <>Ah, crap. Guess we didn't put up a page here. Please
+        enjoy our complimentary quote for your inconvenience.</>
+    ]
 
+    const randomOutput = (el) => {
+        const n = Math.floor(Math.random()*el.length)
+        return(el[n])
+    }
+    
     return (
       <div>
       <Header />
@@ -22,28 +46,33 @@ const PageNotFound = () => {
                 <div className="box-container row">
 
                     <div className="box-col col s12 m6">
-                        <div className="img-card">
-                            <img src={image} className="img-constraints" draggable="false" alt="Sorry, broh. You're on the wrong page." />
-                        </div>
+                        <SiteImage files={["fall_error", "cop_error"]} imgClasses={"lost-img"} description={"Sorry, broh. You're on the wrong page."} />
+                        <br/>
                     </div>
 
                     <div className="box-col col s12 m6 center">
-                        <h1 className="404-header">Hey, broh.. r u lost??</h1>
-                        <div className="404-text-content left-text">
-                            <div className="404-description">
-                            <RandomQuote type="locationError" />
-                            <span className="material-icons-outlined">
-                                report_problem
-                            </span>
-                            </div>
-                            <div className="404-quote italics">
-                            01000100 01101001 01110110 01100101 01110010 01110011 01101001 01110100 01111001 00101110 00100000 01000011 01110010 01100101 01100001 01110100 01101001 01110110 01101001 01110100 01111001 00101110 00100000 01010000 01100001 01110011 01110011 01101001 01101111 01101110 00101110
-                            </div>
-                        </div>
+                        <div className="lost-header gravy-font left-text">{randomOutput(header)}</div><div className="lost-header right-text">r u lost??</div>
+                        <br/>
+                        <div className="container lost-text gravy-font weight-4">{randomOutput(text)}</div>
+                        <Link to="/">
+                        <Button
+                            node="button"
+                            style={{
+                            marginRight: '5px',
+                            width: '250px'
+                            }}
+                            waves="light"
+                            className="back-btn"
+                        >
+                            FIND YOUR WAY HOME
+                        </Button>
+                        </Link>
+                        <br/><br/>
+                        <RandomQuote className={"i-am-lost italics"} type={"locationError"} />
                     </div>
-
                 </div>
             </div>
+            <br/>
         </div>
       <Footer />
       <NavDesktop />

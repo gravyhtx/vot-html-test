@@ -1,5 +1,4 @@
-import React from 'react';
-import { Collapsible, CollapsibleItem } from 'react-materialize'
+import { Collapsible, CollapsibleItem } from 'react-materialize';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import NavMobile from '../components/NavMobile';
@@ -9,6 +8,7 @@ import Register from '../components/Register';
 import RandomQuote from '../components/modules/RandomQuote';
 
 const UserLoginCollapsible = () =>  {
+
     return (
         <div className="user-login-container">
             <Header />
@@ -33,7 +33,9 @@ const UserLoginCollapsible = () =>  {
                     </CollapsibleItem>
                 </Collapsible>
                 <div className="big-spacer" />
-                <div className="center-text italics"><RandomQuote className="center-text login-zen" type="zen" /></div>
+                {/* <ImageContainer width={"400px"} imgClasses={""} description={image[1]} src={image[0]} /> */}
+                <br/>
+                <div className="center-text italics"><RandomQuote className="center-text login-zen" type="zen" /></div>                
                 <br/><br/>
             </div>
             <NavDesktop />

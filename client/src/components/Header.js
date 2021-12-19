@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import  Logo from "../images/vot_txt-logo_white.svg";
+import Logo from "../images/header.svg";
 import NotificationBar from './NotificationBar';
 import SiteData from "../config/site-data.json"
 
 const Header = () =>  {
 
     let siteName = SiteData.name;
-    let abbv = SiteData.abbreviation.toLocaleLowerCase();
+    let abbv = SiteData.abbreviation.toLowerCase();
     let notification;
 
     const headerLink = "/"
@@ -17,7 +17,6 @@ const Header = () =>  {
     const { pathname } = location;
     const splitLocation = pathname.split("/");
 
-    
     notification=
     <>
       Create your account today and get a <u>FREE</u> Limited Edition VoT NFT!&nbsp;
@@ -26,7 +25,6 @@ const Header = () =>  {
       </span>
     </>;
     
-
     return (
       <header className="site-header" id="site-header">
           <div className="navbar-container black" id="header-container">

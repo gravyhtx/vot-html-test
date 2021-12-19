@@ -1,17 +1,14 @@
-import  React from 'react';
-
-const ImageContainer = ( { containerClasses, imgClasses, description, src } ) => {
+const ImageContainer = ({ width, containerClasses, imgClasses, description, src }) => {
     let cClass="";
-    if(containerClasses){
-        cClass=" "+containerClasses;
-    }
+    if(containerClasses){cClass=" "+containerClasses};
     let iClass="";
-    if(imgClasses){
-        iClass=" "+imgClasses;
-    }
+    if(imgClasses){iClass=" "+imgClasses};
+    let imgSize = {};
+    if(width){imgSize = {maxWidth: width}};
+    
     return (
         <div className={"image-container"+cClass}>
-            <img className={"image-class"+iClass} alt={description} src={src} />
+            <img style={imgSize} className={"image-class"+iClass} alt={description} src={src} />
         </div>
     )
 }

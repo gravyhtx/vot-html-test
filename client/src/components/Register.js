@@ -47,23 +47,25 @@ const Register = () =>  {
     return (
         <>
             <div className="login-input-container">
-                <div id="register-user-email">Email</div>
+                <div id="user-register-email">Email</div>
                 <TextInput
                     email
                     name="email"
-                    aria-labelledby="register-user-email"
+                    aria-labelledby="user-register-email"
                     className="input-field"
-                    id="register-user-email_input"
+                    id="user-register-email_input"
                     onChange={handleInputChange}
-                    value={userFormData.email} />
+                    value={userFormData.email}
+                    validate />
             </div>
             <div className="login-input-container">
-                <div id="register-user-password">Password</div>
+                <div id="user-register-password">Password</div>
                 <TextInput
+                    name="password"
                     type="password"
-                    aria-labelledby="register-user-password"
+                    aria-labelledby="user-register-password"
                     className="input-field"
-                    id="register-user-password_input"
+                    id="user-register-password_input"
                     onChange={handleInputChange}
                     value={userFormData.password} />
             </div>

@@ -56,6 +56,7 @@ const Login = () =>  {
                         name="email"
                         onChange={handleInputChange}
                         value={userFormData.email}
+                        validate
                     />
                 </div>
                 <div className="login-input-container" id="user-login-container">
