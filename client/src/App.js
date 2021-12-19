@@ -55,7 +55,7 @@ function App() {
           <Route path="/admin/drop" exact component={() => <AdminCreateDrop website={website} />} />
         {/* USERS */}
           <Route path="/login" exact component={() => <UserLogin website={website} />} />
-          <Route path="/complete-signup" exact component={() => <UserRegistration website={website} />} />
+          <Route path="/sign-up" exact component={() => <UserRegistration website={website} />} />
           <Route path="/account" exact component={() => <Account website={website} userData={userData} />} />
         {/* SITE */}
           <Route path="/" exact component={() => <Home website={website} />} />

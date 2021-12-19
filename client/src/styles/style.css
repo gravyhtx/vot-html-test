@@ -818,7 +818,11 @@ button.btn-floating.navigation-link:hover {
 .login-btn,
 .login-btn:focus,
 .back-btn,
-.back-btn:focus {
+.back-btn:focus,
+.logout-btn,
+.logout-btn:focus,
+.account-wallet-btn,
+.account-wallet-btn:focus {
     width: 200px;
     height: 50px;
     background-color: var(--button-bg-darker);
@@ -830,7 +834,9 @@ button.btn-floating.navigation-link:hover {
 }
 
 .login-btn:hover,
-.back-btn:hover {
+.back-btn:hover,
+.logout-btn:hover,
+.account-wallet-btn:hover {
     background-color: #111111;
     border: 1px solid white;
     box-shadow: 0 0 5px #ffffff50;
