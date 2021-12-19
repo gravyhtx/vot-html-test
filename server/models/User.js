@@ -6,7 +6,7 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: true,
+      required: false,
       unique: true
     },
     email: {
@@ -21,11 +21,43 @@ const userSchema = new Schema(
     },
     first_name: {
       type: String,
-      required: true
+      required: false
     },
     last_name: {
       type: String,
-      required: true
+      required: false
+    },
+    phone: {
+      type: Number,
+      required: false
+    },
+    addressOne: {
+      type: String,
+      required: false
+    },
+    addressTwo: {
+      type: String,
+      required: false
+    },
+    city: {
+      type: String,
+      required: false
+    },
+    state: {
+      type: String,
+      required: false
+    },
+    zip: {
+      typre: String,
+      required: false
+    },
+    walletAddress: {
+      type: String,
+      required: false
+    },
+    walletBalance: {
+      type: Number,
+      required: false
     },
     orders: [Order.schema]
   },

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { TextInput, Button } from 'react-materialize';
 
-import { loginUser } from '../utils/API';
+import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 const Register = () =>  {
@@ -25,7 +25,7 @@ const Register = () =>  {
         }
 
         try {
-            const response = await loginUser(userFormData);
+            const response = await createUser(userFormData);
 
             if(!response.ok) {
                 throw new Error('something went wrong!');
