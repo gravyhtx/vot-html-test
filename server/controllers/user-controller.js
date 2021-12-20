@@ -42,5 +42,19 @@ module.exports = {
     
     const token = signToken(user);
     res.json({ token, user })
+  },
+
+  async updateUser({ user, body }, res) {
+    console.log(user)
+    try {
+      const updatedUser = await User.findOneAndUpdate(
+        {_id: user._id },
+        body
+      );
+      return res.json(updatedUser);
+    } catch (err) {
+      console.log(err);
+      return res.status(400).json(err);
+    }
   }
 };

@@ -42,6 +42,8 @@ const Register = () =>  {
             email: '',
             password: ''
         })
+
+        window.location.assign('/sign-up');
     }
 
     return (

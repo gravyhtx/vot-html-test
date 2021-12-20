@@ -2646,6 +2646,11 @@
   "resolved" "https://registry.npmjs.org/nan/-/nan-2.15.0.tgz"
   "version" "2.15.0"
 
+"nanoid@^3.1.30":
+  "integrity" "sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ=="
+  "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.1.30.tgz"
+  "version" "3.1.30"
+
 "nice-try@^1.0.4":
   "integrity" "sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ=="
   "resolved" "https://registry.npmjs.org/nice-try/-/nice-try-1.0.5.tgz"
@@ -2872,6 +2877,11 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
+"picocolors@^1.0.0":
+  "integrity" "sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ=="
+  "resolved" "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz"
+  "version" "1.0.0"
+
 "picomatch@^2.0.4", "picomatch@^2.2.1":
   "integrity" "sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw=="
   "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-2.3.0.tgz"
@@ -2881,6 +2891,15 @@
   "integrity" "sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY="
   "resolved" "https://registry.npmjs.org/pify/-/pify-3.0.0.tgz"
   "version" "3.0.0"
+
+"postcss@^8.4.5":
+  "integrity" "sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg=="
+  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.5.tgz"
+  "version" "8.4.5"
+  dependencies:
+    "nanoid" "^3.1.30"
+    "picocolors" "^1.0.0"
+    "source-map-js" "^1.0.1"
 
 "pretty-format@^27.0.0", "pretty-format@^27.4.2":
   "integrity" "sha512-p0wNtJ9oLuvgOQDEIZ9zQjZffK7KtyR6Si0jnXULIDwrlNF8Cuir3AZP0hHv0jmKuNN/edOnbMjnzd4uTcmWiw=="
@@ -3315,6 +3334,11 @@
     "require-from-string" "^2.0.0"
     "semver" "^5.5.0"
     "tmp" "0.0.33"
+
+"source-map-js@^1.0.1":
+  "integrity" "sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA=="
+  "resolved" "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.1.tgz"
+  "version" "1.0.1"
 
 "source-map-support@^0.5.13":
   "integrity" "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w=="
