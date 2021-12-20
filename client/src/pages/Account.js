@@ -6,6 +6,7 @@ import NavDesktop from "../components/NavDesktop";
 import NavMobile from "../components/NavMobile";
 import Footer from "../components/Footer";
 
+import Auth from '../utils/auth';
 // import ImageContainer from "../components/ImageContainer";
 
 const Account = ( userData ) => {
@@ -39,6 +40,7 @@ const Account = ( userData ) => {
             }}
             waves="light"
             className="logout-btn"
+            onClick={Auth.logout}
         >
             LOG OUT
         </Button>
