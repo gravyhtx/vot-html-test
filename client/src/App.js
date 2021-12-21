@@ -22,19 +22,12 @@ import AdminOrderPage from "./components/AdminOrderPage";
 import AdminCreateDrop from "./components/AdminCreateDrop";
 
 
-
 function App() {
 
   const website = {
     name: process.env.REACT_APP_COMPANY_NAME,
     drop: process.env.REACT_APP_CURRENT_DROP,
     szn: process.env.REACT_APP_CURRENT_SZN
-  }
-  const userData = {
-    firstName: "Andrew",
-    lastName: "Richard",
-    email: "andrew@gravydesign.co",
-
   }
   const scrollToTop = () => {
     window.scrollTo({
@@ -56,7 +49,7 @@ function App() {
         {/* USERS */}
           <Route path="/login" exact component={() => <UserLogin website={website} />} />
           <Route path="/sign-up" exact component={() => <UserRegistration website={website} />} />
-          <Route path="/account" exact component={() => <Account website={website} userData={userData} />} />
+          <Route path="/account" exact component={() => <Account website={website} />} />
         {/* SITE */}
           <Route path="/" exact component={() => <Home website={website} />} />
           <Route path="/products" exact component={() => <ProductsPage website={website} />} />

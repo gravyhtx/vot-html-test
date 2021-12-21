@@ -43,6 +43,21 @@ const Account = () => {
         console.log(userData)
     }, [userDataLength]);
 
+    const blockie = <BlockiesIdenticon className="blockie-nav" opts={{seed: userData.walletAddress?userData.walletAddress:"Claire Richard"}}/>
+    // var canvas = userData.walletAddress?blockie:<></>
+    var blockieCanvas = document.getElementById('blockie-canvas');
+    const blockieUrl = blockieCanvas.toDataURL()
+    console.log(blockieUrl);
+    // const dataURL = () => {
+    //     let url = blockieCanvas.toDataURL()
+    //     return(url)
+    // }
+    // const blockiePng = document.write('<img src="'+dataURL+'"/>');
+    // console.log(dataURL);
+    // var dataURL = canvas.toDataURL();
+    // console.log(dataURL);
+    // const blockie = document.write('<img src="'+img+'"/>');
+
     return(
         <div className="animate__animated animate__fadeIn center">
         <Header />
@@ -50,7 +65,7 @@ const Account = () => {
         <div className="account-container animate__animated animate__fadeIn" id="account-container">
         <h1 className="account-header">Account</h1>
         <div className="account-info-container" id="account-info-container">
-        <BlockiesIdenticon className="blockie-nav" opts={{seed: "foobafdsafr"}}/>
+            {blockie}
             <div id="account-info-name">Name</div>
 
             <div id="account-info-name">{userData.email}</div>
@@ -59,8 +74,7 @@ const Account = () => {
             <Button
                 node="button"
                 style={{
-                marginRight: '5px',
-                width: '250px'
+                    width: '250px'
                 }}
                 waves="light"
                 className="account-wallet-btn"

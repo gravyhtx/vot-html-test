@@ -12,11 +12,11 @@ class BlockiesIdenticon extends React.Component {
   getOpts () {
     return {
       seed: this.props.opts.seed || "foo",
-      color: this.props.opts.color || "#11111190",
-      bgcolor: this.props.opts.bgcolor || "#3b495490",
+      color: this.props.opts.color || "#111111",
+      bgcolor: this.props.opts.bgcolor || "#3b4954",
       size: this.props.opts.size || 10,
-      scale: this.props.opts.scale || 5,
-      spotcolor: this.props.opts.spotcolor || "#7FCCE490"
+      scale: this.props.opts.scale || 8,
+      spotcolor: this.props.opts.spotcolor || "#7FCCE4"
     };
   }
   componentDidMount() {
@@ -26,7 +26,10 @@ class BlockiesIdenticon extends React.Component {
     blockies.render(this.getOpts(), this.canvas);
   }
   render() {
-    return <canvas ref={canvas => this.canvas = canvas}/>;
+    const blockieCanvas = <canvas ref={canvas => this.canvas = canvas} id="blockie-canvas"/>
+    // const blockieUrl = blockieCanvas.toDataURL();
+    // console.log(blockieUrl)
+    return (blockieCanvas)
   }
 }
 

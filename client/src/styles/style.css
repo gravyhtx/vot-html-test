@@ -726,7 +726,7 @@ li.active .collapsible-header {
     margin-top: 2px;
     margin-right: 0px;
     border: 1px solid white;
-    opacity: .7;
+    /* opacity: .7; */
 }
 
 

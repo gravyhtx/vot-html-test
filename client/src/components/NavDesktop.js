@@ -11,6 +11,8 @@ const NavDesktop = ( userData ) => {
 
     const fingerprint = <Icon className="avatar">fingerprint</Icon>
     const blockie = <Icon className="avatar">fingerprint</Icon>
+
+    const account = Auth.loggedIn ? "/account" : "/login";
     // const blockie = <BlockiesIdenticon className="blockie-nav" opts={{seed: "foobafdsafr"}}/>
     // window.addEventListener('wheel', checkScrollDirection);
     
@@ -49,11 +51,11 @@ const NavDesktop = ( userData ) => {
                     toolbarEnabled: true
                 }}
                 floating
-                icon={Auth.loggedIn ? blockie : fingerprint}
+                icon={fingerprint}
                 large
                 node="button"
             >
-                <Link to={Auth.loggedIn ? "/account" : "/login"}>
+                <Link to={account}>
                     <Button
                         className="btn-floating navigation-link"
                         floating
