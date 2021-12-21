@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Button } from "react-materialize";
 
 import Header from "../components/Header";
@@ -7,9 +7,42 @@ import NavMobile from "../components/NavMobile";
 import Footer from "../components/Footer";
 import BlockiesIdenticon from "../components/BlockiesIdenticon"
 
+import Auth from '../utils/auth';
 // import ImageContainer from "../components/ImageContainer";
 
-const Account = ( userData ) => {
+import {getSingleUser} from '../utils/API';
+
+const Account = () => {
+    const [userData, setUserData] = useState({});
+    const userDataLength = Object.keys(userData).length;
+
+    useEffect(() => {
+        const getUserData = async () => {
+            try {
+                const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+                if(!token) {
+                    window.location.assign('/login');
+                    return false
+                }
+
+                const response = await getSingleUser(token);
+
+                if(!response.ok){
+                    throw new Error('something went wrong!');
+                }
+
+                const user = await response.json();
+                setUserData(user);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        getUserData();
+        console.log(userData)
+    }, [userDataLength]);
+
     return(
         <div className="animate__animated animate__fadeIn center">
         <Header />
@@ -19,6 +52,8 @@ const Account = ( userData ) => {
         <div className="account-info-container" id="account-info-container">
         <BlockiesIdenticon className="blockie-nav" opts={{seed: "foobafdsafr"}}/>
             <div id="account-info-name">Name</div>
+
+            <div id="account-info-name">{userData.email}</div>
                 
             </div>
             <Button
@@ -41,6 +76,7 @@ const Account = ( userData ) => {
             }}
             waves="light"
             className="logout-btn"
+            onClick={Auth.logout}
         >
             LOG OUT
         </Button>
