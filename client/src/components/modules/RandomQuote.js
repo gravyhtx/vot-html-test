@@ -21,8 +21,7 @@ const RandomQuote = ({ type, className }) => {
     ];
     const mottos = [
         <>"Sustainability, Diversity, Creativity"</>,
-        <>"Zen Quote 02"</>,
-        <>"Zen Quote 03"</>
+        <>"SUSTAINABILITY with the ability to SUSTAIN"</>
     ];
     const locationError = [
         <>"I have never been lost, but I will admit to being confused for several weeks."<br/>- Daniel Boone</>,
@@ -41,18 +40,14 @@ const RandomQuote = ({ type, className }) => {
         <>In three words I can sum up everything I've learned about life: It Goes On.<br/>- Robert Frost</>
         
     ];
-    const errorMessage = [
-        '"Error Quote 01"',
-        '"Error Quote 02"',
-        '"Error Quote 03"'
-    ];
     const rapQuotes = [
         <>"You've got enemies? Good, that means you actually stood up for something."<br/>- Eminem</>,
         <>"Behind me is infinite power. Before me is endless possibility, around me is boundless opportunity.
         My strength is mental, physical, and spiritual"
         <br/>- 50 Cent</>,
         <>"Good things come in good time"<br/>- Wiz Khalifa</>,
-        <>"Remind yourself, nobody is built like you. You design yourself."<br/>- Jay-Z</>,
+        // <>"Remind yourself, nobody is built like you. You design yourself."<br/>- Jay-Z</>,
+        <>"May the best of your todays be the worst of your tomorrows."<br/>- Jay-Z</>,
         <>"Even though you're fed up, you got to keep ya head up."<br/>- Tupac Shakur</>,
         <>"They're gonna try to tell you no, shatter all your dreams. But you gotta get up and go and think
         of better things. "<br/>- Mac Miller</>,
@@ -74,8 +69,8 @@ const RandomQuote = ({ type, className }) => {
     } else if (type === "rap") {
         output = rapQuotes;
     } else {
-        output = errorMessage;
-    };
+        output = ""
+    }
     
     const len = output.length;
     const sel = Math.floor(Math.random()*len);

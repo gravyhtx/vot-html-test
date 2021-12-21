@@ -29,7 +29,7 @@ const Faq = () => {
             questions.map((q, index) =>
                 <CollapsibleItem
                     expanded={false}
-                    className={checkId === q.id ? "active" : ""}
+                    className={checkId === index ? "active" : ""}
                     id={"header-"+q.id}
                     header={
                         <div className="faq-question-header" key={"q-"+index}>

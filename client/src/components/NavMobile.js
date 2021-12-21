@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Icon } from 'react-materialize';
+import Auth from '../utils/auth';
 
-const NavDesktop = () => {
+const NavMobile = () => {
     return (
         <div className="mobile-nav mobile">
-            <Link to="/login">
+
+            <div className="col s3 nav-mobile-col">
+            <Link to={Auth.loggedIn ? "/account" : "/login"}>
             <Button
                 className="btn-floating navigation-link"
                 floating
@@ -13,6 +16,9 @@ const NavDesktop = () => {
                 node="button"
             />
             </Link>
+            </div>
+
+            <div className="col s3 nav-mobile-col">
             <Link to="/products">
             <Button
                 className="btn-floating navigation-link"
@@ -21,6 +27,9 @@ const NavDesktop = () => {
                 node="button"
             />
             </Link>
+            </div>
+
+            <div className="col s3 nav-mobile-col">
             <Link to="/faq">
             <Button
                 className="btn-floating navigation-link"
@@ -29,6 +38,9 @@ const NavDesktop = () => {
                 node="button"
             />
             </Link>
+            </div>
+
+            <div className="col s3 nav-mobile-col">
             <Link to="/cart">
             <Button
                 className="btn-floating navigation-link"
@@ -37,8 +49,10 @@ const NavDesktop = () => {
                 node="button"
             />
             </Link>
+            </div>
+
         </div>
     );
 }
 
-export default NavDesktop;
+export default NavMobile;

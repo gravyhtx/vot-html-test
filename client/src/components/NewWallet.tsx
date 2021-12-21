@@ -193,7 +193,7 @@ function Header() {
 
 function App() {
   const context = useWeb3React<Web3Provider>()
-  const { connector, library, chainId, account, activate, deactivate, active, error } = context
+  const { connector, library, account, activate, deactivate, active, error } = context
 
   // handle logic to recognize the connector currently being activated
   const [activatingConnector, setActivatingConnector] = React.useState<any>()

@@ -8,6 +8,8 @@ const Login = () =>  {
     const [userFormData, setUserFormData] = useState({ email: '', password: ''});
     const [validated] = useState(false);
 
+    // console.log(Auth.loggedIn())
+
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({...userFormData, [name]: value });
@@ -43,9 +45,7 @@ const Login = () =>  {
     }
 
     return (
-        // <div className="login-cointainer">
         <>
-            {/* <div className="login-header disable-highlight">Login</div> */}
                 <div className="login-input-container" id="user-login-container">
                     <div id="user-login-email">Email</div>
                     <TextInput

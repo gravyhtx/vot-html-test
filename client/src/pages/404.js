@@ -58,8 +58,7 @@ const PageNotFound = () => {
                         <Button
                             node="button"
                             style={{
-                            marginRight: '5px',
-                            width: '250px'
+                                width: '250px'
                             }}
                             waves="light"
                             className="back-btn"

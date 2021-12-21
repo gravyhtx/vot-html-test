@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 
 // make array to loop for "links-list"
 const Footer = () => {
+
+    const links = [
+      ["home", "products", "faq", "cart"],
+      ["login", ""]
+    ]
+    const siteMap = {
+
+    }
     return (
       <div className="footer animate__animated animate__fadeIn">
         <div className="page-footer" id="online">

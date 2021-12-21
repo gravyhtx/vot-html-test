@@ -14,7 +14,6 @@ const CryptoConverter = ( price ) => {
         const c_usd = Number(1/c_price);
         const total = Number(c_usd*cost);
         let c_display = total.toFixed(6) + " " + coin;
-        // document.getElementById(coin).innerHTML = c_display;
         localStorage.setItem(coin+'_bank', c_display);
         return (localStorage.getItem(coin+'_bank'));
     }
@@ -35,10 +34,6 @@ const CryptoConverter = ( price ) => {
     console.log(btc)
 
     return ([eth, btc])
-
 }
-
-// UPDATE COIN PRICES
-// setInterval(() => {CryptoConverter(40)}, 15000);
 
 export default CryptoConverter;
