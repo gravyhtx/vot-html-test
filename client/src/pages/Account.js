@@ -1,92 +1,26 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { Button } from "react-materialize";
 
 import Header from "../components/Header";
 import NavDesktop from "../components/NavDesktop";
 import NavMobile from "../components/NavMobile";
 import Footer from "../components/Footer";
-import BlockiesIdenticon from "../components/BlockiesIdenticon"
+import AccountContainer from "../components/AccountContainer";
 
 import Auth from '../utils/auth';
-// import ImageContainer from "../components/ImageContainer";
 
-import {getSingleUser} from '../utils/API';
 
 const Account = () => {
-    const [userData, setUserData] = useState({});
-    const userDataLength = Object.keys(userData).length;
-
-    useEffect(() => {
-        const getUserData = async () => {
-            try {
-                const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-                if(!token) {
-                    window.location.assign('/login');
-                    return false
-                }
-
-                const response = await getSingleUser(token);
-
-                if(!response.ok){
-                    throw new Error('something went wrong!');
-                }
-
-                const user = await response.json();
-                setUserData(user);
-            } catch (err) {
-                console.error(err);
-            }
-        };
-
-        getUserData();
-        console.log(userData)
-    }, [userDataLength]);
-
-    const blockie = <BlockiesIdenticon className="blockie-nav" opts={{seed: userData.walletAddress?userData.walletAddress:"Claire Richard"}}/>
-    // var canvas = userData.walletAddress?blockie:<></>
-    // var blockieCanvas = document.getElementById('blockie-canvas');
-    // const blockieUrl = blockieCanvas.toDataURL()
-    // console.log(blockieUrl);
-    // const dataURL = () => {
-    //     let url = blockieCanvas.toDataURL()
-    //     return(url)
-    // }
-    // const blockiePng = document.write('<img src="'+dataURL+'"/>');
-    // console.log(dataURL);
-    // var dataURL = canvas.toDataURL();
-    // console.log(dataURL);
-    // const blockie = document.write('<img src="'+img+'"/>');
 
     return(
         <div className="animate__animated animate__fadeIn center">
         <Header />
         <NavMobile />
-        <div className="account-container animate__animated animate__fadeIn" id="account-container">
-        <h1 className="account-header">Account</h1>
-        <div className="account-info-container" id="account-info-container">
-            {blockie}
-            <div id="account-info-name">Name</div>
-
-            <div id="account-info-name">{userData.email}</div>
-                
-            </div>
-            <Button
-                node="button"
-                style={{
-                    width: '250px'
-                }}
-                waves="light"
-                className="account-wallet-btn"
-            >
-                ADD WALLET
-            </Button>
-        </div>
+        <AccountContainer />
         <Button
             node="button"
             style={{
-            marginRight: '5px',
-            width: '250px'
+                width: '250px'
             }}
             waves="light"
             className="logout-btn"

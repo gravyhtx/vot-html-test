@@ -14,6 +14,8 @@ import FaqActive from "./pages/FaqActive";
 import Policy from "./pages/Policy";
 import Cart from "./pages/Cart";
 
+import NewWallet from "./components/NewWallet.tsx";
+
 import PageNotFound from "./pages/404"
 
 import AdminLogin from "./components/AdminLogin";
@@ -35,7 +37,8 @@ function App() {
       behavior: "smooth"
     });
   };
-  document.addEventListener('load', scrollToTop())
+
+  document.addEventListener('load', scrollToTop());
 
   return (
     <div className="App">
@@ -57,6 +60,7 @@ function App() {
           <Route path="/faq" exact component={() => <Faq website={website} />} />
           <Route path="/faq/active" exact component={() => <FaqActive website={website} />} />
           <Route path="/shipping" exact component={() => <Policy website={website} />} />
+          <Route path="/wallet" exact component={() => <NewWallet website={website} />} />
         {/* CART/CHECKOUT */}
           <Route path="/cart" exact component={() => <Cart website={website} />} />
         {/* QR */}
