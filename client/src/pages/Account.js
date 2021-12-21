@@ -45,9 +45,9 @@ const Account = () => {
 
     const blockie = <BlockiesIdenticon className="blockie-nav" opts={{seed: userData.walletAddress?userData.walletAddress:"Claire Richard"}}/>
     // var canvas = userData.walletAddress?blockie:<></>
-    var blockieCanvas = document.getElementById('blockie-canvas');
-    const blockieUrl = blockieCanvas.toDataURL()
-    console.log(blockieUrl);
+    // var blockieCanvas = document.getElementById('blockie-canvas');
+    // const blockieUrl = blockieCanvas.toDataURL()
+    // console.log(blockieUrl);
     // const dataURL = () => {
     //     let url = blockieCanvas.toDataURL()
     //     return(url)
