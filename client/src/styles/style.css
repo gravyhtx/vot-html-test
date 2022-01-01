@@ -888,7 +888,8 @@ button.btn-floating.navigation-link:hover {
     margin: 0 auto;
     padding: 20px 10px 0;
     border: 1px solid white;
-    box-shadow: 0 0 25px #ffffff50;
+    background-color: black;
+    box-shadow: 0 0 20px #ffffff50;
 }
 .seed-word-container {
     padding: 8px !important;
@@ -900,7 +901,7 @@ button.btn-floating.navigation-link:hover {
     color: var(--theme-primary-medium-color)
 }
 .seed-phrase-checkbox {
-    padding: 20px;
+    padding: 25px 20px;
     /* background-color: var(--theme-primary-light-color); */
 }
 .seed-phrase-checkbox span {

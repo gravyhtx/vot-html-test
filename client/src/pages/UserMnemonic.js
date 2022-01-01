@@ -62,8 +62,16 @@ const UserMnemonic = () => {
 
     // Handle Agreement
     let [checked, setChecked] = useState(false); 
-    const handleChange = () => { 
+    const handleChange = () => {
+        handleAgreement();
         setChecked(!checked);
+    };
+
+    // Check for page refresh
+    let [refresh, setRefresh] = useState(true); 
+    const handleAgreement = () => { 
+        setRefresh(false);
+        setChecked(false);
     };
 
     // Store Seed Phrase Hex  
@@ -99,13 +107,10 @@ const UserMnemonic = () => {
         window.location.assign('/signup-2');
     }
 
-    let refresh = true;
-
     const ErrorMessage = () => {
-        if (!checked & !refresh) {
-            refresh = false;
+        if (!checked && !refresh) {
             return (
-                <div className="blue-glow center">Please save your seed phrase and click the checkbox.</div>
+                <div className="blue-glow center italics">** Please save your seed phrase and click the checkbox. **</div>
             )
         } else {
             return (<></>)
@@ -119,6 +124,7 @@ const UserMnemonic = () => {
             <Button
                 node="button"
                 style={{
+                    margin: '0 auto',
                     width: '250px'
                 }}
                 waves="light"
@@ -130,15 +136,16 @@ const UserMnemonic = () => {
             )
         } else {
             checked=false;
-            ErrorMessage();
             return(
             <Button
                 node="button"
                 style={{
+                    margin: '0 auto',
                     width: '250px'
                 }}
                 waves="light"
                 className="theme-btn disabled-btn"
+                onClick={handleAgreement}
             >
                 Next
             </Button>
@@ -166,7 +173,6 @@ const UserMnemonic = () => {
                 )}
             </div>
         </div>
-        <br/>
         <div className="seed-phrase-checkbox center">
             <div className="container">
             <div className="important">IMPORTANT!</div>
@@ -176,6 +182,7 @@ const UserMnemonic = () => {
             </div>
             </div>
             <br/>
+            <ErrorMessage />
             <Checkbox
             onChange={handleChange}
             checked={false}
@@ -185,7 +192,6 @@ const UserMnemonic = () => {
             />
         </div>
         <div className="user-registration-next center">
-        <ErrorMessage />
         <Agree />
         </div>
         <br/><br/>
