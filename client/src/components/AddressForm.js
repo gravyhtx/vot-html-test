@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { TextInput } from 'react-materialize';
 import { Button } from 'react-materialize';
-
+import Web3Wallet from './Web3Wallet';
 import Auth from '../utils/auth';
 import { updateUser } from '../utils/API';
 
@@ -78,26 +78,28 @@ const AddressForm = () => {
     return (
         <>
         <div className='register-register-container container'>
-            <div className="register-input-container" id="user-register-container">
-            <div id="user-register-email">Email</div>
-                <TextInput
-                    email
-                    className="input-field" 
-                    id="user-register-email_input"
-                    aria-labelledby="user-register-email"
-                    name="email"
-                    validate
-                />
-            </div>
-            <div className="register-input-container" id="user-register-container">
-                <div id="user-register-password">Password</div>
-                <TextInput 
-                    className="input-field" 
-                    id="user-register-password_input"
-                    aria-labelledby="user-register-email"
-                    type="password"
-                    name="password"
-                />
+            <div className='row'>
+                <div className="register-input-container col s12 m6" id="user-register-container">
+                    <div id="user-register-email">Email</div>
+                    <TextInput
+                        email
+                        className="input-field" 
+                        id="user-register-email_input"
+                        aria-labelledby="user-register-email"
+                        name="email"
+                        validate
+                    />
+                </div>
+                <div className="register-input-container col s12 m6" id="user-register-container">
+                    <div id="user-register-password">Password</div>
+                    <TextInput 
+                        className="input-field" 
+                        id="user-register-password_input"
+                        aria-labelledby="user-register-email"
+                        type="password"
+                        name="password"
+                    />
+                </div>
             </div>
         </div>
         <br/>
@@ -150,17 +152,10 @@ const AddressForm = () => {
                 />
             </div>
             <br/>
-            <Button
-                node="button"
-                style={{
-                    marginRight: '5px',
-                    width: '250px'
-                }}
-                waves="light"
-                className="account-wallet-btn"
-            >
-                ADD WALLET
-            </Button>
+
+            <div>
+                <Web3Wallet />
+            </div>
             <Button
                 node="button"
                 style={{

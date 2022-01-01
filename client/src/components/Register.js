@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 
 const Register = () =>  {
 
-    const [userFormData, setUserFormData] = useState({ email: '', password: ''});
+    const [userFormData, setUserFormData] = useState({ email: '', password: '', mnemonic: ''});
     const [validated] = useState(false);
 
     const handleInputChange = (event) => {
@@ -40,10 +40,11 @@ const Register = () =>  {
 
         setUserFormData({
             email: '',
-            password: ''
+            password: '',
+            mnemonic: 'false'
         })
 
-        window.location.assign('/sign-up');
+        window.location.assign('/signup-1');
     }
 
     return (

@@ -16,6 +16,8 @@ const Account = () => {
         <div className="animate__animated animate__fadeIn center">
         <Header />
         <NavMobile />
+        <div className="account">
+        <h1 className="account-header">Account</h1>
         <AccountContainer />
         <Button
             node="button"
@@ -28,6 +30,7 @@ const Account = () => {
         >
             LOG OUT
         </Button>
+        </div>
         <NavDesktop />
         <Footer />
         </div>

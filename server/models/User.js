@@ -14,6 +14,10 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
+    mnemonic: {
+      type: String,
+      required: true
+    },
     first_name: {
       type: String,
       required: false

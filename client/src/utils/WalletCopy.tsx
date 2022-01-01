@@ -44,8 +44,16 @@ export default function() {
 
 function ChainId() {
   const { chainId } = useWeb3React()
-  const userChainId = chainId ?? ''
-  return (userChainId)
+  console.log("Chain ID", chainId)
+  return (
+    <>
+      <span>Chain Id</span>
+      <span role="img" aria-label="chain">
+        ⛓
+      </span>
+      <span>{chainId ?? ''}</span>
+    </>
+  )
 }
 
 function BlockNumber() {
@@ -81,14 +89,36 @@ function BlockNumber() {
       }
     }
   }, [library, chainId]) // ensures refresh if referential identity of library doesn't change across chainIds
-  const userBlocknumber = blockNumber === null ? 'Error' : blockNumber ?? ''
-  return (userBlocknumber)
+
+  return (
+    <>
+      <span>Block Number</span>
+      <span role="img" aria-label="numbers">
+        🔢
+      </span>
+      <span>{blockNumber === null ? 'Error' : blockNumber ?? ''}</span>
+    </>
+  )
 }
 
 function Account() {
   const { account } = useWeb3React()
-  const userAccount = account === null? '-': account? account: ''
-  return (userAccount)
+
+  return (
+    <>
+      <span>Account</span>
+      <span role="img" aria-label="robot">
+        🤖
+      </span>
+      <span>
+        {account === null
+          ? '-'
+          : account
+          ? `${account.substring(0, 6)}...${account.substring(account.length - 4)}`
+          : ''}
+      </span>
+    </>
+  )
 }
 
 function Balance() {
@@ -118,8 +148,16 @@ function Balance() {
       }
     }
   }, [account, library, chainId]) // ensures refresh if referential identity of library doesn't change across chainIds
-  const userBalance = balance === null ? 'Error' : balance ? formatEther(balance) : ''
-  return (userBalance)
+
+  return (
+    <>
+      <span>Balance</span>
+      <span role="img" aria-label="gold">
+        💰
+      </span>
+      <span>{balance === null ? 'Error' : balance ? `Ξ${formatEther(balance)}` : ''}</span>
+    </>
+  )
 }
 
 function Header() {
@@ -128,11 +166,20 @@ function Header() {
   return (
     <>
       {/* <h1 style={{ margin: '1rem', textAlign: 'right' }}>{active ? '🟢' : error ? '🔴' : '🟠'}</h1> */}
-      <h3>
-        <div>{ChainId()}</div>
-        <div>{BlockNumber()}</div>
-        <div>{Account()}</div>
-        <div>{Balance()} ETH</div>
+      <h3
+        style={{
+          display: 'grid',
+          gridGap: '1rem',
+          gridTemplateColumns: '1fr min-content 1fr',
+          maxWidth: '20rem',
+          lineHeight: '2rem',
+          margin: 'auto'
+        }}
+      >
+        <ChainId />
+        <BlockNumber />
+        <Account />
+        <Balance />
       </h3>
     </>
   )
@@ -163,44 +210,86 @@ function App() {
 
   return (
     <>
-      {/* <hr style={{ margin: '2rem' }} /> */}
-      <Header />
-      <div>
-      {(!active) && (
-        <button
-          className='btn waves-effect waves-light account-wallet-btn'
-          disabled={disabled}
-          onClick={() => {
-            setActivatingConnector(currentConnector)
-            activate(injected)
+      {/* <Header /> */}
+      <hr style={{ margin: '2rem' }} />
+      <div
+        style={{
+          display: 'grid',
+          gridGap: '1rem',
+          gridTemplateColumns: '1fr 1fr',
+          maxWidth: '20rem',
+          margin: 'auto'
+        }}
+      >
+      <button
+        style={{
+          height: '3rem',
+          borderRadius: '1rem',
+          borderColor: activating ? 'orange' : connected ? 'green' : 'unset',
+          cursor: disabled ? 'unset' : 'pointer',
+          position: 'relative'
+        }}
+        disabled={disabled}
+        onClick={() => {
+          setActivatingConnector(currentConnector)
+          activate(injected)
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            color: 'black',
+            margin: '0 0 0 1rem'
           }}
         >
-          <div>
-            {activating && <Spinner color={'black'} style={{ height: '25%', marginLeft: '-1rem' }} />}
-            {connected}
-          </div>
-          ADD WALLET
-        </button>
-      )}
+          {activating && <Spinner color={'black'} style={{ height: '25%', marginLeft: '-1rem' }} />}
+          {connected && (
+            <span role="img" aria-label="check">
+              ✅
+            </span>
+          )}
+        </div>
+        INJECTED
+      </button>
           
       </div>
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         {(active || error) && (
           <button
-            className='btn waves-effect waves-light account-wallet-btn'
+            style={{
+              height: '3rem',
+              marginTop: '2rem',
+              borderRadius: '1rem',
+              borderColor: 'red',
+              cursor: 'pointer'
+            }}
             onClick={() => {
               deactivate()
             }}
           >
-            DEACTIVATE WALLET
+            Deactivate
           </button>
         )}
+
         {!!error && <h4 style={{ marginTop: '1rem', marginBottom: '0' }}>{getErrorMessage(error)}</h4>}
       </div>
 
-      {/* <hr style={{ margin: '2rem' }} /> */}
+      <hr style={{ margin: '2rem' }} />
 
-      {/* <div> */}
+      <div
+        style={{
+          display: 'grid',
+          gridGap: '1rem',
+          gridTemplateColumns: 'fit-content',
+          maxWidth: '20rem',
+          margin: 'auto'
+        }}
+      >
         {/* {!!(library && account) && (
           <button
             style={{
@@ -223,7 +312,7 @@ function App() {
             Sign Message
           </button>
         )} */}
-      {/* </div> */}
+      </div>
     </>
   )
 }

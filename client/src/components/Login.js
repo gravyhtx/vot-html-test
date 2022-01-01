@@ -78,7 +78,6 @@ const Login = () =>  {
                         marginRight: '5px'
                         }}
                         waves="light"
-                        // disabled= {!(userFormData.email && userFormData.password)}
                         onClick={handleFormSubmit}
                         className="login-btn"
                     >

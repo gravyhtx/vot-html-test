@@ -3,6 +3,7 @@ import './styles/style.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import UserLogin from "./pages/UserLogin";
+import UserMnemonic from "./pages/UserMnemonic";
 import UserRegistration from "./pages/UserRegistration";
 import Account from "./pages/Account";
 
@@ -13,8 +14,6 @@ import Faq from "./pages/Faq";
 import FaqActive from "./pages/FaqActive";
 import Policy from "./pages/Policy";
 import Cart from "./pages/Cart";
-
-import NewWallet from "./components/NewWallet.tsx";
 
 import PageNotFound from "./pages/404"
 
@@ -51,7 +50,8 @@ function App() {
           <Route path="/admin/drop" exact component={() => <AdminCreateDrop website={website} />} />
         {/* USERS */}
           <Route path="/login" exact component={() => <UserLogin website={website} />} />
-          <Route path="/sign-up" exact component={() => <UserRegistration website={website} />} />
+          <Route path="/signup-1" exact component={() => <UserMnemonic website={website} />} />
+          <Route path="/signup-2" exact component={() => <UserRegistration website={website} />} />
           <Route path="/account" exact component={() => <Account website={website} />} />
         {/* SITE */}
           <Route path="/" exact component={() => <Home website={website} />} />
@@ -60,7 +60,6 @@ function App() {
           <Route path="/faq" exact component={() => <Faq website={website} />} />
           <Route path="/faq/active" exact component={() => <FaqActive website={website} />} />
           <Route path="/shipping" exact component={() => <Policy website={website} />} />
-          <Route path="/wallet" exact component={() => <NewWallet website={website} />} />
         {/* CART/CHECKOUT */}
           <Route path="/cart" exact component={() => <Cart website={website} />} />
         {/* QR */}

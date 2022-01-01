@@ -1,0 +1,199 @@
+import { useState, useEffect } from 'react';
+// import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from '../components/Footer';
+import NavDesktop from "../components/NavDesktop";
+import NavMobile from "../components/NavMobile";
+import Mnemonic from "../components/Mnemonic";
+
+import { Button, Checkbox } from "react-materialize";
+
+import { createUser, getSingleUser } from '../utils/API';
+import Auth from '../utils/auth';
+
+const UserMnemonic = () => {
+
+    // Get User Data
+    const [userData, setUserData] = useState({});
+    const userDataLength = Object.keys(userData).length;
+    
+    useEffect(() => {
+        const getUserData = async () => {
+            try {
+                const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+                if(!token) {
+                    window.location.assign('/login');
+                    return false
+                }
+
+                const response = await getSingleUser(token);
+
+                if(!response.ok){
+                    throw new Error('something went wrong!');
+                }
+
+                const user = await response.json();
+                setUserData(user);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        getUserData();
+        console.log(userData);
+    }, [userDataLength]);
+
+    // Add Seed Phrase Hex
+    const [userFormData, setUserFormData] = useState({ email: '', password: '', mnemonic: '' });
+    const m = new Mnemonic(96)
+    const hex = m.toHex()
+    let seedHex = hex;
+
+    const getMnemonic = localStorage.getItem('seedHex');
+    if (getMnemonic) {
+        seedHex = getMnemonic;
+    } else {
+        localStorage.setItem('seedHex', seedHex);
+    }
+
+    let getHex = Mnemonic.fromHex(seedHex)
+    const phrase = getHex.toWords()
+
+    // Handle Agreement
+    let [checked, setChecked] = useState(false); 
+    const handleChange = () => { 
+        setChecked(!checked);
+    };
+
+    // Store Seed Phrase Hex  
+    const handleMnemonicSubmit = async (event) => {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        if(form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        try {
+            const response = await createUser(userFormData);
+
+            if(!response.ok) {
+                throw new Error('something went wrong!');
+            }
+
+            const { token, user } = await response.json();
+            console.log(user);
+            Auth.login(token);
+        } catch (err) {
+            console.error(err);
+        }
+
+        setUserFormData({
+            email: userData.email,
+            password: userData.password,
+            mnemonic: seedHex
+        })
+
+        window.location.assign('/signup-2');
+    }
+
+    let refresh = true;
+
+    const ErrorMessage = () => {
+        if (!checked & !refresh) {
+            refresh = false;
+            return (
+                <div className="blue-glow center">Please save your seed phrase and click the checkbox.</div>
+            )
+        } else {
+            return (<></>)
+        }
+    }
+
+    const Agree = () => {
+        if (!checked) {
+            checked=true;
+            return (
+            <Button
+                node="button"
+                style={{
+                    width: '250px'
+                }}
+                waves="light"
+                className="account-wallet-btn"
+                onClick={handleMnemonicSubmit}
+            >
+                Next
+            </Button>
+            )
+        } else {
+            checked=false;
+            ErrorMessage();
+            return(
+            <Button
+                node="button"
+                style={{
+                    width: '250px'
+                }}
+                waves="light"
+                className="theme-btn disabled-btn"
+            >
+                Next
+            </Button>
+            )
+        }
+    }
+    return (
+        <>
+        <Header />
+        <NavMobile />
+        <div className="user-mnemonic-container animate__animated animate__fadeIn box-container-fluid" id="user-registration-container">
+        <br/>
+        <h1 className="user-registration-header center">Complete Your Registration</h1>
+        <div className="seed-phrase">
+            {/* <h2 className="center">Seed Phrase</h2> */}
+            <br/>
+            <div className="seed-phrase-container center container row">
+                {phrase.map((word, index) =>
+                    <div className="seed-word-container center col s4" key={index}>
+                    <div className="row">
+                        <div className="seed-word-number col s2">{index+1}.</div>
+                        <div className="seed-word col s10">{word}</div>
+                    </div>
+                    </div>
+                )}
+            </div>
+        </div>
+        <br/>
+        <div className="seed-phrase-checkbox center">
+            <div className="container">
+            <div className="important">IMPORTANT!</div>
+            <div className="seed-phrase-reminder container">
+                This is the "seed phrase" (aka mnemonic) associated with your account. If you lose your password, this is the only method
+                of recovery. Please take a second to write down this phrase and keep it safe to avoid losing access to your account!
+            </div>
+            </div>
+            <br/>
+            <Checkbox
+            onChange={handleChange}
+            checked={false}
+            id="seed-phrase-checkbox"
+            label="I have saved my seed phrase."
+            value="I have saved my seed phrase."
+            />
+        </div>
+        <div className="user-registration-next center">
+        <ErrorMessage />
+        <Agree />
+        </div>
+        <br/><br/>
+        </div>
+        <Footer />
+        <NavDesktop />
+        </>
+    )
+}
+
+export default UserMnemonic;
