@@ -16,7 +16,7 @@ const userSchema = new Schema(
     },
     mnemonic: {
       type: String,
-      required: true,
+      required: false,
       default: ""
     },
     seedHex: {
