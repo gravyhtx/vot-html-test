@@ -21,7 +21,7 @@ const userSchema = new Schema(
     },
     seedHex: {
       type: String,
-      required: true
+      required: false
     },
     first_name: {
       type: String,
