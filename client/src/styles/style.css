@@ -398,6 +398,24 @@ textarea.materialize-textarea {
     line-height: 100vh;
 }
 
+.not-a-button,
+.not-a-button:focus,
+.not-a-button:active,
+.not-a-button:hover {
+    color: var(--content-color);
+    background-color: transparent;
+    font-family: var(--theme-font);
+    font-size: var(--theme-font-size);
+    font-weight: var(--theme-font-weight);
+    line-height: normal;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    letter-spacing: normal;
+}
+
 
 /*
 ///////////
@@ -1580,6 +1598,10 @@ label#upload-label.active:hover::after {
     color: white;
 }
 
+.account-wallet .wallet-info {
+    color: var(--theme-disabled-color);
+}
+
 .blockie-container {
     width: 140px;
     height: 140px;
@@ -1588,12 +1610,41 @@ label#upload-label.active:hover::after {
     border: 4px solid var(--theme-secondary-dark-color);
     border-radius: 100px;
     background: var(--dark-gradient);
+    box-shadow: 0px 0px 10px black;
 }
 
 .blockie-canvas {
     margin: 26px 0;
     box-shadow: 0 0 15px #7fcce433;
     border: 2px solid #11111104;
+    height: 20px;
+}
+
+.blockie-colors {
+    color: var(--theme-primary-medium-color);
+    font-size: var(--theme-font-size-xxs);
+    background-color: #00000010;
+    margin: 10px 0;
+    padding: 4px;
+    border: 1px solid var(--theme-primary-dark-color);
+    box-shadow: 2px 2px black;
+    height: 23px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+
+.blockie-colors:hover {
+    text-shadow: 0 0 10px var(--theme-secondary-light-color);
+    color: var(--theme-disabled-color);
+    /* color: white; */
+    font-size: var(--theme-font-size-xxs);
+    background-color: #7fcce410;
+    padding: 4px;
+    border: 1px solid #7fcce47a;
+    box-shadow: 0 0 2px #7fcce47a;
+    height: 23px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
 }
 
 .no-avatar {
@@ -1620,6 +1671,7 @@ label#upload-label.active:hover::after {
 .account-info-email {
     font-size: var(--theme-font-size-md);
     margin-top: 10px;
+    text-shadow: 0 0 8px var(--theme-disabled-color);
 }
 
 .account-logout {
@@ -1867,9 +1919,6 @@ label#upload-label.active:hover::after {
     .user-registration-header {
         font-size: var(--theme-font-size-lg);
     }
-    .account-info-email {
-        font-size: var(--theme-font-size);
-    }
     .learn-more {
         font-size: var(--theme-font-size-md) !important;
     }
@@ -1950,6 +1999,9 @@ label#upload-label.active:hover::after {
     }
     .account-info-name {
         font-size: var(--theme-font-size-md);
+    }
+    .account-info-email {
+        font-size: var(--theme-font-size);
     }
 
     .login-cointainer, .register-cointainer {

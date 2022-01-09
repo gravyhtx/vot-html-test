@@ -20,7 +20,7 @@ const AccountContainer = () => {
         const getUserData = async () => {
             try {
                 const token = Auth.loggedIn() ? Auth.getToken() : null;
-
+                console.log(token)
                 if(!token) {
                     window.location.assign('/login');
                     return false
@@ -33,6 +33,7 @@ const AccountContainer = () => {
                 }
 
                 const user = await response.json();
+                console.log(user)
                 setUserData(user);
             } catch (err) {
                 console.error(err);
@@ -57,31 +58,35 @@ const AccountContainer = () => {
     // const blockie = document.write('<img src="'+img+'"/>');
     const getWallet = localStorage.getItem('-walletlink:https://www.walletlink.org:Addresses');
 
-    const getColor = localStorage.getItem('blockie-color');
-    const setColor = (n) => localStorage.setItem('blockie-color', n);
+    const getColors = localStorage.getItem('blockie-color');
+    const setColors = (n) => localStorage.setItem('blockie-color', n);
 
+    // let scheme = getColors?getColors:["#111111","#3b4954","#7FCCE4"];
+    // let color1 = scheme[0];
+    // let color2 = scheme[1];
+    // let color3 = scheme[2];
+    
     let color1;
     let color2;
     let color3;
+    let scheme = getColors?getColors:0;
 
-    let scheme = getColor?getColor:0;
-
-    console.log("color: "+getColor)
+    console.log("color: "+getColors)
 
     if (scheme < 1) {
-        setColor(scheme);
+        setColors(scheme);
         console.log(scheme);
         color1 = "#111111";
         color2 = "#3b4954";
         color3 = "#7FCCE4";
     } else if (scheme > 1) {
-        setColor(scheme);
+        setColors(scheme);
         console.log(scheme);
         color1 = "#7FCCE4";
         color2 = "#111111";
         color3 = "#3b4954";
     } else {
-        setColor(scheme);
+        setColors(scheme);
         console.log(scheme);
         color1 = "#3b4954";
         color2 = "#7FCCE4"
@@ -92,21 +97,21 @@ const AccountContainer = () => {
         console.log('click')
         if (scheme === 1) {
             scheme++;
-            setColor(scheme);
+            setColors(scheme);
             console.log(scheme);
             // color1 = "#3b4954";
             // color2 = "#7FCCE4"
             // color3 = "#111111"
         } else if (scheme > 1) {
             scheme = 0;
-            setColor(scheme);
+            setColors(scheme);
             console.log(scheme);
             // color1 = "#7FCCE4";
             // color2 = "#111111";
             // color3 = "#3b4954";
         } else {
             scheme++;
-            setColor(scheme);
+            setColors(scheme);
             console.log(scheme);
             // color1 = "#111111";
             // color2 = "#3b4954";
@@ -140,20 +145,22 @@ const AccountContainer = () => {
                 ?<>
                 {blockie}
                 </>
-                :<SvgContainer margins="26px" src={Avatar} classes="no-avatar" />}
+                :<SvgContainer src={Avatar} classes="no-avatar" />}
             </div>
             {!userData.walletAddress
             ?<Button
                 node="button"
-                className="logout-btn"
+                className="blockie-colors not-a-button monospace"
                 onClick={setScheme}>
-                COLOR SCHEME
+                [CHANGE COLOR SCHEME]
             </Button>
             :<></>}
             <div className="account-info-name">{(userData.first_name && userData.last_name)?userData.first_name+" "+userData.last_name:""}</div>
             <div className="account-info-email">{userData.email}</div>
         </div>
+        <div className="account-wallet">
         <Web3Wallet />
+        </div>
         <AddressForm />
         </div>
         </>

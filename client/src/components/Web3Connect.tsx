@@ -10,6 +10,8 @@ import { useEagerConnect, useInactiveListener } from '../utils/hooks'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { Spinner } from '../components/Spinner'
 
+
+
 const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] })
 
 function getErrorMessage(error: Error) {

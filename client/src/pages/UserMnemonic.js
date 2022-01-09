@@ -56,8 +56,8 @@ const UserMnemonic = () => {
         localStorage.setItem('seed_hex', seedHex);
     }
 
-    let getHex = Mnemonic.fromHex(seedHex)
-    const phrase = getHex.toWords()
+    let getHex = Mnemonic.fromHex(seedHex);
+    const phrase = getHex.toWords();
 
     // Handle Agreement
     let [checked, setChecked] = useState(false);

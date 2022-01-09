@@ -122,7 +122,7 @@ const ProductsPage = ({ website }) =>  {
                         />
                         <br/>
                         <br/>
-                        <SocialCircles containerClasses="" />
+                        <SocialCircles containerClasses="products-page-socials" />
                     </div>
                 </div>
                 <br/>

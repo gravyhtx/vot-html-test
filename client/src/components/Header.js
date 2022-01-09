@@ -6,6 +6,8 @@ import SiteData from "../config/site-data.json"
 
 const Header = () =>  {
 
+    // Get userData
+
     let siteName = SiteData.name;
     let abbv = SiteData.abbreviation.toLowerCase();
     let notification;
@@ -38,6 +40,7 @@ const Header = () =>  {
                   alt={siteName ? siteName+" Logo" : "Website Logo"} />
               </div>
             </Link>
+            {/* userData.wallet?<NotificationBar text={notification} link={notificationLink} />:<></> */}
             <NotificationBar text={notification} link={notificationLink} />
           </div>
       </header>
