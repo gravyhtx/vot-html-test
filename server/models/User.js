@@ -18,6 +18,10 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
+    seedHex: {
+      type: String,
+      required: true
+    },
     first_name: {
       type: String,
       required: false
@@ -58,6 +62,15 @@ const userSchema = new Schema(
       type: Number,
       required: false
     },
+    completeRegistration: {
+      type: Boolean,
+      default: false
+    },
+    blockie: {
+      type: String,
+      required: false
+    },
+    colorScheme: [String],
     orders: [Order.schema]
   },
   {
