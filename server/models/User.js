@@ -14,11 +14,6 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
-    mnemonic: {
-      type: String,
-      required: false,
-      default: ""
-    },
     seedHex: {
       type: String,
       required: false
@@ -54,7 +49,7 @@ const userSchema = new Schema(
       required: false
     },
     zip: {
-      typre: String,
+      type: String,
       required: false
     },
     walletAddress: {

@@ -12,7 +12,7 @@ router.route('/').post(createUser);
 
 router.route('/login').post(login);
 
-router.route('/single').get(getSingleUser);
+router.route('/single').get(authMiddleware, getSingleUser);
 
 router.route('/').put(authMiddleware, updateUser);
 

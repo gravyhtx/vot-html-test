@@ -22,6 +22,7 @@ const AddressForm = () => {
 
             const response = await getSingleUser(token);
 
+            console.log(token)
             if(!response.ok){
                 throw new Error('something went wrong!');
             }

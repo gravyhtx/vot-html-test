@@ -58,6 +58,7 @@ const UserMnemonic = () => {
 
     let getHex = Mnemonic.fromHex(seedHex)
     const phrase = getHex.toWords()
+    console.log(phrase)
 
     // Handle Agreement
     let [checked, setChecked] = useState(false);
