@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TextContainer = ( { containerClasses, header, headerClasses, text, textClasses, border } ) => {
+const TextContainer = ( { containerClasses, containerId, header, headerClasses, headerId, text, textId, textClasses, border } ) => {
     let cClass="";
     if(containerClasses){
         cClass=" "+containerClasses;
@@ -14,9 +14,9 @@ const TextContainer = ( { containerClasses, header, headerClasses, text, textCla
         tClass=" "+textClasses;
     }
     return (
-        <div className={border ? "text-container borders"+cClass : "text-container"+cClass}>
-            {header ? <header className={"text-container_header"+hClass}>{header}</header> : ""}
-            {text ? <div className={"text-container_text"+tClass}>{text}</div> : ""}
+        <div className={border ? "text-container borders"+cClass : "text-container"+cClass} id={containerId?containerId:"text-container"}>
+            {header ? <header className={"text-container_header"+hClass} id={headerId?headerId:"text-container-header"}>{header}</header> : ""}
+            {text ? <div className={"text-container_text"+tClass} id={textId?textId:"text-container-text"}>{text}</div> : ""}
         </div>
     )
 }

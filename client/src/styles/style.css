@@ -569,6 +569,19 @@ h2 {
     background-color: var(--text-container-bkg);
 }
 
+.text-container.scroll {
+    height: 440px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: 0;  /* Firefox */
+}
+
+.text-container.scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
 .text-container.borders {
     border: 3px solid var(--text-container-border-color);
 }
@@ -682,6 +695,47 @@ h2 {
         .text-container.borders.reverse.thin { border: 1px solid var(--text-container-shadow-color); }
     .text-container.borders.thick { border: 3px solid var(--text-container-border-color); }
         .text-container.borders.reverse.thick { border: 3px solid var(--text-container-shadow-color); }
+}
+
+/* BACK TO TOP */
+.back-to-top {
+    background-color:black;
+    text-align:center;
+    padding:10px !important;
+
+    /* hide with opacity */
+    opacity: 0;
+
+    /* also add a translate effect */
+    transform: translateY(100px);
+
+    /* and a transition */
+    transition: all .25s ease;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+}
+
+.showBtn {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.top-show {
+    opacity:1;
+    -khtml-opacity:1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    -khtml-transition: opacity .25s ease-in-out !important;
+}
+
+
+  
+.top-hide {
+    opacity:0;
 }
 
 
@@ -1253,6 +1307,10 @@ label#upload-label.active:hover::after {
     padding: 0 20px;
 }
 
+.learn-more {
+    font-size: var(--theme-font-size-lg) !important;
+}
+
 .product-aside-image {
 
 }
@@ -1494,11 +1552,12 @@ label#upload-label.active:hover::after {
 
 .account-header {
     padding: 30px 0;
+    font-size: var(--theme-font-size-xxl);
 }
 
 .account-container {
     max-width: 750px;
-    background-color: #010201;
+    background-color: #0c0d0e;
     border: 5px solid var(--theme-secondary-dark-color);
     border-radius: 50px;
     margin: 25px auto;
@@ -1525,6 +1584,7 @@ label#upload-label.active:hover::after {
     width: 140px;
     height: 140px;
     margin: 0 auto;
+    padding: 26px;
     border: 4px solid var(--theme-secondary-dark-color);
     border-radius: 100px;
     background: var(--dark-gradient);
@@ -1810,6 +1870,9 @@ label#upload-label.active:hover::after {
     .account-info-email {
         font-size: var(--theme-font-size);
     }
+    .learn-more {
+        font-size: var(--theme-font-size-md) !important;
+    }
 
 }
 
@@ -1869,7 +1932,7 @@ label#upload-label.active:hover::after {
     }
 
     .learn-more {
-        text-align: justify;
+        font-size: var(--theme-font-size);
     }
 
     .signup-container {
@@ -1881,6 +1944,10 @@ label#upload-label.active:hover::after {
         padding: 30px 25px !important;
     }
 
+    .account-header {
+        font-size: var(--theme-font-size-xxl);
+        padding: 10px 0;
+    }
     .account-info-name {
         font-size: var(--theme-font-size-md);
     }
@@ -1934,6 +2001,10 @@ label#upload-label.active:hover::after {
 
     .seed-phrase-reminder {
         margin-bottom: 20px;
+    }
+
+    .learn-more {
+        font-size: var(--theme-font-size) !important;
     }
 
     .important {

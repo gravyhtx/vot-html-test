@@ -30,19 +30,10 @@ const PageNotFound = () => {
         <>Ah, crap. Guess we didn't put up a page here. Please
         enjoy our complimentary quote for your inconvenience.</>
     ]
-
-    const getStateId = localStorage.getItem('stateId');
-    const setStateId = (n) => localStorage.setItem('stateId', n);
-    const stateId = getStateId ? getStateId : 0;
     
     const select = (el) => {
         let n = Math.floor(Math.random()*el.length);
-        if (n === stateId) {
-            select(el)
-        } else {
-            setStateId(n);
-            return el[n];
-        }
+        return el[n];
     }
     
     return (

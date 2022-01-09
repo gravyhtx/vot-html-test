@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TextInput } from 'react-materialize';
 import { Button } from 'react-materialize';
-import Web3Wallet from './Web3Wallet';
+// import Web3Wallet from './Web3Wallet';
 import Auth from '../utils/auth';
 import { updateUser, getSingleUser } from '../utils/API';
 
@@ -166,7 +166,6 @@ const AddressForm = () => {
             <Button
                 node="button"
                 style={{
-                    marginRight: '5px',
                     width: '250px'
                 }}
                 waves="light"

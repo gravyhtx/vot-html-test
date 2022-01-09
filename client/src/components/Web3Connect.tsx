@@ -162,6 +162,20 @@ function App() {
   const connected = currentConnector === connector
   const disabled = !triedEager || !!activatingConnector || connected || !!error
 
+  const web3activate = () => {
+    setActivatingConnector(currentConnector)
+    activate(injected)
+    if (window.location.pathname === '/account') {
+      window.location.reload()
+    }
+  }
+  const web3deactivate = () => {
+    deactivate()
+    if (window.location.pathname === '/account') {
+      window.location.reload()
+    }
+  }
+
   return (
     <>
       <Header />
@@ -171,8 +185,7 @@ function App() {
           className='btn waves-effect waves-light account-wallet-btn'
           disabled={disabled}
           onClick={() => {
-            setActivatingConnector(currentConnector)
-            activate(injected)
+            web3activate()
           }}
         >
           <div>
@@ -188,7 +201,7 @@ function App() {
           <button
             className='btn waves-effect waves-light account-wallet-btn'
             onClick={() => {
-              deactivate()
+              web3deactivate()
             }}
           >
             DEACTIVATE WALLET

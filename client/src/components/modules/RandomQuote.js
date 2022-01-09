@@ -54,7 +54,7 @@ const RandomQuote = ({ type, className }) => {
         <>"You might not have a car or big gold chain, stay true to yourself and things will change."
         <br/>- Snoop Dogg</>,
         <>"We ain't picture perfect but we worth the picture still."<br/>- J. Cole</>,
-        <>"“We can’t change the world until we change ourselves.”<br/>- The Notorious B.I.G.</>,
+        <>"We can’t change the world until we change ourselves."<br/>- The Notorious B.I.G.</>,
         <>"Being happy is the goal... but greatness is my mission."<br/>- Childish Gambino</>
     ]
 
@@ -71,19 +71,10 @@ const RandomQuote = ({ type, className }) => {
     } else {
         output = ""
     }
-
-    const getStateId = localStorage.getItem('stateId');
-    const setStateId = (n) => localStorage.setItem('stateId', n);
-    const stateId = getStateId ? getStateId : 0;
     
     const select = (el) => {
         let n = Math.floor(Math.random()*el.length);
-        if (n === stateId) {
-            select(el)
-        } else {
-            setStateId(n);
-            return el[n];
-        }
+        return el[n];
     }
     const quote = select(output);
 

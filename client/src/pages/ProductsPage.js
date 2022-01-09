@@ -25,29 +25,30 @@ const ProductsPage = ({ website }) =>  {
 
     const main = {
         border: true,
-        containerClasses: "shadow thick dark-gradient padding",
+        containerClasses: "scroll shadow thick dark-gradient padding",
         headerClasses: "center gravy-font",
         textClasses: "gravy-font justify-text products-text-main",
         // h1: `Welcome to our ${website.szn} collection.`,
         p1: <>
-            <p>We are currently preparing for our first szn, and will be dropping the first wave of product on December 22, 2021 We will
-            be featuring our VOT logo on 100% supima cotton apparel with all of our materials Made in the USA.
+            <p>We are currently preparing for our first szn, and will be dropping the first wave of product online in January 2022. We will
+            be featuring our VOT logo on 100% Supima cotton apparel with all of our materials Grown in the USA.
             </p><p>We believe in  a crypto future so are preparing for the Web 3.0 movement by selling our physical products with collectible
             digital NFTs and completely integrating our website onto the blockchain by Spring 2022. For our upcoming Winter drop we will
-            be offering multiple payment options until we are completely on-chain in 2022.
+            be offering multiple payment options until we are completely on-chain.
             </p><p>If you’d like to be notified for our release then create an account with us today and follow us on  Instagram and
             Twitter so we can keep you updated. Sign up with your crypto wallet to prepare for our full Web3 release in 2022. We will
             be airdropping some rewards and a round of limited edition NFTs but you will need a verified wallet for us to send your
-            digital swag so make sure to complete your registration if you want to be among the first VoT Enthusiasts.
+            digital swag so make sure to complete your registration if you want to be among the first VOT Enthusiasts.
             </p>
         </>
     }
     const aside = {
-        containerClasses: "no-bkg no-margin side-padding right-text",
+        containerClasses: "no-bkg no-margin side-padding justify-text",
         textClasses: "big learn-more",
-        p1: <p>To learn more about our Village of Thousands, please visit
-        our <Link className="link underline" to="/faq">FAQ</Link> to learn more about VOT
-        and get Web 3.0 updates. Watch us grow by following us on our socials.</p>
+        p1: <p>To learn more about our Village of Thousands and get updates on our Web 3.0 release, head over to
+        our "<Link className="link underline" to="/faq">Frequently Ask Questions</Link>" page. 
+        You can start your journey as a VOT Enthusiast by creating an account and following us on our socials.
+        We look forward to having you grow with us.</p>
     }
 
     const img1 = {
@@ -56,6 +57,23 @@ const ProductsPage = ({ website }) =>  {
         description: "",
     }
 
+    const scrollbox = document.getElementById('scroll-container');
+    let active = false;
+
+    const setActivate = () =>  {
+        scrollbox.classList.add('reverse');
+        active = true;
+    }
+
+    // scrollbox.addEventListener('click', active?setActivate():console.log("Cannot activate listener."))
+
+    // var sideBar = document.getElementById('sidebar');
+    // console.log(sideBar.className)
+    // if (sideBar.classList.contains('active')){
+    //     console.log('active')
+    // }
+    // else (console.log('not active'))
+    const e = () => console.log("event")
 
     return (
         <div className="products-page-container">
@@ -65,6 +83,7 @@ const ProductsPage = ({ website }) =>  {
 
             <div className="row products-page-content box-container animate__animated animate__fadeIn">
                 <h1 className='products-header center gravy-font'>Welcome to our {website.szn} collection.</h1>
+                <div className='scroll-box' onChange={e()}>
                 <TextContainer
                     containerClasses={main.containerClasses}
                     header={main.h1}
@@ -72,7 +91,9 @@ const ProductsPage = ({ website }) =>  {
                     text={main.p1}
                     textClasses={main.textClasses}
                     border={main.border}
+                    containerId="scroll-container"
                 />
+                </div>
                 <br/>
                 <div className='row'>
                     <h2 className='center product-carousel-header gravy-font'>{`SZN // WINTER 2021-2022 // DROP #${

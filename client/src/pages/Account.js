@@ -6,6 +6,7 @@ import NavDesktop from "../components/NavDesktop";
 import NavMobile from "../components/NavMobile";
 import Footer from "../components/Footer";
 import AccountContainer from "../components/AccountContainer";
+// import BackToTop from "../components/BackToTop";
 
 import Auth from '../utils/auth';
 
@@ -33,6 +34,7 @@ const Account = () => {
         </Button>
         </div>
         </div>
+        {/* <BackToTop /> */}
         <NavDesktop />
         <Footer />
         </div>
