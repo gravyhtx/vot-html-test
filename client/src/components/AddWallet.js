@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { updateUser, getSingleUser } from '../utils/API';
 import Auth from '../utils/auth';
 
-const AddWallet = () => {
+const AddWallet = (walletAddress, walletBalance) => {
     // Get User Data
     const [userData, setUserData] = useState({});
     const userDataLength = Object.keys(userData).length;
@@ -11,11 +11,6 @@ const AddWallet = () => {
     const getUserData = async () => {
         try {
             const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-            // if(!token) {
-            //     window.location.assign('/login');
-            //     return false
-            // }
 
             const response = await getSingleUser(token);
 
@@ -35,10 +30,6 @@ const AddWallet = () => {
 
     const [userWallet, setUserWallet] = useState({walletAddress:'', walletBalance:''})
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setUserWallet({...userWallet, [name]: value });
-    }
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -67,12 +58,13 @@ const AddWallet = () => {
         }
 
         setUserWallet({
-            walletAddress: "",
-            walletBalance: ""
+            walletAddress: walletAddress,
+            walletBalance: walletBalance
         })
 
         window.location.assign('/');
     }
+    handleSubmit();
 }
 
 export default AddWallet;

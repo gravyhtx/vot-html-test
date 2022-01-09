@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 import {
   NoEthereumProviderError,
@@ -9,7 +9,9 @@ import { formatEther } from '@ethersproject/units'
 import { useEagerConnect, useInactiveListener } from '../utils/hooks'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { Spinner } from '../components/Spinner'
-
+// import AddWallet from './AddWallet'
+import { getSingleUser, updateUser } from '../utils/API'
+import Auth from '../utils/auth';
 
 
 const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] })
@@ -34,15 +36,6 @@ function getLibrary(provider: any): Web3Provider {
   library.pollingInterval = 12000
   return library
 }
-
-export default function() {
-  return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <App />
-    </Web3ReactProvider>
-  )
-}
-
 
 function ChainId() {
   const { chainId } = useWeb3React()
@@ -124,6 +117,78 @@ function Balance() {
   console.log(userBalance+" ETH")
 }
 
+export default function() {
+  return (
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <App walletAddress={Account()} walletBalance={Balance()} />
+    </Web3ReactProvider>
+  )
+}
+
+// const AddWallet = (walletAddress, walletBalance) => {
+//   // Get User Data
+//   const [userData, setUserData] = useState({});
+//   const userDataLength = Object.keys(userData).length;
+
+//   useEffect(() => {
+//   const getUserData = async () => {
+//       try {
+//           const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+//           const response = await getSingleUser(token);
+
+//           if(!response.ok){
+//               throw new Error('something went wrong!');
+//           }
+
+//           const user = await response.json();
+//           setUserData(user);
+//       } catch (err) {
+//           console.error(err);
+//       }
+//   };
+//   getUserData();
+//   // console.log(userData);
+//   }, [userDataLength]);
+
+//   const [userWallet, setUserWallet] = useState({walletAddress:'', walletBalance:''})
+
+//   const submitWallet = async (event) => {
+//       event.preventDefault();
+
+//       const form = event.currentTarget;
+//       if(form.checkValidity() === false) {
+//           event.preventDefault();
+//           event.stopPropagation();
+//       }
+
+//       const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+//       if (!token) {
+//           window.location.assign('/404');
+//           return false;
+//       }
+
+//       try {
+//           const response = await updateUser(userWallet, token);
+
+//           if(!response.ok) {
+//               throw new Error('something went wrong!');
+//           }
+
+//       } catch (err) {
+//           console.error(err);
+//       }
+
+//       setUserWallet({
+//           walletAddress: walletAddress,
+//           walletBalance: walletBalance
+//       })
+
+//       window.location.assign('/');
+//   }
+// }
+
 // ChainId();
 // BlockNumber();
 // Balance();
@@ -141,7 +206,7 @@ function Header() {
   )
 }
 
-function App() {
+function App(getAddress, getBalance) {
   const context = useWeb3React<Web3Provider>()
   const { connector, library, account, activate, deactivate, active, error } = context
 
@@ -164,18 +229,81 @@ function App() {
   const connected = currentConnector === connector
   const disabled = !triedEager || !!activatingConnector || connected || !!error
 
+  // Get User Data
+  const [userData, setUserData] = useState({});
+  const userDataLength = Object.keys(userData).length;
+
+  useEffect(() => {
+  const getUserData = async () => {
+      try {
+          const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+          const response = await getSingleUser(token);
+
+          if(!response.ok){
+              throw new Error('something went wrong!');
+          }
+
+          const user = await response.json();
+          setUserData(user);
+      } catch (err) {
+          console.error(err);
+      }
+  };
+  getUserData();
+  // console.log(userData);
+  }, [userDataLength]);
+
+  const [userWallet, setUserWallet] = useState({walletAddress:getAddress, walletBalance:getBalance})
+
+  const submitWallet = async () => {
+      // event.preventDefault();
+
+      // const form = event.currentTarget;
+      // if(form.checkValidity() === false) {
+      //     event.preventDefault();
+      //     event.stopPropagation();
+      // }
+
+      const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+      if (!token) {
+          window.location.assign('/404');
+          return false;
+      }
+
+      try {
+          const response = await updateUser(userWallet, token);
+
+          if(!response.ok) {
+              throw new Error('something went wrong!');
+          }
+
+      } catch (err) {
+          console.error(err);
+      }
+
+      setUserWallet({
+          walletAddress: getAddress,
+          walletBalance: getBalance
+      })
+
+      // window.location.assign('/');
+  }
+
   const web3activate = () => {
     setActivatingConnector(currentConnector)
     activate(injected)
-    if (window.location.pathname === '/account') {
-      window.location.reload()
-    }
+    submitWallet()
+    // if (window.location.pathname === '/account') {
+    //   window.location.reload()
+    // }
   }
   const web3deactivate = () => {
     deactivate()
-    if (window.location.pathname === '/account') {
-      window.location.reload()
-    }
+    // if (window.location.pathname === '/account') {
+    //   window.location.reload()
+    // }
   }
 
   return (
