@@ -16,7 +16,8 @@ const userSchema = new Schema(
     },
     mnemonic: {
       type: String,
-      required: true
+      required: true,
+      default: ""
     },
     seedHex: {
       type: String,
@@ -24,11 +25,13 @@ const userSchema = new Schema(
     },
     first_name: {
       type: String,
-      required: false
+      required: false,
+      default: ""
     },
     last_name: {
       type: String,
-      required: false
+      required: false,
+      default: ""
     },
     phone: {
       type: Number,
@@ -56,11 +59,13 @@ const userSchema = new Schema(
     },
     walletAddress: {
       type: String,
-      required: false
+      required: false,
+      default: ""
     },
     walletBalance: {
       type: Number,
-      required: false
+      required: false,
+      default: 0
     },
     completeRegistration: {
       type: Boolean,
@@ -68,7 +73,8 @@ const userSchema = new Schema(
     },
     blockie: {
       type: String,
-      required: false
+      required: false,
+      default: ""
     },
     colorScheme: [String],
     orders: [Order.schema]
