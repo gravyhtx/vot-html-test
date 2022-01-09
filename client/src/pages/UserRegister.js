@@ -7,7 +7,7 @@ import Login from '../components/Login';
 import Register from '../components/Register';
 import RandomQuote from '../components/modules/RandomQuote';
 
-const UserLoginCollapsible = () =>  {
+const UserRegisterCollapsible = () =>  {
 
     return (
         <div className="user-login-container">
@@ -15,19 +15,19 @@ const UserLoginCollapsible = () =>  {
             <NavMobile />
             <br/>
             <div className="row container signup-container animate__animated animate__fadeIn login-container">
-                <div className='signup-collapsible'>
+            <div className='signup-collapsible'>
                 <Collapsible
                     accordion
                 >
                     <CollapsibleItem
-                        expanded={true}
+                        expanded={false}
                         header={<div className="login-header disable-highlight">Login</div>}
                     >
                         <Login />
                     </CollapsibleItem>
                     <CollapsibleItem
                         className='login-collapsible-item'
-                        expanded={false}
+                        expanded={true}
                         header={<div className="login-header disable-highlight">Register</div>}
                     >
                         <Register />
@@ -42,4 +42,4 @@ const UserLoginCollapsible = () =>  {
     )
 }
 
-export default UserLoginCollapsible;
+export default UserRegisterCollapsible;

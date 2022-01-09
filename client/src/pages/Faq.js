@@ -33,7 +33,8 @@ const Faq = () => {
                     id={"header-"+q.id}
                     header={
                         <div className="faq-question-header" key={"q-"+index}>
-                            {(index+1) < 10 ? ("00"+(index+1)+"//") : ("0"+(index+1)+"//")}&emsp;{q.question}
+                            <span className="faq-number">{(index+1) < 10 ? ("00"+(index+1)+"//") : ("0"+(index+1)+"//")}&emsp;</span>
+                            {q.question}
                         </div>}
                     key={index}>
                         <div>

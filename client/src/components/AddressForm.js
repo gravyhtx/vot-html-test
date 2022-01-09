@@ -1,11 +1,40 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextInput } from 'react-materialize';
 import { Button } from 'react-materialize';
 import Web3Wallet from './Web3Wallet';
 import Auth from '../utils/auth';
-import { updateUser } from '../utils/API';
+import { updateUser, getSingleUser } from '../utils/API';
 
 const AddressForm = () => {
+    // Get User Data
+    const [userData, setUserData] = useState({});
+    const userDataLength = Object.keys(userData).length;
+
+    useEffect(() => {
+    const getUserData = async () => {
+        try {
+            const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+            // if(!token) {
+            //     window.location.assign('/login');
+            //     return false
+            // }
+
+            const response = await getSingleUser(token);
+
+            if(!response.ok){
+                throw new Error('something went wrong!');
+            }
+
+            const user = await response.json();
+            setUserData(user);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+    getUserData();
+    // console.log(userData);
+    }, [userDataLength]);
     // firstName?firstName:""
     const [userFormData, setUserFormData] = useState({
         // GET FROM PREVIOUS FORM //
@@ -19,9 +48,9 @@ const AddressForm = () => {
         city: "",
         state: "",
         zip: "",
-        // GET FROM NEW WALLET APP //
-        walletAddress: "",
-        walletBalance: ""
+        // // GET FROM NEW WALLET APP //
+        // walletAddress: "",
+        // walletBalance: ""
     })
 
     const handleInputChange = (event) => {
@@ -67,9 +96,10 @@ const AddressForm = () => {
             city: "",
             state: "",
             zip: "",
-            // GET FROM NEW WALLET APP //
-            walletAddress: "",
-            walletBalance: ""
+            // // GET FROM NEW WALLET APP //
+            // walletAddress: "",
+            // walletBalance: "",
+            // completed: true
         })
 
         window.location.assign('/');
@@ -77,35 +107,9 @@ const AddressForm = () => {
 
     return (
         <>
-        <div className='register-register-container container'>
-            <div className='row'>
-                <div className="register-input-container col s12 m6" id="user-register-container">
-                    <div id="user-register-email">Email</div>
-                    <TextInput
-                        email
-                        className="input-field" 
-                        id="user-register-email_input"
-                        aria-labelledby="user-register-email"
-                        name="email"
-                        validate
-                    />
-                </div>
-                <div className="register-input-container col s12 m6" id="user-register-container">
-                    <div id="user-register-password">Password</div>
-                    <TextInput 
-                        className="input-field" 
-                        id="user-register-password_input"
-                        aria-labelledby="user-register-email"
-                        type="password"
-                        name="password"
-                    />
-                </div>
-            </div>
-        </div>
-        <br/>
         <div className='register-address-container container'>
             <div className="register-input-container" id="user-register-container">
-            <div id="user-register-address">Address</div>
+            <div className="user-register-address-header">ADDRESS</div>
                 <TextInput
                     className="input-field" 
                     id="user-register-address1_input"
@@ -113,6 +117,7 @@ const AddressForm = () => {
                     name="addressOne"
                     placeholder='Address Line 1'
                     onChange={handleInputChange}
+                    // value={userData.addressOne?userData.addressOne:''}
                 />
                 <TextInput
                     email
@@ -122,6 +127,7 @@ const AddressForm = () => {
                     name="addressTwo"
                     placeholder='Address Line 2'
                     onChange={handleInputChange}
+                    // value={userData.addressTwo?userData.addressTwo:''}
                 />
                 <TextInput
                     email
@@ -131,6 +137,7 @@ const AddressForm = () => {
                     name="city"
                     placeholder='City'
                     onChange={handleInputChange}
+                    // value={userData.city?userData.city:''}
                 />
                 <TextInput
                     email
@@ -140,6 +147,7 @@ const AddressForm = () => {
                     name="state"
                     placeholder='State'
                     onChange={handleInputChange}
+                    // value={userData.state?userData.state:''}
                 />
                 <TextInput
                     email
@@ -149,13 +157,12 @@ const AddressForm = () => {
                     name="zip"
                     placeholder='Zip Code'
                     onChange={handleInputChange}
+                    // value={userData.zip?userData.zip:''}
                 />
             </div>
             <br/>
-
-            <div>
-                <Web3Wallet />
-            </div>
+            {!userData.complete
+            ?<div className='user-register-finish'>
             <Button
                 node="button"
                 style={{
@@ -166,8 +173,23 @@ const AddressForm = () => {
                 className="account-wallet-btn"
                 onClick={handleFormSubmit}
             >
-                Finish Updating User
+                {userData.completed?"ADD ADDRESS":"COMPLETE REGISTRATION"}
             </Button>
+            </div>
+            :<div className='user-address-edit'>
+            <Button
+                node="button"
+                style={{
+                    marginRight: '5px',
+                    width: '250px'
+                }}
+                waves="light"
+                className="account-wallet-btn"
+                onClick={handleFormSubmit}
+            >
+                EDIT ADDRESS
+            </Button>
+            </div>}
         </div>
         </>
     )

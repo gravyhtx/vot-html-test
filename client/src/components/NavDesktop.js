@@ -2,46 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Icon } from 'react-materialize';
 import Auth from '../utils/auth';
-import BlockiesIdenticon from "./BlockiesIdenticon";
-
+// import BlockiesIdenticon from "./BlockiesIdenticon";
 // import BlockiesIdenticon from 'blockies/react-component';
 
 
 const NavDesktop = ( userData ) => {
 
     const fingerprint = <Icon className="avatar">fingerprint</Icon>
-    const blockie = <Icon className="avatar">fingerprint</Icon>
-
+    // const blockie = <Icon className="avatar">fingerprint</Icon>
     const account = Auth.loggedIn() ? "/account" : "/login";
-    // const blockie = <BlockiesIdenticon className="blockie-nav" opts={{seed: "foobafdsafr"}}/>
-    // window.addEventListener('wheel', checkScrollDirection);
-    
-    // let wheelDelta = (e) => {return e.wheelDelta}
-    // let deltaY = (e) => {return e.deltaY}
-    // let moveNav = false;
-    // let scrollCount = 0;
-
-
-    // function checkScrollDirection(e) {
-    //     if (checkScrollDirectionIsUp(e) && scrollCount < 20) {
-    //         moveNav = true;
-    //         console.log("moveNav", "up");
-            
-    //     } else {
-    //         moveNav = false;
-    //         console.log("moveNav", "down");
-    //     }
-    // }
-
-    
-    // function checkScrollDirectionIsUp(e) {
-    //     if (e.wheelDelta) {
-    //         return wheelDelta(e) > 0;
-    //     }
-    //     return deltaY(e) < 0;
-    // }
-    console.log(Auth.loggedIn())
-
+    // blockie = <BlockiesIdenticon className="blockie-nav" opts={{seed: "foobafdsafr"}}/>
+    // document.onload = console.log(Auth.loggedIn())
     return (
         <div className="fixed-action-btn toolbar desktop">
             <Button

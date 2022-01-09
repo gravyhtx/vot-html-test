@@ -11,28 +11,35 @@ import Questions from "../components/modules/FaqModule";
 import RandomQuote from "../components/modules/RandomQuote";
 
 import Cartas from "../images/art/cartas.png";
-// import Bro from "../images/art/bro.png";
-// document.body.classList.add('scroll');
 
-const FaqActive = () => {
+import CryptoConverter from "../components/modules/CryptoConverter";
+
+const Faq = () => {
     const questions = Questions()
-    // const checkId = window.location.hash ? window.location.hash.substring(1) : "";
+    const checkId = window.location.hash ? window.location.hash.substring(1) : "";
+
+    // GET 'ETH' + 'BTC' PRICES //
+    CryptoConverter(40);
+    // UPDATE COIN PRICES //
+    setInterval(() => {CryptoConverter(40)}, 15000);
+
     // useEffect needed for "scrollIntoView({ behavior: 'smooth' })"
     const question = () => {
         return (
-            questions.map((q) =>
+            questions.map((q, index) =>
                 <CollapsibleItem
                     expanded={false}
-                    // className={checkId === q.id ? "active" : ""}
+                    // className={checkId === index ? "active" : ""}
                     className="active"
                     id={"header-"+q.id}
                     header={
-                        <div className="faq-question-header" key={"header-"+q.id}>
-                            {q.id+"//"}&emsp;{q.question}
+                        <div className="faq-question-header" key={"q-"+index}>
+                            <span className="faq-number">{(index+1) < 10 ? ("00"+(index+1)+"//") : ("0"+(index+1)+"//")}&emsp;</span>
+                            {q.question}
                         </div>}
-                    key={"header-"+q.id}>
+                    key={index}>
                         <div>
-                            {q.answer.map((a) =><p className="faq-answer" key={a}>{a}</p>)}
+                            {q.answer.map((a, index) => <div className="faq-answer p-style" key={index}>{a}</div>)}
                         </div>
                 </CollapsibleItem>
             )
@@ -54,7 +61,7 @@ const FaqActive = () => {
             </div>
         </div>
         <br/><br/>
-        <RandomQuote className={"center small"} type={"rap"} />
+        <RandomQuote className={"center faq-quote italics"} type={"rap"} />
         <br/><br/>
         <NavDesktop />
         <Footer />
@@ -62,4 +69,4 @@ const FaqActive = () => {
     )
 }
 
-export default FaqActive;
+export default Faq;

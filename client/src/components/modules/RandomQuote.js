@@ -71,12 +71,23 @@ const RandomQuote = ({ type, className }) => {
     } else {
         output = ""
     }
-    
-    const len = output.length;
-    const sel = Math.floor(Math.random()*len);
-    const quote = output[sel];
 
-    return (<div className={className}>{quote}</div>)
+    const getStateId = localStorage.getItem('stateId');
+    const setStateId = (n) => localStorage.setItem('stateId', n);
+    const stateId = getStateId ? getStateId : 0;
+    
+    const select = (el) => {
+        let n = Math.floor(Math.random()*el.length);
+        if (n === stateId) {
+            select(el)
+        } else {
+            setStateId(n);
+            return el[n];
+        }
+    }
+    const quote = select(output);
+
+    return (<div className={className?"quote "+className:"quote"}>{quote}</div>)
 }
 
 export default RandomQuote;

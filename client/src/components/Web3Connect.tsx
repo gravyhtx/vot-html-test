@@ -45,7 +45,7 @@ export default function() {
 function ChainId() {
   const { chainId } = useWeb3React()
   const userChainId = chainId ?? ''
-  return (userChainId)
+  console.log("Chain ID: "+userChainId)
 }
 
 function BlockNumber() {
@@ -82,7 +82,7 @@ function BlockNumber() {
     }
   }, [library, chainId]) // ensures refresh if referential identity of library doesn't change across chainIds
   const userBlocknumber = blockNumber === null ? 'Error' : blockNumber ?? ''
-  return (userBlocknumber)
+  console.log("Block Number: "+userBlocknumber)
 }
 
 function Account() {
@@ -119,22 +119,23 @@ function Balance() {
     }
   }, [account, library, chainId]) // ensures refresh if referential identity of library doesn't change across chainIds
   const userBalance = balance === null ? 'Error' : balance ? formatEther(balance) : ''
-  return (userBalance)
+  console.log(userBalance+" ETH")
 }
+
+// ChainId();
+// BlockNumber();
+// Balance();
 
 function Header() {
   // const { active, error } = useWeb3React()
-
   return (
-    <>
+    <div className='wallet-info'>
       {/* <h1 style={{ margin: '1rem', textAlign: 'right' }}>{active ? '🟢' : error ? '🔴' : '🟠'}</h1> */}
-      <h3>
-        <div>{ChainId()}</div>
-        <div>{BlockNumber()}</div>
+        {/* <div>{ChainId()}</div>
+        <div>{BlockNumber()}</div> */}
         <div>{Account()}</div>
-        <div>{Balance()} ETH</div>
-      </h3>
-    </>
+        {/* <div>{Balance()}</div> */}
+    </div>
   )
 }
 
@@ -163,10 +164,9 @@ function App() {
 
   return (
     <>
-      {/* <hr style={{ margin: '2rem' }} /> */}
       <Header />
-      <div>
       {(!active) && (
+      <div>
         <button
           className='btn waves-effect waves-light account-wallet-btn'
           disabled={disabled}
@@ -180,12 +180,11 @@ function App() {
             {connected}
           </div>
           ADD WALLET
-        </button>
-      )}
-          
+        </button>          
       </div>
+      )}
+      {(active || error) && (
       <div>
-        {(active || error) && (
           <button
             className='btn waves-effect waves-light account-wallet-btn'
             onClick={() => {
@@ -194,9 +193,9 @@ function App() {
           >
             DEACTIVATE WALLET
           </button>
-        )}
         {!!error && <h4 style={{ marginTop: '1rem', marginBottom: '0' }}>{getErrorMessage(error)}</h4>}
       </div>
+      )}
 
       {/* <hr style={{ margin: '2rem' }} /> */}
 

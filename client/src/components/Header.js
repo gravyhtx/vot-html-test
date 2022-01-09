@@ -11,7 +11,7 @@ const Header = () =>  {
     let notification;
 
     const headerLink = "/"
-    const notificationLink = "/login"
+    const notificationLink = "/register"
 
     const location =  useLocation();
     const { pathname } = location;

@@ -11,12 +11,7 @@ import RandomQuote from '../components/modules/RandomQuote';
 
 import TextContainer from '../components/TextContainer';
 import ImageContainer from '../components/ImageContainer';
-import SvgContainer from '../components/SvgContainer';
-
-import Github from '../images/icons/github_social-circles.svg';
-import Instagram from '../images/icons/instagram_social-circles.svg';
-import Twitter from '../images/icons/twitter_social-circles.svg';
-import Discord from '../images/icons/discord_social-circles.svg';
+import SocialCircles from '../components/SocialCircles';
 
 import Pixels from '../images/art/choose_your_vot.png';
 import Hope from '../images/art/hope.png';
@@ -73,42 +68,11 @@ const Home = () => {
           <div className="col s12 m5 l6">
             <div className="right-align index-aside justify-text">
                 <p>We strive to be a leader in providing quality, eco-friendly products in the fashion world and set high standards for all emerging Web3 products and services.
-                </p><p>Our company is currently preparing for a full Web3 release in 2022 when we will be selling all NFT-authenticated products. If you’d like to join the movement, follow us on our socials and you can get ready for our first drop
+                </p><p>Our company is currently preparing for a full Web 3.0 release in 2022 when we will be selling all NFT-authenticated products. If you’d like to join the movement, follow us on our socials and you can get ready for our first drop
                 by <Link className="text-link" to="/login">creating an account</Link> with us today.
                 </p>
-                <br/><br/>
-                <div className="icon-container row">
-                  <div className='col s3'>
-                    <SvgContainer
-                      link="https://www.instagram.com/VillageOfThousands/"
-                      classes="svg-color-light link"
-                      width="75px"
-                      description="Village of Thousands // Instagram"
-                      src={Instagram} />
-                  </div>
-                  <div className='col s3'>
-                    <SvgContainer
-                      link="https://twitter.com/VoThousands/"
-                      classes="svg-color-light link"
-                      width="75px"
-                      description="Village of Thousands // Twitter"
-                      src={Twitter} />
-                  </div>
-                  <div className='col s3'>
-                    <SvgContainer
-                      classes="svg-color-light link"
-                      width="75px"
-                      description="Village of Thousands // Discord"
-                      src={Discord} />
-                  </div>
-                  <div className='col s3'>
-                    <SvgContainer
-                      classes="svg-color-light link"
-                      width="75px"
-                      description="Village of Thousands // Github"
-                      src={Github} />
-                  </div>
-                </div>
+                <br/>
+                <SocialCircles />
             </div>
           </div>
         </div>

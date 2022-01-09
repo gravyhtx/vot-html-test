@@ -18,8 +18,9 @@
 
 /* THEME FONT SIZES */
     --theme-font-size:      1.2rem;
+    --theme-font-size-xxs:   0.67rem;
     --theme-font-size-xs:   0.75rem;
-    --theme-font-size-sm:   0.85rem;
+    --theme-font-size-sm:   0.88rem;
     --theme-font-size-md:   1.5rem;
     --theme-font-size-lg:   2.0rem;
     --theme-font-size-xl:   2.8rem;
@@ -49,7 +50,7 @@
         ** Note: SVG must be imported with black fill (#000000) **
            "If your icon set isn't black you can prepend "brightness(0) saturate(100%)" to your filter property which will first turn the icon set to black."
 */
-    --body-color:   #090909;
+    --body-color:   #111111;
     --svg-body-color: invert(0%) sepia(0%) saturate(7475%) hue-rotate(135deg) brightness(99%) contrast(93%);
     --content-color:#eeeeee;
     --svg-content-color: invert(99%) sepia(1%) saturate(172%) hue-rotate(51deg) brightness(114%) contrast(87%);
@@ -159,10 +160,12 @@
     --copyright-color: #696969;
 
 /* GRADIENTS */
-    --dark-gradient: rgb(0,0,0) linear-gradient(330deg, rgba(0,0,0,1) 0%, rgba(9,9,9,1) 35%, rgb(20, 20, 20) 100%);
+    --dark-gradient: rgb(28, 33, 36) linear-gradient(330deg, rgb(14, 17, 19) 0%, rgb(22, 27, 29) 35%, rgb(20, 20, 20) 100%);
 
 /* GRAVY STYLES */
     --gravy-font: 'Poppins', Helvetica, sans-serif;
+    --important: #D24B4B;
+    --svg-important: invert(38%) sepia(45%) saturate(1023%) hue-rotate(315deg) brightness(96%) contrast(93%);
     --dark-gravy: #64483b;
     --svg-dark-gravy: invert(27%) sepia(36%) saturate(501%) hue-rotate(334deg) brightness(91%) contrast(84%);
     --light-gravy: #d6c8b4;
@@ -295,6 +298,22 @@ h1, button {
     margin: 0;
     padding: 0;
     color: var(--theme-primary-light-color);
+}
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+    padding: 0 5px;
 }
 
 
@@ -470,6 +489,23 @@ input:focus { border-bottom: 1px solid var(--blue-glow) !important; }
 }
 
 /*
+////////////
+// COLORS //
+////////////
+*/
+
+.important {
+    color: var(--important) !important;
+    text-shadow: 0 0 10px var(--important);
+    margin-bottom: 5px;
+}
+.blue-glow {
+    color: var(--blue-glow) !important;
+    text-shadow: 0 0 10px var(--blue-glow);
+    margin-bottom: 5px;
+}
+
+/*
 /////////////
 // BUTTONS //
 /////////////
@@ -624,7 +660,7 @@ h2 {
         margin: 40px 0;
         padding: 15px;
     }
-    .text-container.padding { padding: 30px; }
+    .text-container.padding { padding: 5px 20px; }
     .text-container_header {
         font-size: var(--theme-font-size-md);
         font-weight: 500;
@@ -634,6 +670,18 @@ h2 {
     .text-container_text.small { font-size: var(--theme-font-size-xs); }
     .text-container_text.big { font-size: var(--theme-font-size-sm); }
     .text-container_text.yuge { font-size: var(--theme-font-size-md); }
+
+    .text-container.shadow { box-shadow: 2px 2px var(--text-container-shadow-color); }
+        .text-container.reverse.shadow { box-shadow: 2px 2px var(--text-container-border-color); }
+        .text-container.thick.shadow { box-shadow: 3px 3px var(--text-container-shadow-color); }
+        .text-container.reverse.thick.shadow { box-shadow: 3px 3px var(--text-container-border-color); }
+        .text-container.thin.shadow { box-shadow: 2px 2px var(--text-container-shadow-color); }
+        .text-container.reverse.thin.shadow { box-shadow: 1px 1px var(--text-container-border-color); }
+
+    .text-container.borders.thin { border: 1px solid var(--text-container-border-color); }
+        .text-container.borders.reverse.thin { border: 1px solid var(--text-container-shadow-color); }
+    .text-container.borders.thick { border: 3px solid var(--text-container-border-color); }
+        .text-container.borders.reverse.thick { border: 3px solid var(--text-container-shadow-color); }
 }
 
 
@@ -765,8 +813,14 @@ li.active .collapsible-header {
     /* box-shadow: 1px 1px 10px rgba(192, 240, 240, 0.1); */
 }
 
-button.btn-floating.navigation-link:hover {
-    background-color: rgba(0, 0, 0, 0.1);;
+button.btn-floating.navigation-link:hover,
+button.btn-floating.navigation-link:active,
+button.btn-floating.navigation-link:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.fixed-action-btn.toolbar ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .fixed-action-btn.toolbar.active {
@@ -780,7 +834,7 @@ button.btn-floating.navigation-link:hover {
     /* padding-top: 8px; */
 }
 
-.btn-floating i:hover .active {
+.btn-floating:hover .active {
     color: rgba(192, 240, 240);
     box-shadow: 0px 0px 10px rgba(192, 240, 240, 0.05);
 }
@@ -817,13 +871,22 @@ button.btn-floating.navigation-link:hover {
     padding: 50px 25px !important;
 }
 
-.login-cointainer,
-.register-cointainer {
+.signup-container ul li div.collapsible-body {
+    padding: 2rem 2rem 1rem;
+}
+
+.signup-collapsible {
+    margin-bottom: 30px;
+}
+
+/* .login-container,
+.register-container {
     border: 3px solid var(--theme-primary-medium-color);
     padding: 30px 50px 50px;
     box-shadow: 2px 2px 2px var(--blue-glow);
     background: var(--dark-gradient);
-}
+    margin-bottom: 30px;
+} */
 
 .login-input-container {
     margin-bottom: 80px;
@@ -847,7 +910,7 @@ button.btn-floating.navigation-link:hover {
     height: 50px;
     background-color: var(--button-bg-darker);
     color: var(--theme-primary-light-color);
-    border: 1px solid var(--blue-glow);
+    border: 2px solid var(--blue-glow);
     box-shadow: 5px 5px 2px black;
     margin: 20px 0;
     border-radius: 0;
@@ -858,9 +921,9 @@ button.btn-floating.navigation-link:hover {
 .logout-btn:hover,
 .account-wallet-btn:hover,
 .theme-btn:hover {
-    background-color: #111111;
-    border: 1px solid white;
-    box-shadow: 0 0 5px #ffffff50;
+    background-color: #3b495425;
+    border: 2px solid var(--theme-secondary-dark-color);
+    box-shadow: 0 0 15px #7fcce433;
     text-shadow: 0 0 50px white;
 }
 
@@ -876,51 +939,260 @@ button.btn-floating.navigation-link:hover {
 
 
 .login-zen {
+    padding: 5px 10px;
     text-shadow: 0 0 15px var(--blue-glow);
-    font-size: var(--theme-font-size-md);
+    font-size: var(--theme-font-size-sm);
 }
 
-.seed-phrase {
-    /* padding: 20px; */
+.forgot-password,
+.forgot-password-link {
+    color: var(--theme-primary-medium-color);
+    font-size: var(--theme-font-size-sm);
 }
+
+.forgot-password-link {
+    cursor: pointer;
+}
+
+.forgot-password-link:hover {
+    color: var(--theme-secondary-light-color);
+    text-shadow: 2px 2px 2px black;
+}
+
 .seed-phrase-container {
     max-width: 750px;
     margin: 0 auto;
     padding: 20px 10px 0;
     border: 1px solid white;
     background-color: black;
-    box-shadow: 0 0 20px #ffffff50;
+    box-shadow: 0 0 15px #ffffff50;
 }
+
 .seed-word-container {
     padding: 8px !important;
 }
+
 .seed-word {
     text-shadow: 0 0 5px var(--blue-glow);
 }
+
 .seed-word-number {
     color: var(--theme-primary-medium-color)
 }
+
+.seed-phrase {
+    margin-bottom: 10px;
+}
+
 .seed-phrase-checkbox {
     padding: 25px 20px;
-    /* background-color: var(--theme-primary-light-color); */
 }
+
 .seed-phrase-checkbox span {
     color: white;
     font-weight: 400;
 }
+
 .seed-phrase-checkbox [type="checkbox"]:checked+span:not(.lever):before {
     border-right: 2px solid white;
     border-bottom: 2px solid white;
 }
-.important {
-    color: rgb(211, 74, 74) !important;
-    text-shadow: 0 0 10px rgb(211, 74, 74);
-    margin-bottom: 5px;
+
+.download-seed-phrase,
+.upload-seed-phrase {
+    margin: 0 auto;
+    max-width: 225px;
+    padding: 20px 0 !important;
+    text-align: center;
 }
-.blue-glow {
-    color: var(--blue-glow) !important;
-    text-shadow: 0 0 10px var(--blue-glow);
-    margin-bottom: 5px;
+
+.download-seed-phrase {
+    color: var(--theme-secondary-light-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.upload-file-container {
+    margin-top: 10px 0 20px;
+}
+
+.upload-seed-phrase {
+    color: var(--theme-primary-light-color);
+    font-weight: 800;
+}
+
+.download-seed-phrase:hover {
+    color: white;
+    text-shadow: 1px 1px 5px var(--blue-glow);
+}
+
+.upload-file-name {
+    padding: 3px 8px;
+    border-bottom: 1px solid white;
+}
+
+input#upload {
+    margin-top: 10px;
+}
+
+label#upload-label {
+    width: 100%;
+    cursor: pointer;
+    margin: 0 8px 0 0;
+    padding: 3px 10px;
+    border: 2px solid var(--theme-secondary-dark-color);
+}
+
+label#upload-label::after {
+    content: "Choose File";
+}
+
+.upload-btn-container {
+    width: 90px;
+}
+
+label#upload-label.active {
+    color: var(--button-color-dark);
+    background-color: var(--blue-glow);
+    font-weight: 800;
+    border: 2px solid var(--button-color-main);
+    text-shadow: 1px 1px var(--button-color-main);
+    box-shadow: 0 2px 5px  #ffffff50;
+}
+label#upload-label.active::after {
+    content: "FILE UPLOADED"
+}
+
+.upload-file-name.active {
+    background-color: black;
+    border-color: var(--blue-glow);
+    box-shadow: 0 3px 5px #7fcce450;
+}
+
+label#upload-label:hover {
+    border: 2px solid var(--theme-secondary-dark-color);
+    background-color: #ffffff10;
+    
+}
+label#upload-label:hover {
+    /* content: "Choose File"; */
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+
+label#upload-label.active:hover::after {
+    /* content: "Choose File"; */
+}
+
+.new-password-label-2 {
+    margin-top: 90px;
+}
+
+.user-registration-header {
+    padding: 30px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.user-registration-account-header {
+    color: var(--theme-secondary-light-color);
+    font-size: var(--theme-font-size-lg);
+    font-weight: 500;
+    margin: 50px auto 30px;
+    text-shadow: 0 0 10px #7fcce450;
+}
+
+.user-registration-info {
+    border: 2px solid var(--theme-secondary-dark-color);
+    padding: 20px;
+    background-color: black;
+}
+
+.user-registration-details {
+    text-align: center;
+    font-size: var(--theme-font-size);
+}
+
+.user-registration-email {
+    text-align: center;
+    font-size: var(--theme-font-size-md);
+    text-decoration: underline;
+}
+
+.user-registration-wallet .wallet-info,
+.user-registration-details {
+    color: var(--theme-secondary-light-color);
+    text-shadow: 0 0 10px #7fcce47a;
+}
+
+.user-registration-details:hover {
+    color: white;
+}
+
+.user-register-address-header,
+.user-register-email-header {
+    font-size: var(--theme-font-size-md);
+    font-weight: 500;
+    padding: 10px 0 20px;
+}
+
+.user-register-address-header {
+    margin-top: 30px;
+}
+
+.user-registration-forms {
+    margin-bottom: 100px;
+}
+
+.user-register-finish {
+    margin-top: 20px;
+}
+.user-registration-next {
+    margin-bottom: 20px;
+}
+
+.pw-recovery-input-container {
+    max-width: 1080px;
+    background-color: var(--theme-alt-dark-color);
+    border: 3px solid var(--theme-primary-dark-color);
+    padding: 15px 5px;
+}
+
+.pw-recovery-container {
+    padding: 0 10px;
+}
+
+.new-password-container {
+    max-width: 600px;
+    padding: 40px;
+}
+
+.pw-recovery-header {
+    padding: 30px 0;
+}
+
+.pw-recovery-email {
+    padding: 0 25px;
+}
+
+.pw-recovery-message {
+    max-width: 1080px;
+    color: var(--theme-disabled-color);
+}
+
+.pw-recovery-input {
+    padding: 0 5px;
+}
+.pw-recovery-input input,
+.pw-recovery-email input {
+    text-align: center;
+    color: white;
+}
+
+.pw-recovery-input input:focus {
+    background-color: white !important;
+    color: black;
 }
 
 
@@ -976,6 +1248,15 @@ button.btn-floating.navigation-link:hover {
     border-bottom: 4px solid white;
 }
 
+.product-aside {
+    margin-bottom: 80px;
+    padding: 0 20px;
+}
+
+.product-aside-image {
+
+}
+
 .info-container {
     padding: 0;
 }
@@ -994,6 +1275,14 @@ button.btn-floating.navigation-link:hover {
 /* PRODUCTS PAGE */
 .products-page-content {
     /* padding: 50px; */
+    border-bottom: 4px solid white;
+    margin-bottom: 100px;
+}
+
+.products-header {
+    color: white;
+    padding: 0 10px;
+    margin: 50px 0;
 }
 
 /* PRODUCT CARDS */
@@ -1053,6 +1342,18 @@ button.btn-floating.navigation-link:hover {
 
 .materialboxed.active {
 
+}
+
+.product-grid {
+    padding: 40px;
+}
+
+.product-grid-item {
+    margin: 0 auto;
+}
+
+.product-grid-image {
+    max-width: 50%;
 }
 
 .options-row {
@@ -1163,6 +1464,11 @@ button.btn-floating.navigation-link:hover {
     width: 40vw;;
 }
 
+.faq-number {
+    color: var(--theme-disabled-color);
+    text-shadow: 2px 2px 0 var(--button-bg-focus);
+}
+
 .faq-quote {
     font-family: var(--font-alt-sans);
     font-size: 1rem;
@@ -1185,12 +1491,19 @@ button.btn-floating.navigation-link:hover {
 .account {
     padding: 10px;
 }
+
+.account-header {
+    padding: 30px 0;
+}
+
 .account-container {
+    max-width: 750px;
     background-color: #010201;
-    border: 2px solid #353535;
-    border-radius: 100px;
+    border: 5px solid var(--theme-secondary-dark-color);
+    border-radius: 50px;
     margin: 25px auto;
     padding: 40px 20px;
+    box-shadow: 4px 5px #353535;
 }
 
 .account-avatar {
@@ -1208,6 +1521,28 @@ button.btn-floating.navigation-link:hover {
     color: white;
 }
 
+.blockie-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    border: 4px solid var(--theme-secondary-dark-color);
+    border-radius: 100px;
+    background: var(--dark-gradient);
+}
+
+.blockie-canvas {
+    margin: 26px 0;
+    box-shadow: 0 0 15px #7fcce433;
+    border: 2px solid #11111104;
+}
+
+.no-avatar {
+    margin: 26px;
+    /* font-size: 6rem; */
+    filter: var(--svg-light-color);
+    width: 80px;
+}
+
 .account_user-info {
     margin-bottom: 5px;
 }
@@ -1221,6 +1556,23 @@ button.btn-floating.navigation-link:hover {
 
 .account-email {
     color: var(--theme-secondary-light-color);
+}
+.account-info-email {
+    font-size: var(--theme-font-size-md);
+    margin-top: 10px;
+}
+
+.account-logout {
+    margin-bottom: 30px;
+}
+
+.account-logout .logout-btn {
+    border: 3px solid var(--button-bg-focus);
+}
+.account-logout .logout-btn:hover {
+    border-color: var(--blue-glow);
+    background-color: #7fcce433;
+    box-shadow: 0 0 10px #7fcce433;
 }
 
 .account-rewards {
@@ -1384,7 +1736,7 @@ button.btn-floating.navigation-link:hover {
     display: flex;
     margin: 0 auto;
     max-width: 100%;
-    max-width: 450px;
+    max-width: 405px;
 }
 
 
@@ -1433,6 +1785,9 @@ button.btn-floating.navigation-link:hover {
         font-size: 1.2rem;
         /* filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); */
     }
+    .box-container {
+        max-width: 95vw;
+    }
     .fixed-action-btn {
         right: 10px;
         bottom: 10px;
@@ -1449,15 +1804,25 @@ button.btn-floating.navigation-link:hover {
     .i-am-lost i {
         font-size: var(--theme-font-size);
     }
+    .user-registration-header {
+        font-size: var(--theme-font-size-lg);
+    }
+    .account-info-email {
+        font-size: var(--theme-font-size);
+    }
 
 }
 
 
 @media only screen and (max-width: 769px) {
 
+    input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+        font-size: 14px;
+    }
+
     body { font-size: 12px; }
 
-    h1 { font-size: 18px; }
+    h1 { font-size: 32px; }
     /* .header-img { padding: 15px; } */
 
     .spacer {  margin: 10px 0; }
@@ -1479,11 +1844,14 @@ button.btn-floating.navigation-link:hover {
         font-size: var(--theme-font-size);
     }
     
-    .index-main {
-        font-size: 1.2rem;
+    .index-main,
+    .index-aside {
+        font-size: 1rem;
     }
        
-
+    .product-grid-image {
+        max-width: 80%;
+    }
     .product-info { padding: 0; }
     .product-card {
         margin: 0 auto;
@@ -1508,31 +1876,84 @@ button.btn-floating.navigation-link:hover {
         height: 90vh;
         padding: 0 10px;
     }
+
     .signup-col {
         padding: 30px 25px !important;
     }
+
+    .account-info-name {
+        font-size: var(--theme-font-size-md);
+    }
+
     .login-cointainer, .register-cointainer {
         padding: 25px 40px 40px;
 
     }
+
     .login-header {
         font-size: var(--theme-font-size-lg) !important;
     }
+
+    .forgot-password {
+        font-size: var(--theme-font-size-xxs);
+    }
+
+    .login-zen {
+        font-size: var(--theme-font-size-sm);
+    }
+
+    .account-container {
+        border-radius: 20px;
+        border-width: 3px;
+        box-shadow: none;
+    }
+
     .faq-header {
         font-size: var(--theme-font-size);
         letter-spacing: 2px;
         word-spacing: 0px;
     }
+
     .faq-collapsible .collapsible .collapsible-header {
         font-size: var(--theme-font-size);
         padding: 0.5rem 1rem;
     }
+
     .faq-collapsible .collapsible .collapsible-body {
         font-size: var(--theme-font-size);
         padding: 2rem;
     }
+
     .faq-image {
         width: 70vw;
+    }
+
+    .download-seed-phrase {
+        display: none;
+    }
+
+    .seed-phrase-reminder {
+        margin-bottom: 20px;
+    }
+
+    .important {
+        font-size: var(--theme-font-size);
+    }
+
+    input:not([type]),
+    input[type=text]:not(.browser-default),
+    input[type=password]:not(.browser-default),
+    input[type=email]:not(.browser-default),
+    input[type=url]:not(.browser-default),
+    input[type=time]:not(.browser-default),
+    input[type=date]:not(.browser-default),
+    input[type=datetime]:not(.browser-default),
+    input[type=datetime-local]:not(.browser-default),
+    input[type=tel]:not(.browser-default),
+    input[type=number]:not(.browser-default),
+    input[type=search]:not(.browser-default),
+    textarea.materialize-textarea {
+        padding: 0;
     }
 
 }
@@ -1552,8 +1973,27 @@ button.btn-floating.navigation-link:hover {
 
     /* Inputs */
 
-    input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
-    
+    input:not([type]):focus:not([readonly]),
+    input[type=text]:not(.browser-default):focus:not([readonly]),
+    input[type=password]:not(.browser-default):focus:not([readonly]),
+    input[type=email]:not(.browser-default):focus:not([readonly]),
+    input[type=url]:not(.browser-default):focus:not([readonly]),
+    input[type=time]:not(.browser-default):focus:not([readonly]),
+    input[type=date]:not(.browser-default):focus:not([readonly]),
+    input[type=datetime]:not(.browser-default):focus:not([readonly]),
+    input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+    input[type=tel]:not(.browser-default):focus:not([readonly]),
+    input[type=number]:not(.browser-default):focus:not([readonly]),
+    input[type=search]:not(.browser-default):focus:not([readonly]),
+    textarea.materialize-textarea:focus:not([readonly]) {
+        border-color: var(--blue-glow);
+        -webkit-box-shadow: 0 1px 0 0 var(--blue-glow);
+        box-shadow: 0 1px 0 0 var(--blue-glow);
+    }
+
+    input:active, input:focus {
+        box-shadow: 0 4px 10px var(--blue-glow);
+        border-color: var(--blue-glow);
     }
 
     input:autofill {
@@ -1572,12 +2012,15 @@ button.btn-floating.navigation-link:hover {
     .input-field.col {
         margin-top: 10px !important;
     }
-    input.input-field {
+    /* input.input-field {
         padding: 0 8px !important;
-    }
+    } */
 
     .input-field::placeholder {
-        color: var(--theme-primary-medium-color)
+        color: var(--theme-primary-medium-color);
+    }
+    .input-field:focus {
+        border-color: var(--blue-glow)
     }
 
     .input-header {

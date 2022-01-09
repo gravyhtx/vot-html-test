@@ -31,9 +31,18 @@ const PageNotFound = () => {
         enjoy our complimentary quote for your inconvenience.</>
     ]
 
-    const randomOutput = (el) => {
-        const n = Math.floor(Math.random()*el.length)
-        return(el[n])
+    const getStateId = localStorage.getItem('stateId');
+    const setStateId = (n) => localStorage.setItem('stateId', n);
+    const stateId = getStateId ? getStateId : 0;
+    
+    const select = (el) => {
+        let n = Math.floor(Math.random()*el.length);
+        if (n === stateId) {
+            select(el)
+        } else {
+            setStateId(n);
+            return el[n];
+        }
     }
     
     return (
@@ -51,9 +60,9 @@ const PageNotFound = () => {
                     </div>
 
                     <div className="box-col col s12 m6 center">
-                        <div className="lost-header gravy-font left-text">{randomOutput(header)}</div><div className="lost-header right-text">r u lost??</div>
+                        <div className="lost-header gravy-font left-text">{select(header)}</div><div className="lost-header right-text">r u lost??</div>
                         <br/>
-                        <div className="container lost-text gravy-font weight-4">{randomOutput(text)}</div>
+                        <div className="container lost-text gravy-font weight-4">{select(text)}</div>
                         <Link to="/">
                         <Button
                             node="button"

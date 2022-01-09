@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import { TextInput, Button } from 'react-materialize';
 
 import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 const Login = () =>  {
-    const [userFormData, setUserFormData] = useState({ email: '', password: ''});
+    const [userFormData, setUserFormData] = useState({ email: '', password: '' });
     const [validated] = useState(false);
 
     // console.log(Auth.loggedIn())
@@ -45,46 +46,48 @@ const Login = () =>  {
     }
 
     return (
-        <>
-                <div className="login-input-container" id="user-login-container">
-                    <div id="user-login-email">Email</div>
-                    <TextInput
-                        email
-                        className="input-field" 
-                        id="user-login-email_input"
-                        aria-labelledby="user-login-email"
-                        name="email"
-                        onChange={handleInputChange}
-                        value={userFormData.email}
-                        validate
-                    />
-                </div>
-                <div className="login-input-container" id="user-login-container">
-                    <div id="user-login-password">Password</div>
-                    <TextInput 
-                        className="input-field" 
-                        id="user-login-password_input"
-                        aria-labelledby="user-login-email"
-                        type="password"
-                        name="password"
-                        onChange={handleInputChange}
-                        value={userFormData.password}
-                    />
-                </div>
-                <div className="center-text">
-                    <Button
-                        node="button"
-                        style={{
-                        marginRight: '5px'
-                        }}
-                        waves="light"
-                        onClick={handleFormSubmit}
-                        className="login-btn"
-                    >
-                        SIGN IN
-                    </Button>
-                </div>
-        </>
+        <div className='login-collapsible-item'>
+        <div className='login-input-container' id='user-login-container'>
+            <div id='user-login-email'>Email</div>
+            <TextInput
+                email
+                className='input-field' 
+                id='user-login-email_input'
+                aria-labelledby='user-login-email'
+                name='email'
+                onChange={handleInputChange}
+                value={userFormData.email}
+                validate
+            />
+        </div>
+        <div className="login-input-container" id="user-login-container">
+            <div id="user-login-password">
+            Password&nbsp;
+            <Link to="/recover-password">
+            <span className="forgot-password">{"// "}<u className='forgot-password-link'>Forgot password?</u></span>
+            </Link>
+            </div>
+            <TextInput 
+                className='input-field' 
+                id='user-login-password_input'
+                aria-labelledby='user-login-password'
+                type='password'
+                name='password'
+                onChange={handleInputChange}
+                value={userFormData.password}
+            />
+        </div>
+        <div className="center-text">
+            <Button
+                node='button'
+                waves='light'
+                onClick={handleFormSubmit}
+                className='login-btn'
+            >
+                SIGN IN
+            </Button>
+        </div>
+        </div>
     )      
 }
 export default Login;

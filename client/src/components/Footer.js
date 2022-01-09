@@ -56,7 +56,7 @@ const Footer = () => {
                 </Link>
                 </div>
             </div>
-            <div className="copyright container center">Copyright &copy; 2021 // Village of Thousands</div>
+            <div className="copyright container center">Copyright &copy; 2021-22 // Village of Thousands</div>
             <br/>
           </div>
         </div>

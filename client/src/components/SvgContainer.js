@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const SvgContainer = ( { src, link, color, width, description, container, classes, id, styles, draggable } ) => {
+const SvgContainer = ( { margins, src, link, color, width, description, container, classes, id, styles, draggable } ) => {
     let svgContainer="";
     if(container){svgContainer=" "+container;}
     let svgClass="";
@@ -12,8 +12,9 @@ const SvgContainer = ( { src, link, color, width, description, container, classe
         color = "invert(100%) sepia(94%) saturate(0%) hue-rotate(150deg) brightness(106%) contrast(101%);"
     }
 
+    margins=margins?margins:"0 auto"
     let svgStyles = {
-        margin: "0 auto",
+        margin:margins,
         maxWidth:width,
         styles
     }

@@ -5,9 +5,10 @@ import Instagram from '../images/icons/instagram_social-circles.svg';
 import Twitter from '../images/icons/twitter_social-circles.svg';
 import Discord from '../images/icons/discord_social-circles.svg';
 
-const SocialCircles = ( socialContainer, iClasses, fClass, width, icon1, icon2, icon3, icon4, icon1link, icon2link, icon3link, icon4link, icon1alt, icon2alt, icon3alt, icon4alt ) => {
+const SocialCircles = ( socialContainer, iClasses, iClass, width, icon1, icon2, icon3, icon4, icon1link, icon2link, icon3link, icon4link, icon1alt, icon2alt, icon3alt, icon4alt ) => {
 
-    fClass=fClass?" "+fClass:" svg-color-light";
+    iClass=iClass?" "+iClass:" svg-color-light";
+    socialContainer=socialContainer?" "+socialContainer:"";
     width=width?width:"75px";
 
     icon1=icon1?icon1:Instagram;
@@ -17,7 +18,7 @@ const SocialCircles = ( socialContainer, iClasses, fClass, width, icon1, icon2, 
 
     icon1link=icon1link?icon1link:"https://instagram.com/VillageOfThousands/";
     icon2link=icon2link?icon2link:"https://twitter.com/VoThousands/";
-    icon3link=icon3link?icon3link:"https://discord.gg/nfCC6A47KA";
+    icon3link=icon3link?icon3link:"https://discord.gg/niCC6A47KA";
     icon4link=icon4link?icon4link:"https://github.com/gravyhtx/village-of-thousands";
 
     icon1alt=icon1alt?icon1alt:"Village of Thousands // Instagram";
@@ -26,13 +27,13 @@ const SocialCircles = ( socialContainer, iClasses, fClass, width, icon1, icon2, 
     icon4alt=icon4alt?icon4alt:"Village of Thousands // Github";
 
     return (
-        <div className={"icon-container row"}>
+        <div className={"icon-container row"+socialContainer}>
             <div className='col s3'>
             {/* INSTAGRAM */}
                 <SvgContainer
                     classes={
                         "social-icon link"
-                        +fClass}
+                        +iClass}
                     width={width}
                     description={icon1alt}
                     link={icon1link}
@@ -43,7 +44,7 @@ const SocialCircles = ( socialContainer, iClasses, fClass, width, icon1, icon2, 
                 <SvgContainer
                     classes={
                         "social-icon link"
-                        +fClass}
+                        +iClass}
                     width={width}
                     description={icon2alt}
                     link={icon2link}
@@ -54,7 +55,7 @@ const SocialCircles = ( socialContainer, iClasses, fClass, width, icon1, icon2, 
                 <SvgContainer
                     classes={
                         "social-icon link"
-                        +fClass}
+                        +iClass}
                     width={width}
                     description={icon3alt}
                     link={icon3link}
@@ -65,7 +66,7 @@ const SocialCircles = ( socialContainer, iClasses, fClass, width, icon1, icon2, 
                 <SvgContainer
                     classes={
                         "social-icon link"
-                        +fClass}
+                        +iClass}
                     width={width}
                     description={icon4alt}
                     link={icon4link}

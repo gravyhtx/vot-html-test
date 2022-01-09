@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import NavDesktop from "../components/NavDesktop";
@@ -8,7 +7,7 @@ import Mnemonic from "../components/Mnemonic";
 
 import { Button, Checkbox } from "react-materialize";
 
-import { createUser, getSingleUser } from '../utils/API';
+import { updateUser, getSingleUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 const UserMnemonic = () => {
@@ -22,7 +21,7 @@ const UserMnemonic = () => {
             try {
                 const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-                if(!token) {
+                if((token && userData.email && userData.mnemonic) || !token) {
                     window.location.assign('/login');
                     return false
                 }
@@ -41,7 +40,7 @@ const UserMnemonic = () => {
         };
 
         getUserData();
-        console.log(userData);
+        // console.log(userData);
     }, [userDataLength]);
 
     // Add Seed Phrase Hex
@@ -50,18 +49,18 @@ const UserMnemonic = () => {
     const hex = m.toHex()
     let seedHex = hex;
 
-    const getMnemonic = localStorage.getItem('seedHex');
+    const getMnemonic = localStorage.getItem('seed_hex');
     if (getMnemonic) {
         seedHex = getMnemonic;
     } else {
-        localStorage.setItem('seedHex', seedHex);
+        localStorage.setItem('seed_hex', seedHex);
     }
 
     let getHex = Mnemonic.fromHex(seedHex)
     const phrase = getHex.toWords()
 
     // Handle Agreement
-    let [checked, setChecked] = useState(false); 
+    let [checked, setChecked] = useState(false);
     const handleChange = () => {
         handleAgreement();
         setChecked(!checked);
@@ -85,14 +84,14 @@ const UserMnemonic = () => {
         }
 
         try {
-            const response = await createUser(userFormData);
+            const response = await updateUser(userFormData);
 
             if(!response.ok) {
                 throw new Error('something went wrong!');
             }
 
             const { token, user } = await response.json();
-            console.log(user);
+            // console.log(user);
             Auth.login(token);
         } catch (err) {
             console.error(err);
@@ -118,7 +117,7 @@ const UserMnemonic = () => {
     }
 
     const Agree = () => {
-        if (!checked) {
+        if (!checked) {  // ENABLE "NEXT" BUTTON
             checked=true;
             return (
             <Button
@@ -134,7 +133,7 @@ const UserMnemonic = () => {
                 Next
             </Button>
             )
-        } else {
+        } else {  // DISABLE "NEXT" AND DISPLAY ERROR MESSAGE IF AGREEMENT IS UNCHECKED
             checked=false;
             return(
             <Button
@@ -152,21 +151,34 @@ const UserMnemonic = () => {
             )
         }
     }
+    const seedTxt = () => {
+        const text = phrase.join(' ')
+        return (text)
+    }
+    const downloadTxtFile = () => {
+        const textData = document.createElement("a");
+        const file = new Blob([seedTxt()], {type: 'text/plain'});
+        textData.href = URL.createObjectURL(file);
+        textData.download = "vot_seed_phrase.txt";
+        document.body.appendChild(textData); // Required for this to work in FireFox
+        textData.click();
+    }
+
+    if(userData.email && userData.password && !userData.mnemonic) {
     return (
         <>
         <Header />
         <NavMobile />
         <div className="user-mnemonic-container animate__animated animate__fadeIn box-container-fluid" id="user-registration-container">
-        <br/>
         <h1 className="user-registration-header center">Complete Your Registration</h1>
         <div className="seed-phrase">
             {/* <h2 className="center">Seed Phrase</h2> */}
             <br/>
-            <div className="seed-phrase-container center container row">
+            <div className="seed-phrase-container center container row" id="seed-phrase">
                 {phrase.map((word, index) =>
                     <div className="seed-word-container center col s4" key={index}>
                     <div className="row">
-                        <div className="seed-word-number col s2">{index+1}.</div>
+                        <div className="seed-word-number col s2 disable-highlight">{index+1}.&nbsp;</div>
                         <div className="seed-word col s10">{word}</div>
                     </div>
                     </div>
@@ -177,11 +189,12 @@ const UserMnemonic = () => {
             <div className="container">
             <div className="important">IMPORTANT!</div>
             <div className="seed-phrase-reminder container">
-                This is the "seed phrase" (aka mnemonic) associated with your account. If you lose your password, this is the only method
-                of recovery. Please take a second to write down this phrase and keep it safe to avoid losing access to your account!
+                This is the "seed phrase" (aka mnemonic) associated with your account. If you lose your password or want to change it
+                in the future, entering your seed phrase is the only method of recovery. Please take a second to write down and/or save this
+                phrase and keep it safe to avoid losing access to your account!
             </div>
+            <div className='download-seed-phrase container center sm' id='download' onClick={downloadTxtFile}>DOWNLOAD SEED PHRASE TO .TXT</div>
             </div>
-            <br/>
             <ErrorMessage />
             <Checkbox
             onChange={handleChange}
@@ -199,7 +212,7 @@ const UserMnemonic = () => {
         <Footer />
         <NavDesktop />
         </>
-    )
+    )} else {return(<></>)}
 }
 
 export default UserMnemonic;

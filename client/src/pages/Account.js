@@ -19,6 +19,7 @@ const Account = () => {
         <div className="account">
         <h1 className="account-header">Account</h1>
         <AccountContainer />
+        <div className="account-logout">
         <Button
             node="button"
             style={{
@@ -30,6 +31,7 @@ const Account = () => {
         >
             LOG OUT
         </Button>
+        </div>
         </div>
         <NavDesktop />
         <Footer />

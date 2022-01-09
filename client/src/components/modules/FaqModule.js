@@ -35,14 +35,10 @@ const faq = () => {
                 printed here in the USA. Even our packages are made from 100% recyclable materials, so we encourage
                 you to help us in our efforts by recycling or reusing your packages when you receive some fresh new
                 gear from us.</>,
-                <>Our operations are based in Houston, TX where we assemble and package the products we deliver
-                straight to your home. Our core design and development team is also done in Houston, though we
-                promote diversity on a global scale so our team is not exclusive. We always look forward to working
-                with other talented designers and web developers from all around the world when the opportunities
-                arise.</>,
+                <>We believe sustainability is more than </>,
                 <>Sustainability is our primary core value and one of our biggest ways we can give back as a business.
-                It is also the driving force for every person on our team. We don’t take a whole lot seriously, but
-                we are passionate about our work so when we created Village of Thousands the one thing we all knew
+                It is also the driving force for every person on our team. We are passionate about our work so when we created
+                Village of Thousands the one thing we all knew for certain
                 was that we want to see our work done right with only the finest materials and technologies from
                 companies that take sustainability as seriously as we do.</>,
                 <>We are always growing and adapting with this primary objective in the forefront of our mind.</>
