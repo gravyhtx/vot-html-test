@@ -15,20 +15,20 @@ const UserMnemonic = () => {
     // Get User Data
     const [userData, setUserData] = useState({});
     const userDataLength = Object.keys(userData).length;
-    
+
     useEffect(() => {
         const getUserData = async () => {
             try {
                 const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-                if((token && userData.email && userData.mnemonic) || !token) {
+                if ((token && userData.email && userData.mnemonic) || !token) {
                     window.location.assign('/login');
                     return false
                 }
 
                 const response = await getSingleUser(token);
 
-                if(!response.ok){
+                if (!response.ok) {
                     throw new Error('something went wrong!');
                 }
 
@@ -67,8 +67,8 @@ const UserMnemonic = () => {
     };
 
     // Check for page refresh
-    let [refresh, setRefresh] = useState(true); 
-    const handleAgreement = () => { 
+    let [refresh, setRefresh] = useState(true);
+    const handleAgreement = () => {
         setRefresh(false);
         setChecked(false);
     };
@@ -77,33 +77,31 @@ const UserMnemonic = () => {
     const handleMnemonicSubmit = async (event) => {
         event.preventDefault();
 
-        const form = event.currentTarget;
-        if(form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+        if (!token) {
+            // window.location.assign('/404');
+            return false;
         }
 
         try {
-            const response = await updateUser(userFormData);
-
-            if(!response.ok) {
-                throw new Error('something went wrong!');
+            let updateObj = {
+                seedHex: seedHex
             }
+            updateUser(updateObj, token)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('something went wrong!');
+                    } else {
+                        window.location.assign('/signup-2');
+                    }
 
-            const { token, user } = await response.json();
-            // console.log(user);
-            Auth.login(token);
+                });
+
+
         } catch (err) {
             console.error(err);
         }
-
-        setUserFormData({
-            email: userData.email,
-            password: userData.password,
-            mnemonic: seedHex
-        })
-
-        window.location.assign('/signup-2');
     }
 
     const ErrorMessage = () => {
@@ -118,36 +116,36 @@ const UserMnemonic = () => {
 
     const Agree = () => {
         if (!checked) {  // ENABLE "NEXT" BUTTON
-            checked=true;
+            checked = true;
             return (
-            <Button
-                node="button"
-                style={{
-                    margin: '0 auto',
-                    width: '250px'
-                }}
-                waves="light"
-                className="account-wallet-btn"
-                onClick={handleMnemonicSubmit}
-            >
-                Next
-            </Button>
+                <Button
+                    node="button"
+                    style={{
+                        margin: '0 auto',
+                        width: '250px'
+                    }}
+                    waves="light"
+                    className="account-wallet-btn"
+                    onClick={handleMnemonicSubmit}
+                >
+                    Next
+                </Button>
             )
         } else {  // DISABLE "NEXT" AND DISPLAY ERROR MESSAGE IF AGREEMENT IS UNCHECKED
-            checked=false;
-            return(
-            <Button
-                node="button"
-                style={{
-                    margin: '0 auto',
-                    width: '250px'
-                }}
-                waves="light"
-                className="theme-btn disabled-btn"
-                onClick={handleAgreement}
-            >
-                Next
-            </Button>
+            checked = false;
+            return (
+                <Button
+                    node="button"
+                    style={{
+                        margin: '0 auto',
+                        width: '250px'
+                    }}
+                    waves="light"
+                    className="theme-btn disabled-btn"
+                    onClick={handleAgreement}
+                >
+                    Next
+                </Button>
             )
         }
     }
@@ -157,62 +155,63 @@ const UserMnemonic = () => {
     }
     const downloadTxtFile = () => {
         const textData = document.createElement("a");
-        const file = new Blob([seedTxt()], {type: 'text/plain'});
+        const file = new Blob([seedTxt()], { type: 'text/plain' });
         textData.href = URL.createObjectURL(file);
         textData.download = "vot_seed_phrase.txt";
         document.body.appendChild(textData); // Required for this to work in FireFox
         textData.click();
     }
 
-    if(userData.email && userData.password && !userData.mnemonic) {
-    return (
-        <>
-        <Header />
-        <NavMobile />
-        <div className="user-mnemonic-container animate__animated animate__fadeIn box-container-fluid" id="user-registration-container">
-        <h1 className="user-registration-header center">Complete Your Registration</h1>
-        <div className="seed-phrase">
-            {/* <h2 className="center">Seed Phrase</h2> */}
-            <br/>
-            <div className="seed-phrase-container center container row" id="seed-phrase">
-                {phrase.map((word, index) =>
-                    <div className="seed-word-container center col s4" key={index}>
-                    <div className="row">
-                        <div className="seed-word-number col s2 disable-highlight">{index+1}.&nbsp;</div>
-                        <div className="seed-word col s10">{word}</div>
+    if (userData.email && userData.password && !userData.mnemonic) {
+        return (
+            <>
+                <Header />
+                <NavMobile />
+                <div className="user-mnemonic-container animate__animated animate__fadeIn box-container-fluid" id="user-registration-container">
+                    <h1 className="user-registration-header center">Complete Your Registration</h1>
+                    <div className="seed-phrase">
+                        {/* <h2 className="center">Seed Phrase</h2> */}
+                        <br />
+                        <div className="seed-phrase-container center container row" id="seed-phrase">
+                            {phrase.map((word, index) =>
+                                <div className="seed-word-container center col s4" key={index}>
+                                    <div className="row">
+                                        <div className="seed-word-number col s2 disable-highlight">{index + 1}.&nbsp;</div>
+                                        <div className="seed-word col s10">{word}</div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
+                    <div className="seed-phrase-checkbox center">
+                        <div className="container">
+                            <div className="important">IMPORTANT!</div>
+                            <div className="seed-phrase-reminder container">
+                                This is the "seed phrase" (aka mnemonic) associated with your account. If you lose your password or want to change it
+                                in the future, entering your seed phrase is the only method of recovery. Please take a second to write down and/or save this
+                                phrase and keep it safe to avoid losing access to your account!
+                            </div>
+                            <div className='download-seed-phrase container center sm' id='download' onClick={downloadTxtFile}>DOWNLOAD SEED PHRASE TO .TXT</div>
+                        </div>
+                        <ErrorMessage />
+                        <Checkbox
+                            onChange={handleChange}
+                            checked={false}
+                            id="seed-phrase-checkbox"
+                            label="I have saved my seed phrase."
+                            value="I have saved my seed phrase."
+                        />
                     </div>
-                )}
-            </div>
-        </div>
-        <div className="seed-phrase-checkbox center">
-            <div className="container">
-            <div className="important">IMPORTANT!</div>
-            <div className="seed-phrase-reminder container">
-                This is the "seed phrase" (aka mnemonic) associated with your account. If you lose your password or want to change it
-                in the future, entering your seed phrase is the only method of recovery. Please take a second to write down and/or save this
-                phrase and keep it safe to avoid losing access to your account!
-            </div>
-            <div className='download-seed-phrase container center sm' id='download' onClick={downloadTxtFile}>DOWNLOAD SEED PHRASE TO .TXT</div>
-            </div>
-            <ErrorMessage />
-            <Checkbox
-            onChange={handleChange}
-            checked={false}
-            id="seed-phrase-checkbox"
-            label="I have saved my seed phrase."
-            value="I have saved my seed phrase."
-            />
-        </div>
-        <div className="user-registration-next center">
-        <Agree />
-        </div>
-        <br/><br/>
-        </div>
-        <Footer />
-        <NavDesktop />
-        </>
-    )} else {return(<></>)}
+                    <div className="user-registration-next center">
+                        <Agree />
+                    </div>
+                    <br /><br />
+                </div>
+                <Footer />
+                <NavDesktop />
+            </>
+        )
+    } else { return (<></>) }
 }
 
 export default UserMnemonic;
