@@ -472,7 +472,7 @@ textarea.materialize-textarea {
 /* ICONS */
 i { color: var(--theme-primary-light-color); cursor: default; }
 i:hover { color: white !important; text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.75); }
-input:focus { border-bottom: 1px solid var(--blue-glow) !important; }
+input:focus { border-bottom: 1px solid #7fcce4 !important; }
 
 /* SVG */
 .svg-container, .svg-img {
@@ -518,8 +518,8 @@ input:focus { border-bottom: 1px solid var(--blue-glow) !important; }
     margin-bottom: 5px;
 }
 .blue-glow {
-    color: var(--blue-glow) !important;
-    text-shadow: 0 0 10px var(--blue-glow);
+    color: #7fcce4 !important;
+    text-shadow: 0 0 10px #7fcce4;
     margin-bottom: 5px;
 }
 
@@ -607,7 +607,7 @@ h2 {
     /* Container Background Styles */
     .text-container.no-bkg { background-color: #00000000; }
     .text-container.dark { background-color: var(--theme-alt-dark-color); }
-    .text-container.light { border: none; box-shadow: 3px 3px 5px var(--blue-glow); }
+    .text-container.light { border: none; box-shadow: 3px 3px 5px #7fcce4; }
     .text-container.dark-gradient { background: var(--dark-gradient); }
 
     /* Container Box Styles */
@@ -788,7 +788,7 @@ h2 {
 
 .collapsible {
     border: 2px solid var(--theme-primary-light-color);
-    box-shadow: 3px 3px 0 var(--blue-glow);
+    box-shadow: 3px 3px 0 #7fcce4;
     background: var(--dark-gradient);
 }
 .collapsible-header .login-header {
@@ -955,7 +955,7 @@ button.btn-floating.navigation-link:focus {
 .register-container {
     border: 3px solid var(--theme-primary-medium-color);
     padding: 30px 50px 50px;
-    box-shadow: 2px 2px 2px var(--blue-glow);
+    box-shadow: 2px 2px 2px #7fcce4;
     background: var(--dark-gradient);
     margin-bottom: 30px;
 } */
@@ -982,7 +982,7 @@ button.btn-floating.navigation-link:focus {
     height: 50px;
     background-color: var(--button-bg-darker);
     color: var(--theme-primary-light-color);
-    border: 2px solid var(--blue-glow);
+    border: 2px solid #7fcce4;
     box-shadow: 5px 5px 2px black;
     margin: 20px 0;
     border-radius: 0;
@@ -1012,7 +1012,7 @@ button.btn-floating.navigation-link:focus {
 
 .login-zen {
     padding: 5px 10px;
-    text-shadow: 0 0 15px var(--blue-glow);
+    text-shadow: 0 0 15px #7fcce4;
     font-size: var(--theme-font-size-sm);
 }
 
@@ -1045,7 +1045,7 @@ button.btn-floating.navigation-link:focus {
 }
 
 .seed-word {
-    text-shadow: 0 0 5px var(--blue-glow);
+    text-shadow: 0 0 5px #7fcce4;
 }
 
 .seed-word-number {
@@ -1095,7 +1095,7 @@ button.btn-floating.navigation-link:focus {
 
 .download-seed-phrase:hover {
     color: white;
-    text-shadow: 1px 1px 5px var(--blue-glow);
+    text-shadow: 1px 1px 5px #7fcce4;
 }
 
 .upload-file-name {
@@ -1125,7 +1125,7 @@ label#upload-label::after {
 
 label#upload-label.active {
     color: var(--button-color-dark);
-    background-color: var(--blue-glow);
+    background-color: #7fcce4;
     font-weight: 800;
     border: 2px solid var(--button-color-main);
     text-shadow: 1px 1px var(--button-color-main);
@@ -1137,7 +1137,7 @@ label#upload-label.active::after {
 
 .upload-file-name.active {
     background-color: black;
-    border-color: var(--blue-glow);
+    border-color: #7fcce4;
     box-shadow: 0 3px 5px #7fcce450;
 }
 
@@ -1301,7 +1301,7 @@ label#upload-label.active:hover::after {
 
 .home-zen {
     color: var(--theme-header-color);
-    text-shadow: 0 0 10px var(--blue-glow);
+    text-shadow: 0 0 10px #7fcce4;
     padding: 20px;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
@@ -1682,7 +1682,7 @@ label#upload-label.active:hover::after {
     border: 3px solid var(--button-bg-focus);
 }
 .account-logout .logout-btn:hover {
-    border-color: var(--blue-glow);
+    border-color: #7fcce4;
     background-color: #7fcce433;
     box-shadow: 0 0 10px #7fcce433;
 }
@@ -2109,14 +2109,14 @@ label#upload-label.active:hover::after {
     input[type=number]:not(.browser-default):focus:not([readonly]),
     input[type=search]:not(.browser-default):focus:not([readonly]),
     textarea.materialize-textarea:focus:not([readonly]) {
-        border-color: var(--blue-glow);
-        -webkit-box-shadow: 0 1px 0 0 var(--blue-glow);
-        box-shadow: 0 1px 0 0 var(--blue-glow);
+        border-color: #7fcce4;
+        -webkit-box-shadow: 0 1px 0 0 #7fcce4;
+        box-shadow: 0 1px 0 0 #7fcce4;
     }
 
     input:active, input:focus {
-        box-shadow: 0 4px 10px var(--blue-glow);
-        border-color: var(--blue-glow);
+        box-shadow: 0 4px 10px #7fcce4;
+        border-color: #7fcce4;
     }
 
     input:autofill {
@@ -2143,7 +2143,7 @@ label#upload-label.active:hover::after {
         color: var(--theme-primary-medium-color);
     }
     .input-field:focus {
-        border-color: var(--blue-glow)
+        border-color: #7fcce4
     }
 
     .input-header {
