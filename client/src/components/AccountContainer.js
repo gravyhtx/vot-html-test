@@ -141,13 +141,13 @@ const AccountContainer = () => {
         <div className="account-info-container" id="account-info-container">
             <br/>
             <div onClick={console.log('click')} className="blockie-container">
-                {!userData.walletAddress
+                {userData.walletAddress
                 ?<>
                 {blockie}
                 </>
                 :<SvgContainer src={Avatar} classes="no-avatar" />}
             </div>
-            {!userData.walletAddress
+            {userData.walletAddress
             ?<Button
                 node="button"
                 className="blockie-colors not-a-button monospace"

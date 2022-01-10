@@ -79,10 +79,35 @@ function BlockNumber() {
   const userBlocknumber = blockNumber === null ? 'Error' : blockNumber ?? ''
   console.log("Block Number: "+userBlocknumber)
 }
-
 function Account() {
   const { account } = useWeb3React()
   const userAccount = account === null? '-': account? account: ''
+  console.log(userAccount)
+
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+  if (!token) {
+      // window.location.assign('/404');
+      return false;
+  }
+
+  try {
+      let updateObj = {
+        walletAddress: userAccount
+      }
+      updateUser(updateObj, token)
+      .then(response => {
+        if(!response.ok) {
+            throw new Error('something went wrong!');
+        }
+
+      });
+
+
+  } catch (err) {
+      console.error(err);
+  }
+
   return (userAccount)
 }
 
@@ -120,7 +145,7 @@ function Balance() {
 export default function() {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
-      <App walletAddress={Account()} walletBalance={Balance()} />
+      <App />
     </Web3ReactProvider>
   )
 }
@@ -206,7 +231,7 @@ function Header() {
   )
 }
 
-function App(getAddress, getBalance) {
+function App() {
   const context = useWeb3React<Web3Provider>()
   const { connector, library, account, activate, deactivate, active, error } = context
 
@@ -254,47 +279,31 @@ function App(getAddress, getBalance) {
   // console.log(userData);
   }, [userDataLength]);
 
-  const [userWallet, setUserWallet] = useState({walletAddress:getAddress, walletBalance:getBalance})
+  const [userWallet, setUserWallet] = useState({walletAddress: "", walletBalance: ""})
 
   const submitWallet = async () => {
       // event.preventDefault();
-
-      // const form = event.currentTarget;
-      // if(form.checkValidity() === false) {
-      //     event.preventDefault();
-      //     event.stopPropagation();
-      // }
-
-      const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-      if (!token) {
-          window.location.assign('/404');
-          return false;
-      }
-
-      try {
-          const response = await updateUser(userWallet, token);
-
-          if(!response.ok) {
-              throw new Error('something went wrong!');
-          }
-
-      } catch (err) {
-          console.error(err);
-      }
-
-      setUserWallet({
-          walletAddress: getAddress,
-          walletBalance: getBalance
-      })
+      // const wallAddress = Account()
+      // // const form = event.currentTarget;
+      // // if(form.checkValidity() === false) {
+      // //     event.preventDefault();
+      // //     event.stopPropagation();
+      // // }
+      // console.log(wallAddress)
+     
+      // setUserWallet({
+      //     walletAddress: getAddress,
+      //     walletBalance: getBalance
+      // })
 
       // window.location.assign('/');
   }
 
-  const web3activate = () => {
+  const web3activate = async () => {
     setActivatingConnector(currentConnector)
-    activate(injected)
+    const activeWallet = await activate(injected)
     submitWallet()
+    // submitWallet()
     // if (window.location.pathname === '/account') {
     //   window.location.reload()
     // }
