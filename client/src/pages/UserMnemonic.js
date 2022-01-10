@@ -44,12 +44,12 @@ const UserMnemonic = () => {
     }, [userDataLength]);
 
     // Add Seed Phrase Hex
-    const [userFormData, setUserFormData] = useState({ email: '', password: '', mnemonic: '' });
+    const [userFormData, setUserFormData] = useState({ email: '', password: '', mnemonic: '', completeRegistration: false });
     const m = new Mnemonic(96)
     const hex = m.toHex()
     let seedHex = hex;
 
-    const getMnemonic = localStorage.getItem('seed_hex');
+    const getMnemonic=localStorage.getItem('seed_hex');
     if (getMnemonic) {
         seedHex = getMnemonic;
     } else {
@@ -100,7 +100,8 @@ const UserMnemonic = () => {
         setUserFormData({
             email: userData.email,
             password: userData.password,
-            mnemonic: seedHex
+            mnemonic: seedHex,
+            completeRegistration: true
         })
 
         window.location.assign('/signup-2');

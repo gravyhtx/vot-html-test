@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import './styles/style.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
@@ -30,12 +30,12 @@ import AdminCreateDrop from "./components/AdminCreateDrop";
 function App() {
 
   const website = {
-    name: process.env.REACT_APP_COMPANY_NAME,
-    domain: process.env.REACT_APP_DOMAIN,
-    drop: process.env.REACT_APP_CURRENT_DROP,
-    szn: process.env.REACT_APP_CURRENT_SZN,
-    hCaptchaKey: process.env.REACT_APP_HCAPTCHA_SITE_KEY,
-    hCaptchaSecret: process.env.REACT_APP_HCAPTCHA_SECRET
+    name: process.env.REACT_APP_COMPANY_NAME || "Village of Thousands",
+    domain: process.env.REACT_APP_DOMAIN || "villageofthousands.io",
+    drop: process.env.REACT_APP_CURRENT_DROP || 1,
+    szn: process.env.REACT_APP_CURRENT_SZN || "Winter 2021",
+    hCaptchaKey: process.env.REACT_APP_HCAPTCHA_SITE_KEY || "",
+    hCaptchaSecret: process.env.REACT_APP_HCAPTCHA_SECRET || ""
   }
   const scrollToTop = () => {
     window.scrollTo({
