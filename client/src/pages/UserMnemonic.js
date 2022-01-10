@@ -86,7 +86,8 @@ const UserMnemonic = () => {
 
         try {
             let updateObj = {
-                seedHex: seedHex
+                seedHex: seedHex,
+                completeRegistration: true
             }
             updateUser(updateObj, token)
                 .then(response => {
@@ -102,18 +103,8 @@ const UserMnemonic = () => {
         } catch (err) {
             console.error(err);
         }
-<<<<<<< HEAD
-
-        setUserFormData({
-            email: userData.email,
-            password: userData.password,
-            mnemonic: seedHex,
-            completeRegistration: true
-        })
 
         window.location.assign('/signup-2');
-=======
->>>>>>> 4bc88d45555f0c539510043888940573385eab1a
     }
 
     const ErrorMessage = () => {
