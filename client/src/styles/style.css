@@ -834,7 +834,7 @@ li.active .collapsible-header {
 
 .header-img-container {
     margin: 0 auto;
-    width: 70%;
+    width: 70vw;
     padding: 15px;
     display: flex;
 }
