@@ -834,7 +834,7 @@ li.active .collapsible-header {
 
 .header-img-container {
     margin: 0 auto;
-    width: 70vw;
+    width: 70%;
     padding: 15px;
     display: flex;
 }
@@ -1874,7 +1874,7 @@ label#upload-label.active:hover::after {
     .desktop {  display: none; }
     
     .header-img {
-        width: 90vw;
+        /* width: 90vw; */
         /* padding: 20px; */
     }
     .mobile-nav {
@@ -1944,7 +1944,7 @@ label#upload-label.active:hover::after {
     .yuge-spacer { margin: 40px 0; }
 
     .header-img-container {
-        width: 95vw;
+        width: 95%;
     }
 
     .notify, i { font-size: 10px; }
