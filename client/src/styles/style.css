@@ -1014,6 +1014,7 @@ button.btn-floating.navigation-link:focus {
     padding: 5px 10px;
     text-shadow: 0 0 15px #7fcce4;
     font-size: var(--theme-font-size-sm);
+    margin-bottom: 30px;
 }
 
 .forgot-password,
