@@ -34,7 +34,7 @@ const Header = () =>  {
               <div className="header-img-container" id="header-img-container">
                 <img
                   src={Logo}
-                  className={splitLocation[1] === "" ? "header-img animate__animated animate__fadeInDown "+abbv+"-txt-header" : abbv+"-txt-header"}
+                  className={splitLocation[1] === "" ? "header-img animate__animated animate__fadeInDown "+abbv+"-txt-header" : abbv+"-txt-header header-img"}
                   id="header-img"
                   draggable="false"
                   alt={siteName ? siteName+" Logo" : "Website Logo"} />

@@ -485,7 +485,7 @@ input:focus { border-bottom: 1px solid #7fcce4 !important; }
 }
 
 .icon-container {
-    display: flex;
+    /* display: flex; */
     margin: 0 auto;
     /* margin: 0 25px !important; */
     /* position: relative; */
@@ -1874,7 +1874,7 @@ label#upload-label.active:hover::after {
     .desktop {  display: none; }
     
     .header-img {
-        /* width: 90vw; */
+        width: 90vw;
         /* padding: 20px; */
     }
     .mobile-nav {
@@ -1944,7 +1944,7 @@ label#upload-label.active:hover::after {
     .yuge-spacer { margin: 40px 0; }
 
     .header-img-container {
-        width: 95%;
+        width: 95vw;
     }
 
     .notify, i { font-size: 10px; }
