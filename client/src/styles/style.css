@@ -497,6 +497,7 @@ input:focus { border-bottom: 1px solid #7fcce4 !important; }
 }
 
 .social-icon {
+    max-width:75px;
     width: 75%;
 }
 
@@ -1945,6 +1946,7 @@ label#upload-label.active:hover::after {
 
     h1 { font-size: 32px; }
     /* .header-img { padding: 15px; } */
+    .social-icon { width: 100%; }
 
     .spacer {  margin: 10px 0; }
     /* .big-spacer {
@@ -2097,9 +2099,7 @@ label#upload-label.active:hover::after {
 @media only screen and (max-width: 600px) {
     .mobile.only { display: block; }
     .desktop.only { display: none; }
-    .lost-mobile-header {
-        margin-bottom: 30px;
-    }
+    .lost-mobile-header {  margin-bottom: 30px; }
     .faq-header {
         font-size: var(--theme-font-size-sm);
     }
