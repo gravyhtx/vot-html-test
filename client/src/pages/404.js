@@ -45,13 +45,17 @@ const PageNotFound = () => {
             <div className="location-error-section">
                 <div className="box-container row">
 
-                    <div className="box-col col s12 m6">
+                    <div className="box-col col s12 m6 lost-container">
+                        <div className="lost-mobile-header mobile only">
+                            <div className="lost-header gravy-font left-text">{select(header)}</div>
+                            <div className="lost-header right-text">r u lost??</div>
+                        </div>
                         <SiteImage files={["fall_error", "cop_error"]} imgClasses={"lost-img"} description={"Sorry, broh. You're on the wrong page."} />
                         <br/>
                     </div>
 
                     <div className="box-col col s12 m6 center">
-                        <div className="lost-header gravy-font left-text">{select(header)}</div><div className="lost-header right-text">r u lost??</div>
+                        <div className="lost-header gravy-font left-text desktop only">{select(header)}</div><div className="lost-header right-text desktop only">r u lost??</div>
                         <br/>
                         <div className="container lost-text gravy-font weight-4">{select(text)}</div>
                         <Link to="/">

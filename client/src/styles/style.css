@@ -477,7 +477,7 @@ input:focus { border-bottom: 1px solid #7fcce4 !important; }
 /* SVG */
 .svg-container, .svg-img {
     display: flex;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 .svg-glow {
     -webkit-filter: drop-shadow(0 0 10px #7fcce47a);
@@ -488,6 +488,7 @@ input:focus { border-bottom: 1px solid #7fcce4 !important; }
     /* display: flex; */
     margin: 0 auto;
     padding: 0 25px;
+    width: 100%;
     /* position: relative; */
 }
 
@@ -496,8 +497,7 @@ input:focus { border-bottom: 1px solid #7fcce4 !important; }
 }
 
 .social-icon {
-    /* position: absolute; */
-    /* bottom: 0px; */
+    width: 75%;
 }
 
 /* BORDERS */
@@ -1842,6 +1842,10 @@ label#upload-label.active:hover::after {
 .lost-text {
     font-size: var(--theme-font-size-lg);
 }
+.location-error-section .lost-text {
+    margin-bottom: 20px;
+}
+
 .i-am-lost i {
     font-size: var(--theme-font-size);
 }
@@ -1873,6 +1877,8 @@ label#upload-label.active:hover::after {
 
     .mobile { display: block; }
     .desktop {  display: none; }
+    .mobile.only { display: none; }
+    .desktop.only { display: block; }
     
     .header-img {
         width: 90vw;
@@ -1909,8 +1915,10 @@ label#upload-label.active:hover::after {
         padding: 0;
     }
     .lost-header {
-        font-size: var(--theme-font-size-lg);
+        font-size: var(--theme-font-size-xl);
+        line-height: 1.1;
     }
+    .location-error-section
     .lost-text {
         font-size: var(--theme-font-size-md);
     }
@@ -2060,6 +2068,10 @@ label#upload-label.active:hover::after {
         font-size: var(--theme-font-size) !important;
     }
 
+    .location-error-section .lost-text {
+        font-size: var(--theme-font-size);
+    }
+
     .important {
         font-size: var(--theme-font-size);
     }
@@ -2082,7 +2094,12 @@ label#upload-label.active:hover::after {
 
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 600px) {
+    .mobile.only { display: block; }
+    .desktop.only { display: none; }
+    .lost-mobile-header {
+        margin-bottom: 30px;
+    }
     .faq-header {
         font-size: var(--theme-font-size-sm);
     }

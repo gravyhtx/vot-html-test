@@ -11,7 +11,7 @@ class BlockiesIdenticon extends React.Component {
 //   }
   getOpts () {
     return {
-      seed: this.props.opts.seed || "foo",
+      seed: this.props.opts.seed || "Claire Richard",
       color: this.props.opts.color || "#111111",
       bgcolor: this.props.opts.bgcolor || "#3b4954",
       size: this.props.opts.size || 10,

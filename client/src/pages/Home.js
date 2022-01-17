@@ -67,7 +67,7 @@ const Home = () => {
           </div>
           <div className="col s12 m5 l6">
             <div className="right-align index-aside justify-text">
-                <p>We strive to be a leader in providing quality, eco-friendly products in the fashion world and set high standards for all emerging Web3 products and services.
+                <p>We strive to be a leader in providing quality, eco-friendly products in the fashion world and set high standards for all emerging Web 3.0 products and services.
                 </p><p>Our company is currently preparing for a full Web 3.0 release in 2022 when we will be selling all NFT-authenticated products. If you’d like to join the movement, follow us on our socials and you can get ready for our first drop
                 by <Link className="text-link" to="/register">creating an account</Link> with us today.
                 </p>

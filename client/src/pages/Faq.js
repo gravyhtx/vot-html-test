@@ -12,16 +12,16 @@ import RandomQuote from "../components/modules/RandomQuote";
 
 import Cartas from "../images/art/cartas.png";
 
-import CryptoConverter from "../components/modules/CryptoConverter";
+// import CryptoConverter from "../components/modules/CryptoConverter";
 
 const Faq = () => {
     const questions = Questions()
     const checkId = window.location.hash ? window.location.hash.substring(1) : "";
 
     // GET 'ETH' + 'BTC' PRICES //
-    CryptoConverter(40);
+    // CryptoConverter(40);
     // UPDATE COIN PRICES //
-    setInterval(() => {CryptoConverter(40)}, 15000);
+    // setInterval(() => {CryptoConverter(40)}, 15000);
 
     // useEffect needed for "scrollIntoView({ behavior: 'smooth' })"
     const question = () => {

@@ -9,7 +9,7 @@ const SocialCircles = ( socialContainer, iClasses, iClass, width, icon1, icon2, 
 
     iClass=iClass?" "+iClass:" svg-color-light";
     socialContainer=socialContainer?" "+socialContainer:"";
-    width=width?width:"75px";
+    width=width?width:"";
 
     icon1=icon1?icon1:Instagram;
     icon2=icon2?icon2:Twitter;
@@ -27,7 +27,7 @@ const SocialCircles = ( socialContainer, iClasses, iClass, width, icon1, icon2, 
     icon4alt=icon4alt?icon4alt:"Village of Thousands // Github";
 
     return (
-        <div className={"icon-container row"+socialContainer}>
+        <div className={"social-circles icon-container row"}>
             <div className='col s3'>
             {/* INSTAGRAM */}
                 <SvgContainer
