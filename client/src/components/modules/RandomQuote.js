@@ -7,7 +7,7 @@ const RandomQuote = ({ type, className }) => {
         <>"The world is ruled by letting things take their course."<br/>- Lao Tzu</>,
         <>"The most wasted of days is one without laughter."<br/>- E. E. Cummings</>,
         <>"Do not let what you can't do interfere with what you can do."<br/>- John Wooden</>,
-        <>"A smile is your Greatest social Asset."<br/>- Zig Ziglar</>,
+        <>"A smile is your greatest social asset."<br/>- Zig Ziglar</>,
         <>"What seems to us as bitter trials are often blessings in disguise."<br/>- Oscar Wilde</>,
         <>"Don't walk Behind me; I may not lead.<br/>
         Don't walk in Front of me; I may not follow.<br/>
