@@ -23,7 +23,8 @@ const Home = () => {
         textClasses: "col s12 index-main gravy-font",
         p1: <>
             <div className="row">
-              <div className="col m12 l6 weight-4">
+              <div className="col m12 l6 weight-4 justify-text">
+                <br/>
                 <div>Village of Thousands is a Web 3.0 ready skateboard lifestyle brand and community that sells high quality, sustainable apparel and NFT-authenticated products.
                 </div>
                 <p>Our village is a state of mind. We believe that our dedication to sustainability is what will help us achieve our vision of building a community with the ability to sustain.
