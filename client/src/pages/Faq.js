@@ -30,7 +30,7 @@ const Faq = () => {
                 <CollapsibleItem
                     expanded={false}
                     className={checkId === index ? "active" : ""}
-                    id={"header-"+q.id}
+                    id={"header-"+index}
                     header={
                         <div className="faq-question-header" key={"q-"+index}>
                             <span className="faq-number">{(index+1) < 10 ? ("00"+(index+1)+"//") : ("0"+(index+1)+"//")}&emsp;</span>

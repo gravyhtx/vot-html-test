@@ -10,10 +10,10 @@ const faq = () => {
                 <>Village of Thousands is a Web 3.0 ready lifestyle brand rooted in skateboard culture that sells
                 high quality, sustainable NFT-authenticated apparel and products. We’re a true lifestyle brand,
                 offering an opportunity for us all to build a community of thousands.</>,
-                <>VoT was born in Colombia and grown in the USA. The company began its journey in 2021 lead by Juancarlos
-                Villamil, a lifelong skateboarder, with a commitment to provide the highest quality sustainable
-                apparel and products grown in America. The team is based out of Houston, TX with contributors from
-                around the globe that is ready to push forward with a growing Web 3.0 brand, built to grow with for
+                <>VoT was born in Colombia and grown in the USA. The company was formed in 2021 lead by lifelong skateboarder,
+                Juancarlos Villamil, with a passion for aesthetics and a commitment to provide the highest quality sustainable
+                apparel and products, all grown here in the USA. The team is based out of Houston, TX with contributors from
+                around the globe, ready to push forward with a dynamic Web 3.0 brand, built to grow for
                 and with our community.</>,
                 <>We believe our success relies on the successes we share together as a community. Our constantly
                 expanding community of VoT Enthusiasts share in our vision of a <i><b>sustainable future</b></i> with the <i><b>ability
@@ -40,7 +40,8 @@ const faq = () => {
                 gear from us.</>,
                 <>We believe sustainability goes beyond what we can provide for nature alone. It is the impact on our
                 environment which includes how we treat ourselves and each other.</>,
-                <><i><b>SUSTAINABILITY is the ABILITY to SUSTAIN,</b></i> and this is a journey which starts from within. We believe
+                <><span style={{textAlign:"center"}}><i><b>SUSTAINABILITY is the ABILITY to SUSTAIN.</b></i></span></>,
+                <>This is a journey which starts from within. We believe
                 that our impact and ability to give can only be as great as the work we put in to own self-care and
                 the balance we maintain in our daily lives.</>,
                 <>We are a community of like-minded indivduals, sharing in our common interests in fashion and style with a
@@ -65,8 +66,8 @@ const faq = () => {
                 locally. The best way to be a part of the community right  now  is to follow our social media
                 accounts, buy our apparel when our first szn drops, and rep our brand.</>,
                 <>You can be an early VoT Enthusiast and create your account with an integrated crypto wallet so
-                you can be ready for our Web 3.0 expansion. We will announce a date in early 2022 and customers
-                with verified wallets added to theiraccounts will receive rewards and airdrops as soon as that
+                you can be ready for our Web 3.0 expansion. We will announce a date in early 2022 and VoT Enthusiasts
+                with verified wallets added to their accounts will receive rewards and airdrops as soon as that
                 date arrives.</>,
                 <>Follow us on our socials to stay updated and be part of the community we're building for and
                 with our fellow enthusiasts.</>,
@@ -77,8 +78,8 @@ const faq = () => {
             "question": "Why will VoT be selling NFT-authenticated apparel and products?",
             "answer": [
                 <>The website will be among the first decentralized web apps to combine digital,
-                blockchain-authentication for physical product sales.</>,
-                <>After our first SZN drop, we will sell our products linked to authentic NFTs for potential
+                blockchain-authentication with physical product sales.</>,
+                <>After our first SZN drop, we will sell our products linked to authenticated NFTs for potential
                 collectors, investors, and VoT Enthusiasts. NFTs are just one amazing example of what Web 3.0 has to
                 offer and will play a major role in the next phase of the decentralized web.</>,
                 <>They are gaining tremendous support from buyers and sellers alike since blockchain technology now
