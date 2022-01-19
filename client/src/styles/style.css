@@ -1983,6 +1983,7 @@ label#upload-label.active:hover::after {
     .index-main,
     .index-aside {
         font-size: 1rem;
+        margin: 0 auto;
     }
        
     .product-grid-image {
