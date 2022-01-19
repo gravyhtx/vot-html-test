@@ -16,10 +16,11 @@ const faq = () => {
                 around the globe, ready to push forward with a dynamic Web 3.0 brand, built to grow for
                 and with our community.</>,
                 <>We believe our success relies on the successes we share together as a community. Our constantly
-                expanding community of VoT Enthusiasts share in our vision of a <i><b>sustainable future</b></i> with the <i><b>ability
-                to sustain.</b></i></>,
+                expanding community of VoT Enthusiasts share in our vision of a <span className="italics"><b>sustainable future</b></span> with
+                the <span className="italics"><b>ability to sustain.</b></span></>,
                 <>We encourage discussion so we thought we'd begin here. And since nobody really frequently has been asking us
-                questions quite yet, we're using this FAQ to ask our community to <i><b>"Frequently Ask Questions"</b></i> with us
+                questions quite yet, we're using this FAQ to ask our community to <span className="italics"><b>"Frequently Ask
+                Questions"</b></span> with us
                 as we grow as a brand and truly discover who we are and what we can be.</>,
                 <>Village of Thousands intends to achieve our collective vision through our brand’s platform and
                 utilize our diversity, creativity, and passion to participate in a more sustainable future.</>
@@ -40,7 +41,7 @@ const faq = () => {
                 gear from us.</>,
                 <>We believe sustainability goes beyond what we can provide for nature alone. It is the impact on our
                 environment which includes how we treat ourselves and each other.</>,
-                <><span style={{textAlign:"center"}}><i><b>SUSTAINABILITY is the ABILITY to SUSTAIN.</b></i></span></>,
+                <><span className="italics"><b>SUSTAINABILITY is the ABILITY to SUSTAIN.</b></span></>,
                 <>This is a journey which starts from within. We believe
                 that our impact and ability to give can only be as great as the work we put in to own self-care and
                 the balance we maintain in our daily lives.</>,
