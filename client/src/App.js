@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './styles/style.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
 import UserLogin from "./pages/UserLogin";
 import UserRegister from "./pages/UserRegister";
@@ -33,7 +34,7 @@ function App() {
     name: process.env.REACT_APP_COMPANY_NAME || "Village of Thousands",
     domain: process.env.REACT_APP_DOMAIN || "villageofthousands.io",
     drop: process.env.REACT_APP_CURRENT_DROP || 1,
-    szn: process.env.REACT_APP_CURRENT_SZN || "Winter 2021",
+    szn: process.env.REACT_APP_CURRENT_SZN || "Winter 2022",
     hCaptchaKey: process.env.REACT_APP_HCAPTCHA_SITE_KEY || "",
     hCaptchaSecret: process.env.REACT_APP_HCAPTCHA_SECRET || ""
   }
@@ -63,6 +64,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Switch>
         {/* ADMIN */}
           <Route path="/admin/login" exact component={() => <AdminLogin website={website} />} />

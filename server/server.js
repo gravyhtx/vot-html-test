@@ -21,7 +21,6 @@ app.use(
 )
 
 mongoose.connect(process.env.REACT_APP_MONGODB_URI || "mongodb://localhost/vot");
-// mongoose.connect("mongodb://localhost/vot");
 
 app.use(routes)
 

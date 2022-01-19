@@ -19,7 +19,7 @@ const Cart = () => {
             <div classname="empty-cart center">
                 <p>Your cart is currently empty.</p>
                 <Link to="/products">
-                <p className="link">VIEW PRODUCTS</p>
+                <p className="link cart-view-products">VIEW PRODUCTS</p>
                 </Link>
             </div>
         </div>

@@ -1,12 +1,20 @@
-import makeBlockie from "ethereum-blockies-base64";
+import BlockiesIdenticon from "./BlockiesIdenticon";
 
-const Blockie = ( address ) => {
-
-    // const container = document.getElementById('b-container')
-    // container.style.backgroundImage = `url(${makeBlockie(address)})`;
-    console.log(makeBlockie(address))
+const Blockie = ( email, wallet, colors ) => {
+    const color0 = colors[0];
+    const color1 = colors[1];
+    const color2 = colors[2];
     return (
-        <div id="b-container"></div>
+        <BlockiesIdenticon
+            className="blockie-nav"
+            opts={{
+                seed: email?wallet:"Claire Richard",
+                color: color0,
+                bgcolor: color1,
+                size: 9,
+                scale: 7,
+                spotcolor: color2
+        }}/>
     )
 }
 

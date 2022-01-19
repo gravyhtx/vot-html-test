@@ -82,7 +82,7 @@ function BlockNumber() {
 function Account() {
   const { account } = useWeb3React()
   const userAccount = account === null? '-': account? account: ''
-  console.log(userAccount)
+  // console.log(userAccount)
 
   const token = Auth.loggedIn() ? Auth.getToken() : null;
 

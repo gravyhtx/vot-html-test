@@ -17,6 +17,11 @@ const Footer = () => {
           <div className="footer-container container-fluid center">
             <div className="links-list disable-highlight" id="links-list">
               <div>
+                <Link to="/">
+                  <span className="footer-link">
+                    HOME
+                  </span>
+                </Link> &emsp;//&emsp;
                 <Link to="/about">
                   <span className="footer-link">
                     ABOUT
@@ -56,7 +61,7 @@ const Footer = () => {
                 </Link>
                 </div>
             </div>
-            <div className="copyright container center">Copyright &copy; 2021-22 // Village of Thousands</div>
+            <div className="copyright container center">Copyright &copy; 2022 // Village of Thousands</div>
             <br/>
           </div>
         </div>

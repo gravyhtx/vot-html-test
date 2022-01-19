@@ -26,7 +26,7 @@ class BlockiesIdenticon extends React.Component {
     blockies.render(this.getOpts(), this.canvas);
   }
   render() {
-    const blockieCanvas = <canvas ref={canvas => this.canvas = canvas} id="blockie-canvas"/>
+    const blockieCanvas = <canvas className='animate__animated animate__fadeIn blockie-canvas' ref={canvas => this.canvas = canvas} id="blockie-canvas"/>
     // const blockieUrl = blockieCanvas.toDataURL();
     // console.log(blockieUrl)
     return (blockieCanvas)

@@ -21,17 +21,14 @@ const Header = () =>  {
 
             const response = await getSingleUser(token);
 
-            console.log(token)
+            // console.log(token)
             if(!response.ok){
                 throw new Error('something went wrong!');
             }
 
             const user = await response.json();
             setUserData(user);
-            
-            // if (userData.walletAddress) {
-            //     notificationBar.classList.remove('hide');
-            // }
+
         } catch (err) {
             console.error(err);
         }
@@ -41,7 +38,7 @@ const Header = () =>  {
     getUserData();
     }, [userDataLength]);
 
-    const getWallet = localStorage.getItem('-walletlink:https://www.walletlink.org:Addresses');
+    // const getWallet = localStorage.getItem('-walletlink:https://www.walletlink.org:Addresses');
 
     let siteName = SiteData.name;
     let abbv = SiteData.abbreviation.toLowerCase();
@@ -75,7 +72,6 @@ const Header = () =>  {
                   alt={siteName ? siteName+" Logo" : "Website Logo"} />
               </div>
             </Link>
-            {/* userData.wallet?<NotificationBar text={notification} link={notificationLink} />:<></> */}
             {userData.walletAddress?<></>
             :<div id="notification-bar"><NotificationBar text={notification} link={notificationLink} /></div>
             }
