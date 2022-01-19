@@ -10,14 +10,17 @@ const faq = () => {
                 <>Village of Thousands is a Web 3.0 ready lifestyle brand rooted in skateboard culture that sells
                 high quality, sustainable NFT-authenticated apparel and products. We’re a true lifestyle brand,
                 offering an opportunity for us all to build a community of thousands.</>,
-                <>VoT was born in Columbia and grown in the USA. The company was founded in 2021 by Juancarlos
+                <>VoT was born in Colombia and grown in the USA. The company began its journey in 2021 lead by Juancarlos
                 Villamil, a lifelong skateboarder, with a commitment to provide the highest quality sustainable
                 apparel and products grown in America. The team is based out of Houston, TX with contributors from
                 around the globe that is ready to push forward with a growing Web 3.0 brand, built to grow with for
                 and with our community.</>,
                 <>We believe our success relies on the successes we share together as a community. Our constantly
-                expanding community of VoT Enthusiasts share in our vision of a sustainable future with the ability
-                to sustain.</>,
+                expanding community of VoT Enthusiasts share in our vision of a <i><b>sustainable future</b></i> with the <i><b>ability
+                to sustain.</b></i></>,
+                <>We encourage discussion so we thought we'd begin here. And since nobody really frequently has been asking us
+                questions quite yet, we're using this FAQ to ask our community to <i><b>"Frequently Ask Questions"</b></i> with us
+                as we grow as a brand and truly discover who we are and what we can be.</>,
                 <>Village of Thousands intends to achieve our collective vision through our brand’s platform and
                 utilize our diversity, creativity, and passion to participate in a more sustainable future.</>
             ]
@@ -35,7 +38,18 @@ const faq = () => {
                 printed here in the USA. Even our packages are made from 100% recyclable materials, so we encourage
                 you to help us in our efforts by recycling or reusing your packages when you receive some fresh new
                 gear from us.</>,
-                <>We believe sustainability is more than </>,
+                <>We believe sustainability goes beyond what we can provide for nature alone. It is the impact on our
+                environment which includes how we treat ourselves and each other.</>,
+                <><i><b>SUSTAINABILITY is the ABILITY to SUSTAIN,</b></i> and this is a journey which starts from within. We believe
+                that our impact and ability to give can only be as great as the work we put in to own self-care and
+                the balance we maintain in our daily lives.</>,
+                <>We are a community of like-minded indivduals, sharing in our common interests in fashion and style with a
+                passion for skateboard culture, offering a platform to share in a collective journey towards a common goal
+                of sustainability. With support from each other we can maintain the physical and mental well being and clarity
+                we seek within to achieve the most positive effect we can offer to the world. We are on an everyday mission to better
+                ourselves and our brand and give back to our community. Positivity breeds positivity so the best investment
+                we can make is in ourselves and our community so that our VoT Enthusiasts will have the means to invest in themselves
+                and their extended communities all around the world.</>,
                 <>Sustainability is our primary core value and one of our biggest ways we can give back as a business.
                 It is also the driving force for every person on our team. We are passionate about our work so when we created
                 Village of Thousands the one thing we all knew for certain
@@ -69,7 +83,14 @@ const faq = () => {
                 offer and will play a major role in the next phase of the decentralized web.</>,
                 <>They are gaining tremendous support from buyers and sellers alike since blockchain technology now
                 allows for creators to publish digital works that are uniquely identifiable, have verified ownership,
-                and are created to be scarce in order to hold value just like any other physical collectible.</>,
+                and are created to be scarce in order to hold value just like any other physical collectible. By
+                combining this technology with each product we sell, collector value of each item is increased with
+                authentication in the form of unique digital art.</>,
+                <>VoT has a team of designers and programmers that are working together to bring our Village of
+                Thousands to life. We're giving as much attention, customization, and care to our digital brand
+                as we are with our physical product line. Our NFTs will be prgramatically genrated works of
+                varying pieces of digital art. We are currently writing code and making art for some really
+                exciting projects with endless creation possibilities that we cannot wait to share!</>,
                 <>Our website will be fully Web 3.0 integrated in early 2022 when we will have a full line of both
                 physical and digital blockchain-integrated products as well as our community crypto-token, VOT,
                 available to the public.</>
@@ -83,7 +104,7 @@ const faq = () => {
                 technologies that are strong barriers to accessing your sensitive data from being collected by
                 large, centralized corporations.</>,
                 <>The State of the DApps, a curated list of over 1320 decentralized apps, defines decentralized
-                applications as "applications which run on a P2P network of computers, instead of one computer. They
+                apps as "...applications which run on a P2P network of computers, instead of one computer. They
                 are considered to be a form of software program designed to function on the internet without being
                 controlled by a single entity. DApps can have front-end code and user interfaces written in any
                 language, just like a traditional application, which can make calls to its backend."</>
@@ -98,10 +119,11 @@ const faq = () => {
                 offering our products for purchase with credit and debit cards through Stripe and we will make
                 announcements with plenty of time for our VoT Enthusiasts to download the tools and get non-custodial
                 wallets to participate in the exciting opportunity and ever-changing landscape Web 3.0 provides.</>,
-                <>This site is hosted on IPFS so all of the site data you see is brought to you by the blockchain
-                (bet you didn’t even realize it!). We will be continually upgrading and updating the website and
-                adding on any other necessary services and choosing the ones that are most in alignment with our
-                ethos.</>,
+                <>We will be continually upgrading and updating the website and hand selecting any other additional
+                web services and choosing the ones that are most in alignment with our ethos. This site is built by
+                by our developers, line-by-line, in order to provide a sustainable decentralized platform for the
+                future of our brand. This takes a bit more work than click-and-drag websites, but we are able to
+                carefully select every service we use and organically grow with Web 3.0 without restriction.</>,
                 <>Village of Thousands also has our very own, <a className='link underline'
                 href='https://ethereum.org/en/developers/docs/standards/tokens/erc-20/' target="_blank"
                 rel="noreferrer">ERC-20</a> token, VOT, ready for distribution in 2022 alongside our full Web 3.0
@@ -115,7 +137,8 @@ const faq = () => {
                 <>We have already set up our website to store your wallet address for quick, easy, and secure
                 checkout using “browser injection”. Injection uses your in-browser wallet in order to verify that we
                 have a correct address to send and receive assets so that you don’t need to worry about incorrectly
-                inputting in an invalid address. One of the biggest barriers for some people with sending and
+                inputting in an invalid address.</>,
+                <>One of the biggest barriers for some people with sending and
                 receiving crypto is that if the wallet address you send to does not match the address of the
                 receiving wallet then the cryptocurrency or other digital crypto asset being sent may become
                 permanently irretrievable. We have eliminated this issue with using injection so if you wish to make
