@@ -35,7 +35,6 @@ const UserLoginCollapsible = () =>  {
                 </Collapsible>
                 </div>
                 <div className="center-text italics"><RandomQuote className="center-text login-zen" type="zen" /></div>
-                <br/>
             </div>
             <NavDesktop />
             <Footer />
