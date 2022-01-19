@@ -691,7 +691,7 @@ h2 {
 @media only screen and (max-width: 570px) {
     .text-container {
         margin: 40px 0;
-        padding: 15px;
+        padding: 10px;
     }
     .text-container.padding { padding: 5px 20px; }
     .text-container_header {
@@ -1974,6 +1974,10 @@ label#upload-label.active:hover::after {
     .index-section {
         padding: 5px 10px;
         font-size: var(--theme-font-size);
+    }
+
+    .index-main {
+        width: 95%;
     }
     
     .index-main,
