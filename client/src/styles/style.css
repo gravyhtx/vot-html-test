@@ -2068,7 +2068,8 @@ label#upload-label.active:hover::after {
 
     .faq-collapsible .collapsible .collapsible-body {
         font-size: var(--theme-font-size);
-        padding: 2rem;
+        padding: 1rem;
+        text-align: justify;
     }
 
     .faq-image {
