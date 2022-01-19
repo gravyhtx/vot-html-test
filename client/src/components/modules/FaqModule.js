@@ -47,10 +47,11 @@ const faq = () => {
                 <>We are a community of like-minded indivduals, sharing in our common interests in fashion and style with a
                 passion for skateboard culture, offering a platform to share in a collective journey towards a common goal
                 of sustainability. With support from each other we can maintain the physical and mental well being and clarity
-                we seek within to achieve the most positive effect we can offer to the world. We are on an everyday mission to better
-                ourselves and our brand and give back to our community. Positivity breeds positivity so the best investment
-                we can make is in ourselves and our community so that our VoT Enthusiasts will have the means to invest in themselves
-                and their extended communities all around the world.</>,
+                we seek within to achieve the most positive effect we can offer to the world.</>,
+                <>We are on an everyday mission to better ourselves and our brand and give back to our community.
+                Positivity breeds positivity so the best investment we can make is in ourselves and our community so
+                that our VoT Enthusiasts will have the means to invest in themselves and their extended communities
+                all around the world.</>,
                 <>Sustainability is our primary core value and one of our biggest ways we can give back as a business.
                 It is also the driving force for every person on our team. We are passionate about our work so when we created
                 Village of Thousands the one thing we all knew for certain
