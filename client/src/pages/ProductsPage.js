@@ -36,7 +36,7 @@ const ProductsPage = ({ website }) =>  {
             digital NFTs and completely integrating our website onto the blockchain by Spring 2022. For our upcoming Winter drop we will
             be offering multiple payment options until we are completely on-chain.
             </p><p>If you’d like to be notified for our release then create an account with us today and follow us on Instagram and
-            Twitter so we can keep you updated. Sign up with your crypto wallet to prepare for our full Web3 release in 2022. We will
+            Twitter so we can keep you updated. Sign up with your crypto wallet to prepare for our full Web 3.0 release in 2022. We will
             be airdropping some rewards and a round of limited edition NFTs but you will need a verified wallet for us to send your
             digital swag so make sure to complete your registration if you want to be among the first VOT Enthusiasts.
             </p>

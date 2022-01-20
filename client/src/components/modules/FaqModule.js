@@ -31,7 +31,7 @@ const faq = () => {
             "answer": [
                 <>Village of Thousands is committed to using the best sustainability and fair trade practices from
                 our products to our packaging to our website. We do our homework and find vendors and materials
-                that align with the company’s values to ensure that we can live up to our "GROWN IN THE USA" standards.
+                that align with the company’s values to ensure that we can live up to our "<u>GROWN IN THE USA</u>" standards.
                 Our goal is to maintain complete transparency and control over our supply chain with fair
                 pay wages for anyone that participates in manufacture, design, and development.</>,
                 <>Our garments are made from 100% organic Supima® cotton from farms in the USA and manufactured by
@@ -159,7 +159,7 @@ const faq = () => {
                 <>There are a few apps you will need to download to be ready for Web 3.0 changes across the whole
                 internet. Before you get started though, the first tools you need are a pen and paper.</>,
                 <>Most Web 3.0 services use a BIP39 Mnemonic Code which is a series of words unique to your account
-                which you CAN NOT LOSE or you will lose your entire account and all assets associated with it if
+                which you <u>CAN NOT LOSE</u> or you will lose your entire account and all assets associated with it if
                 you happen to lose your password and do not have the mnemonic available for recovery.</>,
                 <>Security is the top priority of blockchain services so be sure to document every account you make
                 and save that information in a safe place. Thanks to emerging Web 3.0 tech there is no way to hack
