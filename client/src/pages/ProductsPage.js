@@ -109,27 +109,26 @@ const ProductsPage = ({ website }) =>  {
                 </div>
                 
             </div>
-                <div className="row product-aside box-container">
-                    <div className="product-aside-image col m12 l6">
-                        <ImageContainer
-                            containerClasses={img1.containerClasses}
-                            imgClasses={img1.imgClasses}
-                            description={img1.description}
-                            src={Image1}
-                        />
-                    </div>
-                    <div className="col m12 l6">
-                        <TextContainer
-                            containerClasses={aside.containerClasses}
-                            text={aside.p1}
-                            textClasses={aside.textClasses}
-                        />
-                        <br/>
-                        <br/>
-                        <SocialCircles containerClasses="products-page-socials" />
-                    </div>
+            <div className="row product-aside box-container">
+                <div className="product-aside-image col m12 l6">
+                    <ImageContainer
+                        containerClasses={img1.containerClasses}
+                        imgClasses={img1.imgClasses}
+                        description={img1.description}
+                        src={Image1}
+                    />
                 </div>
-                <br/>
+                <div className="col m12 l6">
+                    <TextContainer
+                        containerClasses={aside.containerClasses}
+                        text={aside.p1}
+                        textClasses={aside.textClasses}
+                    />
+                    <br/>
+                    <br/>
+                    <SocialCircles containerClasses="products-page-socials" />
+                </div>
+            </div>
 
             <NavDesktop />
             <Footer />
