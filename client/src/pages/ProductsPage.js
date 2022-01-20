@@ -32,14 +32,13 @@ const ProductsPage = ({ website }) =>  {
         p1: <>
             <p>We are currently preparing for our first SZN, and will be dropping the first wave of product online in January 2022. We will
             be featuring our VoT Logo on <b>100% organic <span className="italics">Supima®</span> cotton</b> apparel with all of our
-            materials Grown in the USA.
+            materials GROWN IN THE USA.
             </p><p>We believe in  a crypto future so are preparing for the Web 3.0 movement by selling our physical products with collectible
             digital NFTs and completely integrating our website onto the blockchain by Spring 2022. For our upcoming Winter drop we will
             be offering multiple payment options until we are completely on-chain.
             </p><p>If you’d like to be notified for our release then <Link className="link weight-6 underline" to="/register">create
             an account</Link> with us today and follow us on Instagram and Twitter so we can keep you updated. Sign up with
-            your crypto wallet to prepare for our full Web 3.0 release in 2022.</p>
-            <p>We will be airdropping some rewards and our first
+            your crypto wallet to prepare for our full Web 3.0 release in 2022. We will be airdropping some rewards and our first
             collection of limited edition NFTs but you will need a verified wallet for us to send your
             digital swag so make sure to complete your registration if you want to be among the first VoT Enthusiasts.
             </p>
@@ -110,7 +109,7 @@ const ProductsPage = ({ website }) =>  {
                 </div>
                 
             </div>
-                <div className="row product-aside">
+                <div className="row product-aside box-container">
                     <div className="product-aside-image col m12 l6">
                         <ImageContainer
                             containerClasses={img1.containerClasses}

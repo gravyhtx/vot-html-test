@@ -1331,7 +1331,7 @@ label#upload-label.active:hover::after {
 }
 
 .learn-more {
-    font-size: var(--theme-font-size-lg) !important;
+    /* font-size: var(--theme-font-size-lg) !important; */
 }
 
 .product-aside-image {

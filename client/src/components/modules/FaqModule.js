@@ -31,7 +31,7 @@ const faq = () => {
             "answer": [
                 <>Village of Thousands is committed to using the best sustainability and fair trade practices from
                 our products to our packaging to our website. We do our homework and find vendors and materials
-                that align with the company’s values to ensure that we can live up to our "<u>GROWN IN THE USA</u>" standards.
+                that align with the company’s values to ensure that we can live up to our <b>GROWN IN THE USA</b> standards.
                 Our goal is to maintain complete transparency and control over our supply chain with fair
                 pay wages for anyone that participates in manufacture, design, and development.</>,
                 <>Our garments are made from <b>100% organic <span className="italics">Supima®</span> cotton</b> from
