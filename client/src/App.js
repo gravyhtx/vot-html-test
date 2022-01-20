@@ -93,7 +93,7 @@ function App() {
             <Redirect to="/" />
           </Route> */}
         {/* 404 */}
-          <Route path="*" element={PageNotFound} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
     </div>
