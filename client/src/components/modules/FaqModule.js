@@ -181,7 +181,7 @@ const faq = () => {
                 of installing Google Chrome Extensions and built for privacy. Instead of seeing ads everywhere on
                 websites, you can choose to view Brave sponsored ads which will pop up on occasion and you will
                 earn rewards in their native BAT token which has steadily been gaining traction and attention.
-                We are pulling for Brave to become the next leading browser and we hope you will look into it and
+                Brave is the leading Web 3.0 browser for a good reason and we hope you will look into it and
                 give it a try so you can see why.</>,
                 <>Brave is available for <a className='link underline' href='https://brave.com/download/'
                 target="_blank" rel="noreferrer">download</a> on computers and mobile devices and allows for
