@@ -138,7 +138,7 @@ const faq = () => {
                 rel="noreferrer">Brave Browser</a>. We are already in development of our NFT-authenticated products
                 and will be airdropping rewards as VOT token and limited runs of NFTs.</>,
                 <>We have already set up our website to store your wallet address for quick, easy, and secure
-                checkout using secure “browser injection”. Injection uses your in-browser wallet in order to verify that we
+                checkout using “browser injection”. Injection uses your in-browser wallet in order to verify that we
                 have a correct address to send and receive assets so that you don’t need to worry about incorrectly
                 inputting in an invalid address.</>,
                 <>One of the biggest barriers for some people with sending and
