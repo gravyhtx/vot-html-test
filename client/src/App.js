@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './styles/style.css';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
 import UserLogin from "./pages/UserLogin";
@@ -65,36 +65,36 @@ function App() {
     <div className="App">
       <Router>
         <ScrollToTop />
-        <Switch>
+        <Routes>
         {/* ADMIN */}
-          <Route path="/admin/login" exact component={() => <AdminLogin website={website} />} />
-          <Route path="/admin/dashboard" exact component={() => <AdminDashboard website={website} />} />
-          <Route path="/admin/orders" exact component={() => <AdminOrderPage website={website} />} />
-          <Route path="/admin/drop" exact component={() => <AdminCreateDrop website={website} />} />
-          {/* <Route path="/admin/send-email" exact component={() => <SendEmail website={website} />} /> */}
+          <Route path="/admin/login" exact element={<AdminLogin website={website} />} />
+          <Route path="/admin/dashboard" exact element={<AdminDashboard website={website} />} />
+          <Route path="/admin/orders" exact element={<AdminOrderPage website={website} />} />
+          <Route path="/admin/drop" exact element={<AdminCreateDrop website={website} />} />
+          {/* <Route path="/admin/send-email" exact element={<SendEmail website={website} />} /> */}
         {/* USERS */}
-          <Route path="/login" exact component={() => <UserLogin website={website} />} />
-          <Route path="/register" exact component={() => <UserRegister website={website} />} />
-          <Route path="/signup-1" exact component={() => <UserMnemonic website={website} />} />
-          <Route path="/signup-2" exact component={() => <UserRegistration website={website} />} />
-          <Route path="/account" exact component={() => <Account website={website} />} />
-          <Route path="/recover-password" exact component={() => <UserRecoverPassword website={website} />} />
+          <Route path="/login" exact element={<UserLogin website={website} />} />
+          <Route path="/register" exact element={<UserRegister website={website} />} />
+          <Route path="/signup-1" exact element={<UserMnemonic website={website} />} />
+          <Route path="/signup-2" exact element={<UserRegistration website={website} />} />
+          <Route path="/account" exact element={<Account website={website} />} />
+          <Route path="/recover-password" exact element={<UserRecoverPassword website={website} />} />
         {/* SITE */}
-          <Route path="/" exact component={() => <Home website={website} />} />
-          <Route path="/products" exact component={() => <ProductsPage website={website} />} />
-          {/* <Route path="/about" exact component={() => <About website={website} />} /> */}
-          <Route path="/faq" exact component={() => <Faq website={website} />} />
-          <Route path="/faq/active" exact component={() => <FaqActive website={website} />} />
-          <Route path="/shipping" exact component={() => <FaqActive website={website} />} />
+          <Route path="/" exact element={<Home website={website} />} />
+          <Route path="/products" exact element={<ProductsPage website={website} />} />
+          {/* <Route path="/about" exact element={<About website={website} />} /> */}
+          <Route path="/faq" exact element={<Faq website={website} />} />
+          <Route path="/faq/active" exact element={<FaqActive website={website} />} />
+          <Route path="/shipping" exact element={<FaqActive website={website} />} />
         {/* CART/CHECKOUT */}
-          <Route path="/cart" exact component={() => <Cart website={website} />} />
+          <Route path="/cart" exact element={<Cart website={website} />} />
         {/* QR */}
-          <Route exact path="/qr">
+          {/* <Route exact path="/qr">
             <Redirect to="/" />
-          </Route>
+          </Route> */}
         {/* 404 */}
-          <Route path="*" component={PageNotFound} />
-        </Switch>
+          <Route path="*" element={PageNotFound} />
+        </Routes>
       </Router>
     </div>
   );

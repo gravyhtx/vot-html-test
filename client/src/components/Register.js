@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TextInput, Button } from 'react-materialize';
 
 import { createUser } from '../utils/API';
@@ -9,6 +9,7 @@ const Register = () =>  {
 
     const [userFormData, setUserFormData] = useState({ email: '', password: '', mnemonic: ''});
     const [validated] = useState(false);
+    let navigate = useNavigate();
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -17,6 +18,7 @@ const Register = () =>  {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        event.stopPropagation();
 
         const form = event.currentTarget;
         if(form.checkValidity() === false) {
@@ -32,8 +34,9 @@ const Register = () =>  {
             }
 
             const { token, user } = await response.json();
-            console.log(user);
+            // console.log(user);
             Auth.login(token);
+            navigate('/signup-1', {replace: true})
         } catch (err) {
             console.error(err);
         }
@@ -44,7 +47,8 @@ const Register = () =>  {
             mnemonic: 'false'
         })
 
-        window.location.assign('/signup-1');
+        // need use History
+        // window.location.assign('/signup-1');
     }
 
     return (
@@ -73,19 +77,14 @@ const Register = () =>  {
                     value={userFormData.password} />
             </div>
             <div className="center-text">
-                <Link to="/complete-signup">
                     <Button
                         node="button"
-                        style={{
-                            marginRight: '5px'
-                        }}
                         waves="light"
                         className="login-btn"
                         onClick={handleFormSubmit}
                     >
                         Create Account
                     </Button>
-                </Link>
             </div>
         </>
     )      

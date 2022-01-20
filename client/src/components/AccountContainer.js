@@ -29,7 +29,7 @@ const AccountContainer = () => {
                 const response = await getSingleUser(token);
 
                 if(!response.ok){
-                    throw new Error('something went wrong!');
+                    // throw new Error('something went wrong!');
                 }
 
                 const user = await response.json();

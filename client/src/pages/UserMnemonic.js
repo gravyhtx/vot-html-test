@@ -94,7 +94,7 @@ const UserMnemonic = () => {
                     if (!response.ok) {
                         throw new Error('something went wrong!');
                     } else {
-                        window.location.assign('/signup-2');
+                        // window.location.assign('/signup-2');
                     }
 
                 });
