@@ -34,7 +34,8 @@ const faq = () => {
                 that align with the company’s values to ensure that we can live up to our "<u>GROWN IN THE USA</u>" standards.
                 Our goal is to maintain complete transparency and control over our supply chain with fair
                 pay wages for anyone that participates in manufacture, design, and development.</>,
-                <>Our garments are made from 100% organic Supima® cotton from farms in the USA and manufactured by
+                <>Our garments are made from <b>100% organic <span className="italics">Supima®</span> cotton</b> from
+                farms in the USA and manufactured by
                 a vendor that is ISO certified at every step of the process. The designs and tagless stamps are all
                 printed here in the USA. Even our packages are made from 100% recyclable materials, so we encourage
                 you to help us in our efforts by recycling or reusing your packages when you receive some fresh new

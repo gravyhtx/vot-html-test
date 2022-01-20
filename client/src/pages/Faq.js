@@ -1,5 +1,6 @@
 import React from "react";
 import { Collapsible,  CollapsibleItem } from "react-materialize";
+import ScrollToEl from "../components/ScrollToEl";
 
 import Header from "../components/Header";
 import NavDesktop from "../components/NavDesktop";
@@ -17,20 +18,24 @@ import Cartas from "../images/art/cartas.png";
 const Faq = () => {
     const questions = Questions()
     const checkId = window.location.hash ? window.location.hash.substring(1) : "";
+    const qId = Number(checkId-1);
+
+    if (checkId) {
+        ScrollToEl(("scrollToEl-"+qId),150);
+    }
 
     // GET 'ETH' + 'BTC' PRICES //
     // CryptoConverter(40);
     // UPDATE COIN PRICES //
     // setInterval(() => {CryptoConverter(40)}, 15000);
 
-    // useEffect needed for "scrollIntoView({ behavior: 'smooth' })"
     const question = () => {
         return (
             questions.map((q, index) =>
                 <CollapsibleItem
-                    expanded={false}
-                    className={checkId === index ? "active" : ""}
-                    id={"header-"+index}
+                    expanded={qId === index ? true:false}
+                    className={qId === index ? "active" : ""}
+                    id={"scrollToEl-"+index}
                     header={
                         <div className="faq-question-header" key={"q-"+index}>
                             <span className="faq-number">{(index+1) < 10 ? ("00"+(index+1)+"//") : ("0"+(index+1)+"//")}&emsp;</span>

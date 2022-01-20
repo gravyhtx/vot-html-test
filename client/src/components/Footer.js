@@ -22,28 +22,23 @@ const Footer = () => {
                     HOME
                   </span>
                 </Link> &emsp;//&emsp;
-                <Link to="/about">
+                <Link to="/faq#1">
                   <span className="footer-link">
                     ABOUT
                   </span>
                 </Link> &emsp;//&emsp;
-                <Link to="/terms">
-                  <span className="footer-link">
-                    TERMS OF SERVICE
-                  </span>
-                </Link>&emsp;//&emsp;
                 <Link to="/shipping">
                   <span className="footer-link">
                     SHIPPING
                   </span>
-                </Link>
-              </div>
-              <div>
+                </Link> &emsp;//&emsp;
                 <Link to="/returns">
                   <span className="footer-link">
                     RETURNS
                   </span>
-                </Link>&emsp;//&emsp;
+                </Link>
+              </div>
+              <div>
                 <Link to="/news">
                   <span className="footer-link">
                     NEWS
@@ -54,7 +49,7 @@ const Footer = () => {
                     FAQ
                   </span>
                 </Link>&emsp;//&emsp;
-                <Link to="/contact">
+                <Link to="/faq#3">
                   <span className="footer-link">
                     CONTACT US
                   </span>
