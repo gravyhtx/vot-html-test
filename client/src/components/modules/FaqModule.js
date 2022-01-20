@@ -202,8 +202,8 @@ const faq = () => {
                 be well worth your time.</>,
                 <>Finally, <a className='link underline'
                 href='https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en'
-                target="_blank" rel="noreferrer">install the Chrome Extension for MetaMask</a> and enter your Secret
-                Recovery Phrase given to you on signup of MetaMask.</>,
+                target="_blank" rel="noreferrer">install the Chrome Extension for MetaMask</a> on your computer
+                and enter your Secret Recovery Phrase given to you on signup of MetaMask.</>,
                 <>That’s the basic setup. There are many options to consider but this is the method we recommend
                 for ease of use. Coinbase Wallet is another non-custodial wallet that will be capable of purchasing
                 and storing NFTs in 2022 as well so if you already have Coinbase then by all means use Coinbase
