@@ -36,7 +36,7 @@ const Register = () =>  {
             const { token, user } = await response.json();
             // console.log(user);
             Auth.login(token);
-            navigate('/signup-1', {replace: true})
+            navigate('/signup-1')
         } catch (err) {
             console.error(err);
         }
@@ -48,7 +48,7 @@ const Register = () =>  {
         })
 
         // need use History
-        // window.location.assign('/signup-1');
+        // window.location.assign('/#/signup-1');
     }
 
     return (
