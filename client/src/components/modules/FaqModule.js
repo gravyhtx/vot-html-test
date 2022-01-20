@@ -122,7 +122,7 @@ const faq = () => {
                 offering our products for purchase with credit and debit cards through Stripe and we will make
                 announcements with plenty of time for our VoT Enthusiasts to download the tools and get non-custodial
                 wallets to participate in the exciting opportunity and ever-changing landscape Web 3.0 provides.</>,
-                <>We will be continually upgrading and updating the website and hand selecting any other additional
+                <>We will be continually upgrading and updating the website as well as hand selecting any other additional
                 web services and choosing the ones that are most in alignment with our ethos. This site is built by
                 by our developers, line-by-line, in order to provide a sustainable decentralized platform for the
                 future of our brand. This takes a bit more work than click-and-drag websites, but we are able to
@@ -138,7 +138,7 @@ const faq = () => {
                 rel="noreferrer">Brave Browser</a>. We are already in development of our NFT-authenticated products
                 and will be airdropping rewards as VOT token and limited runs of NFTs.</>,
                 <>We have already set up our website to store your wallet address for quick, easy, and secure
-                checkout using “browser injection”. Injection uses your in-browser wallet in order to verify that we
+                checkout using secure “browser injection”. Injection uses your in-browser wallet in order to verify that we
                 have a correct address to send and receive assets so that you don’t need to worry about incorrectly
                 inputting in an invalid address.</>,
                 <>One of the biggest barriers for some people with sending and
@@ -146,7 +146,7 @@ const faq = () => {
                 receiving wallet then the cryptocurrency or other digital crypto asset being sent may become
                 permanently irretrievable. We have eliminated this issue with using injection so if you wish to make
                 purchases on our website and receive crypto rewards in the future then please follow the procedures
-                outlined in the next question regarding the tools and services needed for any Web 3.0 site.</>,
+                outlined in the next section regarding the tools and services needed for any Web 3.0 site.</>,
                 <>Our source code is online in a publicly accessible  <a className='link underline'
                 href='https://github.com/gravyhtx/village-of-thousands' target="_blank" rel="noreferrer">Github
                 repository</a>. If you are a Web 3.0 dev, or aspiring dev, feel free to follow along with our updates

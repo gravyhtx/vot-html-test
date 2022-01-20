@@ -74,7 +74,7 @@ const ProductsPage = ({ website }) =>  {
     //     console.log('active')
     // }
     // else (console.log('not active'))
-    const e = () => console.log("event")
+    // const e = () => console.log("event")
 
     return (
         <div className="products-page-container">
@@ -84,7 +84,8 @@ const ProductsPage = ({ website }) =>  {
 
             <div className="row products-page-content box-container animate__animated animate__fadeIn">
                 <h1 className='products-header center gravy-font'>Welcome to our {website.szn} collection.</h1>
-                <div className='scroll-box' onChange={e()}>
+                {/* <div className='scroll-box' onChange={e()}> */}
+                <div className='scroll-box'>
                 <TextContainer
                     containerClasses={main.containerClasses}
                     header={main.h1}
