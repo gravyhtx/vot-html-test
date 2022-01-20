@@ -31,14 +31,14 @@ const ProductsPage = ({ website }) =>  {
         // h1: `Welcome to our ${website.szn} collection.`,
         p1: <>
             <p>We are currently preparing for our first szn, and will be dropping the first wave of product online in January 2022. We will
-            be featuring our VOT logo on 100% Supima cotton apparel with all of our materials Grown in the USA.
+            be featuring our VoT Logo on 100% Supima cotton apparel with all of our materials Grown in the USA.
             </p><p>We believe in  a crypto future so are preparing for the Web 3.0 movement by selling our physical products with collectible
             digital NFTs and completely integrating our website onto the blockchain by Spring 2022. For our upcoming Winter drop we will
             be offering multiple payment options until we are completely on-chain.
             </p><p>If you’d like to be notified for our release then create an account with us today and follow us on Instagram and
             Twitter so we can keep you updated. Sign up with your crypto wallet to prepare for our full Web 3.0 release in 2022. We will
             be airdropping some rewards and a round of limited edition NFTs but you will need a verified wallet for us to send your
-            digital swag so make sure to complete your registration if you want to be among the first VOT Enthusiasts.
+            digital swag so make sure to complete your registration if you want to be among the first VoT Enthusiasts.
             </p>
         </>
     }
@@ -48,7 +48,7 @@ const ProductsPage = ({ website }) =>  {
         textClasses: "big learn-more",
         p1: <p>To learn more about our Village of Thousands and get updates on our Web 3.0 release, head over to
         our "<Link className="link underline" to="/faq">Frequently Ask Questions</Link>" page. 
-        You can start your journey as a VOT Enthusiast by creating an account and following us on our socials.
+        You can start your journey as a VoT Enthusiast by creating an account and following us on our socials.
         We look forward to having you grow with us.</p>
     }
 
