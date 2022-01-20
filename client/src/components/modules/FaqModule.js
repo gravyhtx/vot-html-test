@@ -50,7 +50,7 @@ const faq = () => {
                 of sustainability. With support from each other we can maintain the physical and mental well being and clarity
                 we seek within to achieve the most positive effect we can offer to the world.</>,
                 <>We are on an everyday mission to better ourselves and our brand and give back to our community.
-                Positivity breeds positivity so the best investment we can make is in ourselves and our community so
+                Positivity breeds positivity so the best investments we can make are in ourselves and our community so
                 that our VoT Enthusiasts will have the means to invest in themselves and their extended communities
                 all around the world.</>,
                 <>Sustainability is our primary core value and one of our biggest ways we can give back as a business.
