@@ -118,7 +118,7 @@ const faq = () => {
             "answer": [
                 <>Our developers and designers are working together to prepare for a full Web 3.0 release in 2022.
                 This means that all of our online services will be built on blockchain and using cryptocurrency for
-                all online purchases. We realize that our world is still catching up to Web 3.0 so we are currently
+                all online purchases. We realize that our world is still catching up to Web 3.0 so we will be
                 offering our products for purchase with credit and debit cards through Stripe and we will make
                 announcements with plenty of time for our VoT Enthusiasts to download the tools and get non-custodial
                 wallets to participate in the exciting opportunity and ever-changing landscape Web 3.0 provides.</>,
