@@ -64,7 +64,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <ScrollToTop />
+      <ScrollToTop />
         <Routes>
         {/* ADMIN */}
           <Route path="/admin/login" exact element={<AdminLogin website={website} />} />
