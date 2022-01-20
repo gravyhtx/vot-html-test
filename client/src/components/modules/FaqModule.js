@@ -166,8 +166,8 @@ const faq = () => {
                 into your accounts without the password and/or mnemonic so I’d say this is a fair tradeoff. While it
                 may not be required to write the info on pen and paper, this method is the only sure way to have
                 complete control over your security since the only way to access your wallet is with the mnemonic
-                "seed phrase" and/or password and storing it on your device opens you up to the (still very small)
-                possibility of data being exposed.</>,
+                "seed phrase" and/or password and storing it on your device opens you up to the possibility of
+                data being exposed.</>,
                 <>Some services also authorize access with digital identity apps instead of or alongside the mnemonic
                 as well. <a className='link underline' href='https://global.id/' target="_blank"
                 rel="noreferrer">GlobaliD</a> is the most commonly used service for this so we highly recommend you
