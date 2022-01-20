@@ -31,8 +31,8 @@ const faq = () => {
             "answer": [
                 <>Village of Thousands is committed to using the best sustainability and fair trade practices from
                 our products to our packaging to our website. We do our homework and find vendors and materials
-                that align with the company’s values to ensure that we can live up to our “GROWN IN THE USA”
-                standards. Our goal is to maintain complete transparency and control over our supply chain with fair
+                that align with the company’s values to ensure that we can live up to our "GROWN IN THE USA" standards.
+                Our goal is to maintain complete transparency and control over our supply chain with fair
                 pay wages for anyone that participates in manufacture, design, and development.</>,
                 <>Our garments are made from 100% organic Supima® cotton from farms in the USA and manufactured by
                 a vendor that is ISO certified at every step of the process. The designs and tagless stamps are all
@@ -62,17 +62,17 @@ const faq = () => {
             ]
         },
         {
-            "question": "How can I become part of the community of VoT enthusiasts?",
+            "question": "How can I become part of the community of VoT Enthusiasts?",
             "answer": [
                 <>We are currently growing and developing our brand while building our community both online and
                 locally. The best way to be a part of the community right  now  is to follow our social media
-                accounts, buy our apparel when our first szn drops, and rep our brand.</>,
+                accounts, buy our apparel when our first SZN drops, and rep our brand.</>,
                 <>You can be an early VoT Enthusiast and create your account with an integrated crypto wallet so
                 you can be ready for our Web 3.0 expansion. We will announce a date in early 2022 and VoT Enthusiasts
                 with verified wallets added to their accounts will receive rewards and airdrops as soon as that
                 date arrives.</>,
                 <>Follow us on our socials to stay updated and be part of the community we're building for and
-                with our fellow enthusiasts.</>,
+                with our fellow Enthusiasts.</>,
                 <SocialCircles />
             ]
         },
@@ -91,7 +91,7 @@ const faq = () => {
                 authentication in the form of unique digital art.</>,
                 <>VoT has a team of designers and programmers that are working together to bring our Village of
                 Thousands to life. We're giving as much attention, customization, and care to our digital brand
-                as we are with our physical product line. Our NFTs will be prgramatically genrated works of
+                as we are with our physical product line. Our NFTs will be programatically genrated works of
                 varying pieces of digital art. We are currently writing code and making art for some really
                 exciting projects with endless creation possibilities that we cannot wait to share!</>,
                 <>Our website will be fully Web 3.0 integrated in early 2022 when we will have a full line of both
@@ -243,7 +243,7 @@ const faq = () => {
                 NFTs.</>,
                 <>The most popular app for easily obtaining and getting access to a non-custodial wallet
                 is <a className='link underline' href='https://metamask.io/download' target="_blank"
-                rel="noreferrer">MetaMask.</a></>,
+                rel="noreferrer">MetaMask</a>.</>,
                 <span className="container italics">
                     “MetaMask is a software cryptocurrency wallet used to interact with the Ethereum blockchain.
                     It allows users to access their Ethereum wallet through a browser extension or mobile app,
