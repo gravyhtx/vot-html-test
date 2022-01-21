@@ -163,7 +163,7 @@ const faq = () => {
                 which you <u>MUST NOT LOSE</u> or you will lose your entire account and all assets associated with it if
                 you happen to lose your password and do not have the mnemonic available for recovery.</>,
                 <>Security is the top priority of blockchain services so be sure to document every account you make
-                and save that information in a safe place. Thanks to emerging Web 3.0 tech there is no way to hack
+                and save that information in a safe place. Thanks to emerging Web 3.0 tech there is virtually no way to hack
                 into your accounts without the password and/or mnemonic so I’d say this is a fair tradeoff. While it
                 may not be required to write the info on pen and paper, this method is the only sure way to have
                 complete control over your security since the only way to access your wallet is with the mnemonic
