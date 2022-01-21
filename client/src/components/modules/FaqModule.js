@@ -191,8 +191,8 @@ const faq = () => {
                 className='link underline' href='https://metamask.io/' target="_blank"
                 rel="noreferrer">MetaMask</a>. This is where your pen and paper are absolutely needed because
                 you will be instructed to write down your mnemonic. It can be useful to have a couple backups
-                of your account info but if you choose to save the info we recommend that you save it separately
-                on an external flash drive as a screenshot or in a text file.</>,
+                of your account info but if you choose to save the info digitally we recommend that you store it
+                locally and/or separately on an external flash drive as a screenshot or in a text file.</>,
                 <>MetaMask is a Web 3.0 account manager in a browser extension which, as Brave Browser’s website
                 states, provides a “bridge to explore and handle decentralized applications (Dapps) from a web
                 browser.”</>,
