@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TextInput, Button } from 'react-materialize';
 
 import { loginUser } from '../utils/API';
@@ -17,6 +17,7 @@ const Login = () =>  {
     }
 
     const handleFormSubmit = async (event) => {
+        let navigate = useNavigate()
         event.preventDefault();
 
         const form = event.currentTarget;
@@ -35,6 +36,7 @@ const Login = () =>  {
             const { token, user } = await response.json();
             console.log(user);
             Auth.login(token);
+            navigate('/')
         } catch (err) {
             console.error(err);
         }

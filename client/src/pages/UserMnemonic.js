@@ -4,13 +4,14 @@ import Footer from '../components/Footer';
 import NavDesktop from "../components/NavDesktop";
 import NavMobile from "../components/NavMobile";
 import Mnemonic from "../components/Mnemonic";
-
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Checkbox } from "react-materialize";
 
 import { updateUser, getSingleUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 const UserMnemonic = () => {
+    let navigate = useNavigate()
 
     // Get User Data
     const [userData, setUserData] = useState({});
@@ -22,7 +23,7 @@ const UserMnemonic = () => {
                 const token = Auth.loggedIn() ? Auth.getToken() : null;
 
                 if ((token && userData.email && userData.mnemonic) || !token) {
-                    window.location.assign('/login');
+                    navigate('/')
                     return false
                 }
 
@@ -104,7 +105,7 @@ const UserMnemonic = () => {
             console.error(err);
         }
 
-        window.location.assign('/signup-2');
+        navigate('/signup-2')
     }
 
     const ErrorMessage = () => {
