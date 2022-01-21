@@ -194,7 +194,7 @@ const faq = () => {
                 of your account info but if you choose to save the info digitally we recommend that you store it
                 locally and/or separately on an external flash drive as a screenshot or in a text file.</>,
                 <>MetaMask is a Web 3.0 account manager in a browser extension which, as Brave Browser’s website
-                states, provides a “bridge to explore and handle decentralized applications (Dapps) from a web
+                states, provides a “bridge to explore and handle decentralized applications (DApps) from a web
                 browser.”</>,
                 <><a className='link underline' href='https://metamask.io/download' target="_blank"
                 rel="noreferrer">Download MetaMask</a> and follow all instructions carefully while documenting all
