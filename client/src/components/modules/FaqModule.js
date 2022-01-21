@@ -160,7 +160,7 @@ const faq = () => {
                 <>There are a few apps you will need to download to be ready for Web 3.0 changes across the whole
                 internet. Before you get started though, the first tools you need are a pen and paper.</>,
                 <>Most Web 3.0 services use a BIP39 Mnemonic Code which is a series of words unique to your account
-                which you <u>CAN NOT LOSE</u> or you will lose your entire account and all assets associated with it if
+                which you <u>MUST NOT LOSE</u> or you will lose your entire account and all assets associated with it if
                 you happen to lose your password and do not have the mnemonic available for recovery.</>,
                 <>Security is the top priority of blockchain services so be sure to document every account you make
                 and save that information in a safe place. Thanks to emerging Web 3.0 tech there is no way to hack

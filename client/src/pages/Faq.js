@@ -38,7 +38,7 @@ const Faq = () => {
                     id={"scrollToEl-"+index}
                     
                     header={
-                        <div onClick={ScrollToEl(("scrollToEl-"+qId),150)} className="faq-question-header" key={"q-"+index}>
+                        <div onClick={ScrollToEl(("scrollToEl-"+index),200)} className="faq-question-header" key={"q-"+index}>
                             <span className="faq-number">{(index+1) < 10 ? ("00"+(index+1)+"//") : ("0"+(index+1)+"//")}&emsp;</span>
                             {q.question}
                         </div>}
