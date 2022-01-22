@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import NavDesktop from "../components/NavDesktop";
 import NavMobile from "../components/NavMobile";
 import Mnemonic from "../components/Mnemonic";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button, Checkbox } from "react-materialize";
 
 import { updateUser, getSingleUser } from '../utils/API';
@@ -45,7 +45,7 @@ const UserMnemonic = () => {
     }, [userDataLength]);
 
     // Add Seed Phrase Hex
-    const [userFormData, setUserFormData] = useState({ email: '', password: '', mnemonic: '', completeRegistration: false });
+    // const [userFormData, setUserFormData] = useState({ email: '', password: '', mnemonic: '', completeRegistration: false });
     const m = new Mnemonic(96)
     const hex = m.toHex()
     let seedHex = hex;

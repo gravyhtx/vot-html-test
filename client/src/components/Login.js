@@ -8,7 +8,7 @@ import Auth from '../utils/auth';
 const Login = () =>  {
     const [userFormData, setUserFormData] = useState({ email: '', password: '' });
     //validation requirement
-    const [validated] = useState(false);
+    // const [validated] = useState(false);
     let navigate = useNavigate()
 
     // console.log(Auth.loggedIn())

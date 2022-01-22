@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 // import { Button } from "react-materialize";
 import AddressForm from "./AddressForm";
 import Auth from '../utils/auth';
@@ -12,53 +12,10 @@ import Avatar from "../images/icons/vot_avatar.svg";
 import SvgContainer from "../components/SvgContainer";
 
 const AccountContainer = () => {
-    
-    const [userData, setUserData] = useState({});
-    const userDataLength = Object.keys(userData).length;
-    
-    useEffect(() => {
-        const getUserData = async () => {
-            try {
-                const token = Auth.loggedIn() ? Auth.getToken() : null;
-                // console.log(token)
-                if(!token) {
-                    window.location.assign('/login');
-                    return false
-                }
 
-                const response = await getSingleUser(token);
-
-                if(!response.ok){
-                    // throw new Error('something went wrong!');
-                }
-
-                const user = await response.json();
-                // console.log(user)
-                setUserData(user);
-            } catch (err) {
-                console.error(err);
-            }
-        };
-
-        getUserData();
-        // console.log(userData);
-    }, [userDataLength]);
-    // var canvas = userData.walletAddress?blockie:<></>
-    // var blockieCanvas = document.getElementById('blockie-canvas');
-    // const blockieUrl = blockieCanvas.toDataURL()
-    // console.log(blockieUrl);
-    // const dataURL = () => {
-    //     let url = blockieCanvas.toDataURL()
-    //     return(url)
-    // }
-    // const blockiePng = document.write('<img src="'+dataURL+'"/>');
-    // console.log(dataURL);
-    // var dataURL = canvas.toDataURL();
-    // console.log(dataURL);
-    // const blockie = document.write('<img src="'+img+'"/>');
     const getWallet = localStorage.getItem('-walletlink:https://www.walletlink.org:Addresses');
-    const wallet = userData.walletAddress;
-    const email = userData.email;
+    // const wallet = userData.walletAddress;
+    // const email = userData.email;
 
     const getColors = localStorage.getItem('blockie-color');
     const setColors = (n) => localStorage.setItem('blockie-color', n);
@@ -115,26 +72,86 @@ const AccountContainer = () => {
             scheme++;
             setColors(scheme);
             console.log(scheme);
-            // color1 = "#3b4954";
-            // color2 = "#7FCCE4"
-            // color3 = "#111111"
         } else if (scheme > 1) {
             scheme = 0;
             setColors(scheme);
             console.log(scheme);
-            // color1 = "#7FCCE4";
-            // color2 = "#111111";
-            // color3 = "#3b4954";
         } else {
             scheme++;
             setColors(scheme);
             console.log(scheme);
-            // color1 = "#111111";
-            // color2 = "#3b4954";
-            // color3 = "#7FCCE4";
         }
         window.location.reload();
     }
+    const [ avatar, setAvatar ] = useState(<></>)
+    let AccountAvatar = () => {return avatar}
+    const Blockie = () => {
+        return (
+        <BlockiesIdenticon
+            onClick={setScheme}
+            className="blockie-nav"
+            opts={{
+                seed: getWallet?getWallet:"Claire Richard",
+                color: color1,
+                bgcolor: color2,
+                size: 9,
+                scale: 7,
+                spotcolor: color3
+        }}/>)
+    }
+    const Logo = () => {return (<SvgContainer src={Avatar} classes="no-avatar" />)}
+    const [userData, setUserData] = useState([]);
+    const userDataLength = Object.keys(userData).length;
+    
+    useEffect(() => {
+        const getUserData = async () => {
+            try {
+                const token = Auth.loggedIn() ? Auth.getToken() : null;
+                // console.log(token)
+                if(!token) {
+                    window.location.assign('/login');
+                    return false
+                }
+
+                const response = await getSingleUser(token);
+
+                // const response = await loadAwait(token);
+
+                if(!response.ok){
+                    // throw new Error('something went wrong!');
+                }
+
+                const user = await response.json();
+                // console.log(user)
+                setUserData(user);
+                if (user.walletAddress) {
+                    setAvatar(Blockie);
+                } else {
+                    setAvatar(Logo);
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        getUserData();
+        // console.log(userData);
+    }, [userDataLength]);
+    // var canvas = userData.walletAddress?blockie:<></>
+    // var blockieCanvas = document.getElementById('blockie-canvas');
+    // const blockieUrl = blockieCanvas.toDataURL()
+    // console.log(blockieUrl);
+    // const dataURL = () => {
+    //     let url = blockieCanvas.toDataURL()
+    //     return(url)
+    // }
+    // const blockiePng = document.write('<img src="'+dataURL+'"/>');
+    // console.log(dataURL);
+    // var dataURL = canvas.toDataURL();
+    // console.log(dataURL);
+    // const blockie = document.write('<img src="'+img+'"/>');
+    
+
     // console.log(userData.walletAddress,"data")
     // console.log(getWallet,"local")
 
@@ -145,34 +162,13 @@ const AccountContainer = () => {
     //     console.log(output);
     // }
 
-    // blockieSeed(email, wallet)
-    // console.log(email);
-
-    // const
-    // const blockie = <BlockiesIdenticon className="blockie-nav" opts={{seed: userData.walletAddress?userData.walletAddress:"Claire Richard"}}/>
-    const blockie = <BlockiesIdenticon
-                        onClick={setScheme}
-                        className="blockie-nav"
-                        opts={{
-                            seed: getWallet?getWallet:"Claire Richard",
-                            color: color1,
-                            bgcolor: color2,
-                            size: 9,
-                            scale: 7,
-                            spotcolor: color3
-                    }}/>
-
     return (
         <>
         <div className="account-container animate__animated animate__fadeIn" id="account-container">
         <div className="account-info-container" id="account-info-container">
             <br/>
-            <div className="blockie-container animate__animated animate__fadeIn">
-                {userData.walletAddress
-                ?<>
-                {blockie}
-                </>
-                :<SvgContainer src={Avatar} classes="no-avatar" />}
+            <div className="blockie-container">
+            <AccountAvatar/>
             </div>
             {userData.walletAddress
             ?<Button

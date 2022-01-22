@@ -164,7 +164,7 @@ const AddressForm = () => {
                 />
             </div>
             <br/>
-            {!userData.complete
+            {window.location.pathname === "/signup-2"
             ?<div className='user-register-finish'>
             <Button
                 node="button"
@@ -175,14 +175,13 @@ const AddressForm = () => {
                 className="account-wallet-btn"
                 onClick={handleFormSubmit}
             >
-                {userData.completed?"ADD ADDRESS":"COMPLETE REGISTRATION"}
+                {"COMPLETE REGISTRATION"}
             </Button>
             </div>
             :<div className='user-address-edit'>
             <Button
                 node="button"
                 style={{
-                    marginRight: '5px',
                     width: '250px'
                 }}
                 waves="light"

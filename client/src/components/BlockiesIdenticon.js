@@ -16,7 +16,7 @@ class BlockiesIdenticon extends React.Component {
       bgcolor: this.props.opts.bgcolor || "#3b4954",
       size: this.props.opts.size || 10,
       scale: this.props.opts.scale || 8,
-      spotcolor: this.props.opts.spotcolor || "#7FCCE4"
+      spotcolor: this.props.opts.spotcolor || "#7FCCE4",
     };
   }
   componentDidMount() {
@@ -26,7 +26,7 @@ class BlockiesIdenticon extends React.Component {
     blockies.render(this.getOpts(), this.canvas);
   }
   render() {
-    const blockieCanvas = <canvas className='animate__animated animate__fadeIn blockie-canvas' ref={canvas => this.canvas = canvas} id="blockie-canvas"/>
+    const blockieCanvas = <div className='blockie-box animate__animated animate__fadeIn'><canvas className='blockie-canvas' ref={canvas => this.canvas = canvas} id="blockie-canvas"/></div>
     // const blockieUrl = blockieCanvas.toDataURL();
     // console.log(blockieUrl)
     return (blockieCanvas)

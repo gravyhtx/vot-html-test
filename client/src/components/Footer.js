@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 // make array to loop for "links-list"
 const Footer = () => {
 
-    const links = [
-      ["home", "products", "faq", "cart"],
-      ["login", ""]
-    ]
-    const siteMap = {
+    // const links = [
+    //   ["home", "products", "faq", "cart"],
+    //   ["login", ""]
+    // ]
+    // const siteMap = {
 
-    }
+    // }
     return (
       <div className="footer animate__animated animate__fadeIn">
         <div className="page-footer" id="online">
@@ -32,9 +32,9 @@ const Footer = () => {
                     SHIPPING
                   </span>
                 </Link> &emsp;//&emsp;
-                <Link to="/returns">
+                <Link to="/products">
                   <span className="footer-link">
-                    RETURNS
+                    PRODUCTS
                   </span>
                 </Link>
               </div>

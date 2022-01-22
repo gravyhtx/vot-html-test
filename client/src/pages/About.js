@@ -1,13 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import NavDesktop from "../components/NavDesktop";
 import NavMobile from "../components/NavMobile";
-import RandomQuote from "../components/modules/RandomQuote";
-import ImageContainer from "../components/ImageContainer";
-
-import Pixels from "../images/art/choose_your_vot.png"
+// import RandomQuote from "../components/modules/RandomQuote";
+// import ImageContainer from "../components/ImageContainer";
 
 const About = () => {
     return (

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import './styles/style.css';
-import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
 import UserLogin from "./pages/UserLogin";
@@ -12,10 +13,10 @@ import UserRecoverPassword from "./pages/UserRecoverPassword";
 
 import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
-import About from "./pages/About";
+// import About from "./pages/About";
 import Faq from "./pages/Faq";
 import FaqActive from "./pages/FaqActive";
-import Policy from "./pages/Policy";
+// import Policy from "./pages/Policy";
 import Cart from "./pages/Cart";
 
 import PageNotFound from "./pages/404"
@@ -38,28 +39,6 @@ function App() {
     hCaptchaKey: process.env.REACT_APP_HCAPTCHA_SITE_KEY || "",
     hCaptchaSecret: process.env.REACT_APP_HCAPTCHA_SECRET || ""
   }
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
-
-  document.onload = scrollToTop()
-
-  // document.addEventListener('load', scrollToTop());
-  // var rootElement = document.documentElement
-  // function handleScroll() {
-  //   var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
-  //   if ((rootElement.scrollTop / scrollTotal ) > 0.80 ) {
-  //   // Show button
-  //     scrollToTopBtn.classList.add("showBtn")
-  //   } else {
-  //     // Hide button
-  //     scrollToTopBtn.classList.remove("showBtn")
-  //   }
-  // }
-  
 
   return (
     <div className="App">

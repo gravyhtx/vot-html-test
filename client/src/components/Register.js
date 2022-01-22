@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { TextInput, Button } from 'react-materialize';
 
 import { createUser } from '../utils/API';
@@ -8,7 +8,7 @@ import Auth from '../utils/auth';
 const Register = () =>  {
 
     const [userFormData, setUserFormData] = useState({ email: '', password: '', mnemonic: ''});
-    const [validated] = useState(false);
+    // const [validated] = useState(false);
     let navigate = useNavigate();
 
     const handleInputChange = (event) => {

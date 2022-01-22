@@ -16,7 +16,7 @@ import Cartas from "../images/art/cartas.png";
 
 const Faq = () => {
     const questions = Questions()
-    const checkId = window.location.hash ? window.location.hash.substring(1) : "";
+    // const checkId = window.location.hash ? window.location.hash.substring(1) : "";
 
     // GET 'ETH' + 'BTC' PRICES //
     // CryptoConverter(40);

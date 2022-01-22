@@ -1,20 +1,30 @@
-import React from 'react';
+import { useState } from "react";
 
-const TextContainer = ( { containerClasses, containerId, header, headerClasses, headerId, text, textId, textClasses, border } ) => {
-    let cClass="";
-    if(containerClasses){
-        cClass=" "+containerClasses;
+const TextContainer = ( { containerClasses, containerId, header, headerClasses, headerId, text, textId, textClasses, border, fnClick, fnChange } ) => {
+    let cClass = containerClasses ? " "+containerClasses : "";
+    let cId = containerId ? containerId : 'text-container';
+    let hClass = headerClasses ? " "+headerClasses  : "";
+    let tClass= textClasses ? " "+textClasses: "";
+
+    const scrollbox = document.getElementById(cId);
+
+    const [focus, setFocus] = useState(false);
+
+    const setActivate = () =>  {
+        console.log("CLICK");
+        console.log(scrollbox)
+        // scrollbox.classList.add('reverse');
     }
-    let hClass="";
-    if(headerClasses){
-        hClass=" "+headerClasses;
+    const setBlur = () =>  {
+        // scrollbox.classList.remove('reverse');
     }
-    let tClass="";
-    if(textClasses){
-        tClass=" "+textClasses;
-    }
+
     return (
-        <div className={border ? "text-container borders"+cClass : "text-container"+cClass} id={containerId?containerId:"text-container"}>
+        <div
+        onClick={fnClick?fnClick:setActivate}
+        onBlur={setBlur}
+        className={border ? "text-container borders"+cClass : "text-container"+cClass}
+        id={cId}>
             {header ? <header className={"text-container_header"+hClass} id={headerId?headerId:"text-container-header"}>{header}</header> : ""}
             {text ? <div className={"text-container_text"+tClass} id={textId?textId:"text-container-text"}>{text}</div> : ""}
         </div>

@@ -11,24 +11,23 @@ const BackToTop = () => {
       }
       
     function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-    
-    useEffect(() => {
-        function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-        }
-    
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-    
-    return windowDimensions;
+        const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+        
+        useEffect(() => {
+            function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+            }
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }, []);
+        
+        return windowDimensions;
     }
 
     console.log(useWindowDimensions());
 
     const rootElement = document.documentElement;
-    var scrollToTopBtn = document.getElementById("back-to-top");
+    // var scrollToTopBtn = document.getElementById("back-to-top");
     const scrollToTop = () => {
         rootElement.scrollTo({
             top: 0,
@@ -44,8 +43,8 @@ const BackToTop = () => {
         //     // Hide button
         //     scrollToTopBtn.classList.remove("back-to-top top-hide");
         // }
-        const el = document.getElementById("back-to-top");
-        var y = window.scrollY;
+        // const el = document.getElementById("back-to-top");
+        // var y = window.scrollY;
         // if (y >= 500) {
         //     el.className = "back-to-top top-show"
         // } else {

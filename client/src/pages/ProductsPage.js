@@ -60,14 +60,6 @@ const ProductsPage = ({ website }) =>  {
         description: "",
     }
 
-    const scrollbox = document.getElementById('scroll-container');
-    let active = false;
-
-    const setActivate = () =>  {
-        scrollbox.classList.add('reverse');
-        active = true;
-    }
-
     // scrollbox.addEventListener('click', active?setActivate():console.log("Cannot activate listener."))
 
     // var sideBar = document.getElementById('sidebar');

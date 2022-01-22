@@ -1,5 +1,3 @@
-import Mnemonic from "../components/Mnemonic";
-
 const UploadFile = ( data, success, instructions, instructionsClasses, containerClasses, inputClasses, labelClasses, fileNameClasses ) => {
 
     let active = false;

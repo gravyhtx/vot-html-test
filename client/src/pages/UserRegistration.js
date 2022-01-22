@@ -1,20 +1,20 @@
 // import React, {useState} from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button } from 'react-materialize';
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import NavMobile from "../components/NavMobile";
 import NavDesktop from "../components/NavDesktop";
 import AddressForm from '../components/AddressForm';
-import CompleteUserRegistration from '../components/CompleteUserRegistration';
+// import CompleteUserRegistration from '../components/CompleteUserRegistration';
 import Web3Wallet from '../components/Web3Wallet';
 
 import Auth from '../utils/auth';
 import {getSingleUser} from '../utils/API';
 
 const UserRegistration = () => {
-    let navigate = useNavigate()
+    
+    let navigate = useNavigate();
 
     const [userData, setUserData] = useState({});
     const userDataLength = Object.keys(userData).length;

@@ -36,14 +36,13 @@ const Faq = () => {
                     expanded={qId === index ? true:false}
                     className={qId === index ? "active" : ""}
                     id={"scrollToEl-"+index}
-                    
                     header={
-                        <div onClick={ScrollToEl(("scrollToEl-"+index),200)} className="faq-question-header" key={"q-"+index}>
+                        <div onChange={"./faq#"+index} className="faq-question-header" key={"q-"+index}>
                             <span className="faq-number">{(index+1) < 10 ? ("00"+(index+1)+"//") : ("0"+(index+1)+"//")}&emsp;</span>
                             {q.question}
                         </div>}
                     key={index}>
-                        <div>
+                        <div onChange={ScrollToEl(("scrollToEl-"+index),200)}>
                             {q.answer.map((a, index) => <div className="faq-answer p-style" key={index}>{a}</div>)}
                         </div>
                 </CollapsibleItem>
