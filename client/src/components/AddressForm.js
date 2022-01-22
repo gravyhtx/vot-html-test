@@ -3,12 +3,14 @@ import { TextInput } from 'react-materialize';
 import { Button } from 'react-materialize';
 // import Web3Wallet from './Web3Wallet';
 import Auth from '../utils/auth';
+import { Link, useNavigate } from 'react-router-dom';
 import { updateUser, getSingleUser } from '../utils/API';
 
 const AddressForm = () => {
     // Get User Data
     const [userData, setUserData] = useState({});
     const userDataLength = Object.keys(userData).length;
+    let navigate = useNavigate();
 
     useEffect(() => {
     const getUserData = async () => {
@@ -71,7 +73,7 @@ const AddressForm = () => {
         const token = Auth.loggedIn() ? Auth.getToken() : null;
 
         if (!token) {
-            window.location.assign('/404');
+            navigate('/404');
             return false;
         }
 
@@ -103,7 +105,7 @@ const AddressForm = () => {
             // completed: true
         })
 
-        window.location.assign('/');
+        navigate('/');
     }
 
     return (

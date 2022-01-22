@@ -36,7 +36,7 @@ const UserRegistration = () => {
 
                 const user = await response.json();
                 setUserData(user);
-                navigate('/')
+                // navigate('/')
             } catch (err) {
                 console.error(err);
             }

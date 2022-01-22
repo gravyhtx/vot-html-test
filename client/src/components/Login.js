@@ -7,7 +7,9 @@ import Auth from '../utils/auth';
 
 const Login = () =>  {
     const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+    //validation requirement
     const [validated] = useState(false);
+    let navigate = useNavigate()
 
     // console.log(Auth.loggedIn())
 
@@ -17,7 +19,6 @@ const Login = () =>  {
     }
 
     const handleFormSubmit = async (event) => {
-        let navigate = useNavigate()
         event.preventDefault();
 
         const form = event.currentTarget;
