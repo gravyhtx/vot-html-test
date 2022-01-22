@@ -9,7 +9,7 @@ import { getSingleUser } from '../utils/API';
 const Header = () =>  {
   
 
-    let notificationBar = document.getElementById('notification-bar')
+    // let notificationBar = document.getElementById('notification-bar')
     // Get User Data
     const [userData, setUserData] = useState({});
     const userDataLength = Object.keys(userData).length;

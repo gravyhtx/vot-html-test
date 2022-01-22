@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const SvgContainer = ( { margins, src, link, color, width, description, container, classes, id, styles, draggable } ) => {
     let svgContainer="";
     if(container){svgContainer=" "+container;}

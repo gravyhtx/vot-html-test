@@ -91,7 +91,7 @@ const AccountContainer = () => {
             onClick={setScheme}
             className="blockie-nav"
             opts={{
-                seed: getWallet?getWallet:"Claire Richard",
+                seed: !getWallet?getWallet:"Claire Richard",
                 color: color1,
                 bgcolor: color2,
                 size: 9,
@@ -101,7 +101,7 @@ const AccountContainer = () => {
     }
     const Logo = () => {return (<SvgContainer src={Avatar} classes="no-avatar" />)}
     const [userData, setUserData] = useState([]);
-    const userDataLength = Object.keys(userData).length;
+    // const userDataLength = Object.keys(userData).length;
     
     useEffect(() => {
         const getUserData = async () => {
@@ -136,7 +136,8 @@ const AccountContainer = () => {
 
         getUserData();
         // console.log(userData);
-    }, [userDataLength]);
+    // }, [userDataLength]);
+    }, []);
     // var canvas = userData.walletAddress?blockie:<></>
     // var blockieCanvas = document.getElementById('blockie-canvas');
     // const blockieUrl = blockieCanvas.toDataURL()
@@ -175,11 +176,11 @@ const AccountContainer = () => {
                 node="button"
                 className="blockie-colors not-a-button monospace"
                 onClick={setScheme}>
-                [CHANGE COLORS]
+                <span className="blockie-colors-text">[CHANGE COLORS]</span>
             </Button>
             :<></>}
             <div className="account-info-name">{(userData.first_name && userData.last_name)?userData.first_name+" "+userData.last_name:""}</div>
-            <div className="account-info-email">{userData.email}</div>
+            <div className="account-info-email"><span className="account-info-email_text">{userData.email}</span></div>
         </div>
         <div className="account-wallet">
         <Web3Wallet />

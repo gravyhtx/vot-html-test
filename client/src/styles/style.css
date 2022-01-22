@@ -1612,6 +1612,7 @@ label#upload-label.active:hover::after {
 }
 
 .account-wallet .wallet-info {
+    cursor: default;
     color: var(--theme-disabled-color);
 }
 
@@ -1644,13 +1645,13 @@ label#upload-label.active:hover::after {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0 auto;
-    border: 3px solid #33333375;
+    border: 3px solid #33333333;
     animation: blockiePulse 3s infinite alternate ease-in-out;
 }
 
 @keyframes blockiePulse {
-    from {box-shadow: -2px -2px 50px #2c5c8aad;}
-    to {box-shadow: -2px -2px 50px #488dbbad;}
+    from {box-shadow: -2px -2px 50px #1e578dad;}
+    to {box-shadow: -2px -2px 50px #3b90c2ad;}
 }
 @keyframes avatarBorder {
     from {border: 4px solid #7fcce488;}
@@ -1671,8 +1672,8 @@ label#upload-label.active:hover::after {
 }
 
 .blockie-colors:hover {
-    text-shadow: 0 0 10px var(--theme-secondary-light-color);
-    color: var(--theme-disabled-color);
+    text-shadow: 0 0 10px #777777;
+    color: #cccccc;
     /* color: white; */
     font-size: var(--theme-font-size-xxs);
     background-color: #7fcce410;
@@ -1682,6 +1683,10 @@ label#upload-label.active:hover::after {
     height: 23px;
     -webkit-transition: .3s ease-out;
     transition: .3s ease-out;
+}
+.blockie-colors-text:hover {
+    -webkit-animation: flicker 3s infinite;
+    animation: flicker 3s infinite;
 }
 
 .no-avatar {
@@ -1709,10 +1714,17 @@ label#upload-label.active:hover::after {
 .account-email {
     color: var(--theme-secondary-light-color);
 }
+
 .account-info-email {
     font-size: var(--theme-font-size-md);
     margin-top: 10px;
     text-shadow: 0 0 8px var(--theme-disabled-color);
+}
+
+.account-info-email_text:hover {
+    -webkit-animation: flicker 3s infinite;
+    animation: flicker 3s infinite;
+    cursor: default;
 }
 
 .account-logout {
@@ -2350,6 +2362,29 @@ label#upload-label.active:hover::after {
     
     @-ms-keyframes fadeIn {
         0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+    @keyframes flicker {
+        0% {opacity:1;}
+        7% {opacity:0.91;}
+        13% {opacity:0.88;}
+        18% {opacity:1;}
+        23% {opacity:0.93;}
+        33% {opacity:1}
+        37% {opacity:0.91;}
+        46% {opacity:0.83;}
+        50% {opacity:1;}
+        56% {opacity:0.97;}
+        64% {opacity:1;}
+        69% {opacity:0.87;}
+        74% {opacity:1}
+        76% {opacity:0.91;}
+        81% {opacity:0.88;}
+        88% {opacity:0.87;}
+        91% {opacity:1;}
+        92% {opacity:0.87;}
+        97% {opacity:0.93;}
         100% {opacity:1;}
     }
 

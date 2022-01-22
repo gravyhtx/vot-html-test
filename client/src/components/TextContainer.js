@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 const TextContainer = ( { containerClasses, containerId, header, headerClasses, headerId, text, textId, textClasses, border, fnClick, fnChange } ) => {
     let cClass = containerClasses ? " "+containerClasses : "";
@@ -6,13 +6,11 @@ const TextContainer = ( { containerClasses, containerId, header, headerClasses, 
     let hClass = headerClasses ? " "+headerClasses  : "";
     let tClass= textClasses ? " "+textClasses: "";
 
-    const scrollbox = document.getElementById(cId);
+    // const scrollbox = document.getElementById(cId);
 
-    const [focus, setFocus] = useState(false);
+    // const [focus, setFocus] = useState(false);
 
     const setActivate = () =>  {
-        console.log("CLICK");
-        console.log(scrollbox)
         // scrollbox.classList.add('reverse');
     }
     const setBlur = () =>  {

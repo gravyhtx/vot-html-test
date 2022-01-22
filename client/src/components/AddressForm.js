@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { TextInput } from 'react-materialize';
 import { Button } from 'react-materialize';
 // import Web3Wallet from './Web3Wallet';
 import Auth from '../utils/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { updateUser, getSingleUser } from '../utils/API';
 
 const AddressForm = () => {
@@ -106,6 +106,7 @@ const AddressForm = () => {
         })
 
         navigate('/');
+
     }
 
     return (
@@ -114,11 +115,12 @@ const AddressForm = () => {
             <div className="register-input-container" id="user-register-container">
             <div className="user-register-address-header">ADDRESS</div>
                 <TextInput
-                    className="input-field" 
+                    className="input-field"
                     id="user-register-address1_input"
                     aria-labelledby="user-register-address"
                     name="addressOne"
                     placeholder='Address Line 1'
+                    // placeholder={userData.addressOne?userData.addressOne:'Address Line 1'}
                     onChange={handleInputChange}
                     // value={userData.addressOne?userData.addressOne:''}
                 />
@@ -129,6 +131,7 @@ const AddressForm = () => {
                     aria-labelledby="user-register-address"
                     name="addressTwo"
                     placeholder='Address Line 2'
+                    // placeholder={userData.addressTwo?userData.addressTwo:'Address Line 2'}
                     onChange={handleInputChange}
                     // value={userData.addressTwo?userData.addressTwo:''}
                 />
@@ -139,6 +142,7 @@ const AddressForm = () => {
                     aria-labelledby="user-register-address"
                     name="city"
                     placeholder='City'
+                    // placeholder={userData.city?userData.city:'City'}
                     onChange={handleInputChange}
                     // value={userData.city?userData.city:''}
                 />
@@ -149,6 +153,7 @@ const AddressForm = () => {
                     aria-labelledby="user-register-address"
                     name="state"
                     placeholder='State'
+                    // placeholder={userData.state?userData.state:'State'}
                     onChange={handleInputChange}
                     // value={userData.state?userData.state:''}
                 />
@@ -159,6 +164,7 @@ const AddressForm = () => {
                     aria-labelledby="user-register-address"
                     name="zip"
                     placeholder='Zip Code'
+                    // placeholder={userData.zip?userData.zip:'Zip Code'}
                     onChange={handleInputChange}
                     // value={userData.zip?userData.zip:''}
                 />
