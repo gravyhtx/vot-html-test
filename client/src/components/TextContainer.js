@@ -1,5 +1,7 @@
 // import { useState } from "react";
 
+import { reverse } from "dns";
+
 const TextContainer = ( { containerClasses, containerId, header, headerClasses, headerId, text, textId, textClasses, border, fnClick, fnChange } ) => {
     let cClass = containerClasses ? " "+containerClasses : "";
     let cId = containerId ? containerId : 'text-container';
@@ -39,8 +41,8 @@ const TextContainer = ( { containerClasses, containerId, header, headerClasses, 
 //    Box: padding, margin
 
 // BORDERS
-//    FX: shadow glow
-//    thick, dark, shadow, glow
+//    FX: thick, dark, shadow, glow
+//    reverse
 
 // HEADER:
 //    dark, light, big, small, thick, thin, glow
