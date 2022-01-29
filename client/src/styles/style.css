@@ -541,13 +541,13 @@ button, button:active, button:focus { font-family: var(--font-alt-sans); outline
 /////////////
 */
 
-h1 {
+h1, .h1 {
     font-size: var(--theme-font-size-xl);
     font-weight: 500;
     padding: 10px 0;
     color: var(--theme-header-color);
 }
-h2 {
+h2, .h2 {
     font-size: var(--theme-font-size-lg);
 }
 .header {
@@ -1000,8 +1000,8 @@ button.btn-floating.navigation-link:focus {
 .logout-btn:hover,
 .account-wallet-btn:hover,
 .theme-btn:hover {
-    -webkit-transition: 1s ease-in-out;
-    transition: 800ms ease-in-out;
+    -webkit-transition: 750ms ease-in-out;
+    transition: 750ms ease-in-out;
     background-color: #3b495425;
     border: 2px solid var(--theme-secondary-dark-color);
     box-shadow: 0 0 15px #7fcce433;
@@ -1644,6 +1644,7 @@ label#upload-label.active:hover::after {
     margin: 0 auto;
     -webkit-transition: 1s ease;
     transition: 1s ease;
+    -webkit-animation: avatarBorder 2s infinite alternate linear;
     animation: avatarBorder 2s infinite alternate linear;
     border-radius: 100px;
     /* background: var(--theme-gradient); */
@@ -1655,7 +1656,8 @@ label#upload-label.active:hover::after {
     cursor: none;
     -webkit-transition: 1s ease;
     transition: 1s ease;
-    animation: avatarBorderLighter 150ms infinite alternate linear;
+    -webkit-animation: avatarBorderLighter 250ms infinite alternate linear;
+    animation: avatarBorderLighter 250ms infinite alternate linear;
 }
 
 .blockie-box {
@@ -1677,19 +1679,21 @@ label#upload-label.active:hover::after {
     border: 3px solid #33333333;
     -webkit-transition: 1s ease;
     transition: 1s ease;
-    animation: blockiePulse 15s infinite alternate ease-in-out;
+    -webkit-animation: blockiePulse 16s infinite alternate ease-in-out;
+    animation: blockiePulse 16s infinite alternate ease-in-out;
 }
 
 .blockie-canvas:hover {
     cursor: none;
     -webkit-transition: 1s ease;
     transition: 1s ease;
-    animation: blockiePulse 400ms infinite alternate ease-in-out;
+    -webkit-animation: blockiePulse 250ms infinite alternate ease-in-out;
+    animation: blockiePulse 250ms infinite alternate ease-in-out;
 }
 
 .blockie-container:hover {
-    -webkit-transition: 1s ease;
-    transition: 1s ease;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
     background: #1c1c1c;
 }
 
