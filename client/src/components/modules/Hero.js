@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../images/vot_banner-pipe.png"
+import banner from "../../images/vot_banner.png"
 
 function Hero() {
   return (

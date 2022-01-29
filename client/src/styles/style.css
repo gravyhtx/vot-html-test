@@ -793,19 +793,24 @@ h2 {
     box-shadow: 3px 3px 0 #7fcce4;
     background: var(--dark-gradient);
 }
+
 .collapsible-header .login-header {
     font-size: var(--theme-font-size-xl);
     font-weight: 500;
 }
+
 li.active .collapsible-header {
     color: var(--theme-primary-light-color);
     /* font-size: var(--theme-font-size-xl); */
     /* font-size: var(--responsive-font-size-xxl); */
     text-shadow: 0 0 20px #ffffff50;
 }
-.collapsible-header {
+
+.collapsible-header,
+.collapsible-header:focus-visible,
+.collapsible-header:active {
     justify-content: center;
-    background-color: black;
+    background-color: black !important;
     padding: .75rem 2rem;
     color: var(--button-bg-disabled);
     cursor: default;
@@ -995,6 +1000,8 @@ button.btn-floating.navigation-link:focus {
 .logout-btn:hover,
 .account-wallet-btn:hover,
 .theme-btn:hover {
+    -webkit-transition: 1s ease-in-out;
+    transition: 800ms ease-in-out;
     background-color: #3b495425;
     border: 2px solid var(--theme-secondary-dark-color);
     box-shadow: 0 0 15px #7fcce433;
@@ -1030,9 +1037,8 @@ button.btn-floating.navigation-link:focus {
 }
 
 .forgot-password-link:hover,
-.forgot-password-link:active,
-.forgot-password-link:focus {
-    color: var(--theme-secondary-light-color);
+.forgot-password-link::selection {
+    color: #a0a0a0;
     text-shadow: 2px 2px 2px black;
 }
 
@@ -1302,6 +1308,21 @@ label#upload-label.active:hover::after {
 
 .index-aside {
     font-size: var(--theme-font-size-md);
+}
+
+.index_mobile-container {
+    margin: 0 auto;
+    font-size: var(--theme-font-size);
+    font-weight: 300;
+    padding: 10px 0;
+    /* max-width: 90vw; */
+}
+
+.index_mobile-box {
+    margin: 20px 0;
+    padding: 20px;
+    border: 5px solid #222222;
+    background-color: #111111;
 }
 
 .home-zen {
@@ -1621,12 +1642,19 @@ label#upload-label.active:hover::after {
     width: 140px;
     height: 140px;
     margin: 0 auto;
-    /* padding: 31px; */
-    /* border: 4px solid #7fcce4aa; */
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
     animation: avatarBorder 2s infinite alternate linear;
     border-radius: 100px;
-    background: var(--theme-gradient);
+    /* background: var(--theme-gradient); */
+    background-color: #111111;
     box-shadow: 0px 0px 10px black;
+}
+
+.blockie-container:hover {
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+    animation: avatarBorderLighter 150ms infinite alternate linear;
 }
 
 .blockie-box {
@@ -1646,15 +1674,40 @@ label#upload-label.active:hover::after {
     transform: translate(-50%, -50%);
     margin: 0 auto;
     border: 3px solid #33333333;
-    animation: blockiePulse 3s infinite alternate ease-in-out;
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+    animation: blockiePulse 15s infinite alternate ease-in-out;
 }
 
+.blockie-canvas:hover {
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+    animation: blockiePulse 400ms infinite alternate ease-in-out;
+}
+
+.blockie-container:hover {
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+    background: #1c1c1c;
+}
+
+
 @keyframes blockiePulse {
-    from {box-shadow: -2px -2px 50px #1e578dad;}
-    to {box-shadow: -2px -2px 50px #3b90c2ad;}
+    0% {box-shadow: -2px -2px 50px #71bcdfad;}
+    25% {box-shadow: -2px -2px 40px #739accad;}
+    40% {box-shadow: -2px -2px 50px #4f8db1ad;}
+    67% {box-shadow: -2px -2px 50px #6bb7e2ad;}
+    75% {box-shadow: -2px -2px 40px #6e98cfad;}
+    88% {box-shadow: -2px -2px 40px #71bdf0ad;}
+    92% {box-shadow: -2px -2px 40px #7496b6ad;}
+    100% {box-shadow: -2px -2px 50px #5a9cc2ad;}
 }
 @keyframes avatarBorder {
-    from {border: 4px solid #7fcce488;}
+    from {border: 4px solid #7fcce475;}
+    to {border: 4px solid #7fcce4d0;}
+}
+@keyframes avatarBorderLighter {
+    from {border: 4px solid #7fcce4be;}
     to {border: 4px solid #7fcce4;}
 }
 
@@ -1667,8 +1720,8 @@ label#upload-label.active:hover::after {
     border: 1px solid var(--theme-primary-dark-color);
     box-shadow: 2px 2px black;
     height: 23px;
-    -webkit-transition: .3s ease-out;
-    transition: .3s ease-out;
+    -webkit-transition: 1s ease-out;
+    transition: 1s ease-out;
 }
 
 .blockie-colors:hover {
@@ -1681,8 +1734,8 @@ label#upload-label.active:hover::after {
     border: 1px solid #7fcce47a;
     box-shadow: 0 0 2px #7fcce47a;
     height: 23px;
-    -webkit-transition: .3s ease-out;
-    transition: .3s ease-out;
+    -webkit-transition: 1s ease-out;
+    transition: 1s ease-out;
 }
 .blockie-colors-text:hover {
     -webkit-animation: flicker 3s infinite;
@@ -2026,6 +2079,10 @@ label#upload-label.active:hover::after {
     .index-aside {
         font-size: 1rem;
         margin: 0 auto;
+    }
+
+    .index-socials div p {
+        font-size: 1.2rem;
     }
        
     .product-grid-image {

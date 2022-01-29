@@ -18,7 +18,7 @@ const SocialCircles = ( socialContainer, iClasses, iClass, width, icon1, icon2, 
 
     icon1link=icon1link?icon1link:"https://instagram.com/VillageOfThousands/";
     icon2link=icon2link?icon2link:"https://twitter.com/VoThousands/";
-    icon3link=icon3link?icon3link:"https://discord.gg/niCC6A47KA";
+    icon3link=icon3link?icon3link:"https://discord.gg/nfCC6A47KA";
     icon4link=icon4link?icon4link:"https://github.com/gravyhtx/village-of-thousands";
 
     icon1alt=icon1alt?icon1alt:"Village of Thousands // Instagram";

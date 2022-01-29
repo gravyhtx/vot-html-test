@@ -11,6 +11,7 @@ const Footer = () => {
     // const siteMap = {
 
     // }
+
     return (
       <div className="footer animate__animated animate__fadeIn">
         <div className="page-footer" id="online">

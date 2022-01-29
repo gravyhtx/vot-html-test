@@ -23,13 +23,13 @@ const Home = () => {
         textClasses: "col s12 index-main gravy-font",
         p1: <>
             <div className="row">
-              <div className="col m12 l6 weight-4 justify-text">
+              <div className="col m12 l6 weight-4 justify-text desktop only">
                 <br/>
-                <div>Village of Thousands is a Web 3.0 ready skateboard lifestyle brand and community that sells high quality,
+                <div><span className="weight-6">Village of Thousands</span> is a Web 3.0 ready skateboard lifestyle brand and community that sells high quality,
                 sustainable apparel and NFT-authenticated products.
                 </div>
-                <p>Our village is a state of mind. We believe that our dedication to <b>sustainability</b> is what will help us
-                achieve our vision of building a community with the <b>ability to sustain.</b>
+                <p>Our village is a state of mind. We believe that our dedication to <span className="weight-7 italics">sustainability</span> is
+                what will help us achieve our vision of building a community with the <span className="weight-7 italics">ability to sustain.</span>
                 </p>
               </div>
               <div className="col m12 l6 p-style">
@@ -37,7 +37,7 @@ const Home = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col s12 weight-2 justify-text">We are passionate about minimizing our impact on the environment
+              <div className="index-main_last col s12 weight-2 justify-text">We are passionate about minimizing our impact on the environment
               so we can focus on maximizing our efforts to build our community. Our company uses high quality products and
               services that prioritize fair trade practices at every step in our development process.
               </div>
@@ -53,6 +53,17 @@ const Home = () => {
       <div className="spacer"/>
       <div className="index-section animate__animated animate__fadeIn">
         <div className="container col s12 index-main">
+          <div className="mobile only index_mobile-container justify-text gravy-font">
+            <div className="index_mobile-box">
+              <div><span className="weight-6">Village of Thousands</span> is a Web 3.0 ready skateboard lifestyle brand and community that sells high quality,
+                sustainable apparel and NFT-authenticated products.
+              </div>
+              <br/>
+              <div>Our village is a state of mind. We believe that our dedication to <span className="weight-7 italics">sustainability</span> is
+                what will help us achieve our vision of building a community with the <span className="weight-7 italics">ability to sustain.</span>
+              </div>
+            </div>
+          </div>
           <TextContainer
               border={main.border}
               containerClasses={main.containerClasses}
@@ -69,7 +80,7 @@ const Home = () => {
           <div className="col s12 m7 l6 center">
           <ImageContainer imgClasses="" description="Choose Your VoT" src={Pixels} />
           </div>
-          <div className="col s12 m5 l6">
+          <div className="index-socials col s12 m5 l6">
             <div className="right-align index-aside justify-text">
                 <p>We strive to be a leader in providing quality, eco-friendly products in the fashion world and set high standards
                 for all emerging Web 3.0 products and services.

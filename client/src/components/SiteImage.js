@@ -8,7 +8,7 @@ import Hope from "../images/art/hope.png";
 import Riko from "../images/art/riko.png";
 import SpecialOrder from "../images/art/special_order.png";
 
-// "files" must be an array
+
 const SiteImage = ({ files, width, containerClasses, imgClasses, description }) => {
     const bro = Bro;
     const cartas = Cartas;
@@ -19,6 +19,12 @@ const SiteImage = ({ files, width, containerClasses, imgClasses, description }) 
     const riko = Riko;
     const special_order = SpecialOrder;
 
+    const imgArr = [bro, cartas, choose_your_vot, cop_error, fall_error, hope, riko, special_order];
+
+    if (files === "shit") {
+        console.log(imgArr);
+    }
+
     let cClass="";
     if(containerClasses){cClass=" "+containerClasses};
     let iClass="";
@@ -26,7 +32,7 @@ const SiteImage = ({ files, width, containerClasses, imgClasses, description }) 
     let imgSize = {};
     if(width){imgSize = {maxWidth: width}};
 
-    const arr = files;
+    const arr = files; // "files" must be an array
     const n = Math.floor(Math.random()*arr.length);
     var image;
     eval(`image = ${arr[n].toLowerCase()}`)

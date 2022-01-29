@@ -91,7 +91,7 @@ const AccountContainer = () => {
             onClick={setScheme}
             className="blockie-nav"
             opts={{
-                seed: !getWallet?getWallet:"Claire Richard",
+                seed: getWallet || userData.walletAddress ? getWallet : "Claire Richard",
                 color: color1,
                 bgcolor: color2,
                 size: 9,

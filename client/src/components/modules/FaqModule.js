@@ -124,7 +124,7 @@ const faq = () => {
                 announcements with plenty of time for our VoT Enthusiasts to download the tools and get non-custodial
                 wallets to participate in the exciting opportunity and ever-changing landscape Web 3.0 provides.</>,
                 <>We will be continually upgrading and updating the website as well as hand selecting any other additional
-                web services and choosing the ones that are most in alignment with our ethos. This site is built by
+                web services and choosing the ones that are most in alignment with our ethos. This site is built
                 by our developers, line-by-line, in order to provide a sustainable decentralized platform for the
                 future of our brand. This takes a bit more work than click-and-drag websites, but we are able to
                 carefully select every service we use and organically grow with Web 3.0 without restriction.</>,
