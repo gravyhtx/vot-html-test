@@ -1652,6 +1652,7 @@ label#upload-label.active:hover::after {
 }
 
 .blockie-container:hover {
+    cursor: none;
     -webkit-transition: 1s ease;
     transition: 1s ease;
     animation: avatarBorderLighter 150ms infinite alternate linear;
@@ -1680,6 +1681,7 @@ label#upload-label.active:hover::after {
 }
 
 .blockie-canvas:hover {
+    cursor: none;
     -webkit-transition: 1s ease;
     transition: 1s ease;
     animation: blockiePulse 400ms infinite alternate ease-in-out;
