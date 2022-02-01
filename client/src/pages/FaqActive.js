@@ -52,7 +52,7 @@ const Faq = () => {
         <div className="faq-container animate__animated animate__fadeIn" id="faq-container">
             <br />
             <ImageContainer imgClasses="faq-image" description="Cartas" src={Cartas} />
-            <h1 className="faq-header center italics thin">frequently ask questions...</h1>
+            <h1 className="faq-header center italics thin focus-in-expand">frequently ask questions...</h1>
             <div className="faq-collapsible container">
             <br />
             <Collapsible accordion={false}>

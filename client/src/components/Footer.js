@@ -23,19 +23,19 @@ const Footer = () => {
                     HOME
                   </span>
                 </Link> &emsp;//&emsp;
+                <Link to="/products">
+                  <span className="footer-link">
+                    SHOP
+                  </span>
+                </Link> &emsp;//&emsp;
                 <Link to="/faq#1">
                   <span className="footer-link">
                     ABOUT
                   </span>
                 </Link> &emsp;//&emsp;
-                <Link to="/shipping">
+                <Link to="/cart">
                   <span className="footer-link">
-                    SHIPPING
-                  </span>
-                </Link> &emsp;//&emsp;
-                <Link to="/products">
-                  <span className="footer-link">
-                    PRODUCTS
+                    CART
                   </span>
                 </Link>
               </div>
@@ -57,7 +57,16 @@ const Footer = () => {
                 </Link>
                 </div>
             </div>
-            <div className="copyright container center">Copyright &copy; 2022 // Village of Thousands</div>
+            <div className="copyright container center">
+                <div className="copyright-text">Copyright &copy; 2022 // Village of Thousands</div>
+                <span className="gravydidit highlight-selection gravy-font container center">
+                  <span className="highlight-selection-light cursor-help">
+                    <a className="highlight-selection-light cursor-help" href="https://www.instagram.com/gravydesignco/"
+                    rel="noreferrer" target="_blank">
+                    &nbsp;MADE WITH LOVE BY GRÄVY DESIGN CO.&nbsp;</a>
+                  </span>
+                </span>
+            </div>
             <br/>
           </div>
         </div>

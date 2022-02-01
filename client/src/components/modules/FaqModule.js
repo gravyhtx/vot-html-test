@@ -8,7 +8,7 @@ const faq = () => {
             "question": "Who is the “Village of Thousands”?",
             "answer": [
                 <><span className="italics h2"><b>WELCOME TO THE VOT DIGITAL HQ!</b></span></>,
-                <><span className="weight-5">[Village of Thousands]</span> is a Web 3.0 ready lifestyle brand rooted in skateboard culture that sells
+                <><span className="weight-6 special-text">[Village of Thousands]</span> is a Web 3.0 ready lifestyle brand rooted in skateboard culture that sells
                 high quality, sustainable NFT-authenticated apparel and products. We’re a true lifestyle brand,
                 offering an opportunity for us all to build a community of thousands.</>,
                 <>VoT was born in Colombia and grown in the USA. The company was formed in 2021 lead by lifelong skateboarder,
@@ -32,7 +32,8 @@ const faq = () => {
             "answer": [
                 <>Village of Thousands is committed to using the best sustainability and fair trade practices from
                 our products to our packaging to our website. We do our homework and find vendors and materials
-                that align with the company’s values to ensure that we can live up to our <b>GROWN IN THE USA</b> standards.
+                that align with the company’s values to ensure that we can live up to
+                our <span className="weight-5 italics">GROWN IN THE USA</span> standards.
                 Our goal is to maintain complete transparency and control over our supply chain with fair
                 pay wages for anyone that participates in manufacture, design, and development.</>,
                 <>Our garments are made from <b>100% organic <span className="italics">Supima®</span> cotton</b> from
