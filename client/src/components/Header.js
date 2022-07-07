@@ -7,10 +7,17 @@ import Auth from '../utils/auth';
 import { getSingleUser } from '../utils/API';
 
 const Header = () =>  {
-  
-
     // let notificationBar = document.getElementById('notification-bar')
     // Get User Data
+    const notificationLink = "/register"
+    const notifyEl =
+        <>
+          Create your account today and get a <u>FREE</u> Limited Edition VoT NFT!&nbsp;
+          <span className="info-icon" id="info-icon">
+            <Link to="/faq#8"><i className="material-icons info-icon">info_outline</i></Link>
+          </span>
+        </>
+
     const [userData, setUserData] = useState({});
     const userDataLength = Object.keys(userData).length;
 
@@ -21,12 +28,12 @@ const Header = () =>  {
 
             const response = await getSingleUser(token);
 
-            // console.log(token)
             if(!response.ok){
                 throw new Error('something went wrong!');
             }
 
             const user = await response.json();
+
             setUserData(user);
 
         } catch (err) {
@@ -34,7 +41,7 @@ const Header = () =>  {
         }
         // notificationBar.classList.remove('hide');
     };
-    // console.log(userData)
+    console.log(userData)
     getUserData();
     }, [userDataLength]);
 
@@ -42,26 +49,16 @@ const Header = () =>  {
 
     let siteName = SiteData.name;
     let abbv = SiteData.abbreviation.toLowerCase();
-    let notification;
 
     const headerLink = "/"
-    const notificationLink = "/register"
 
     const location =  useLocation();
     const { pathname } = location;
     const splitLocation = pathname.split("/");
-
-    notification=
-    <>
-      Create your account today and get a <u>FREE</u> Limited Edition VoT NFT!&nbsp;
-      <span className="info-icon" id="info-icon">
-        <Link to="/faq#8"><i className="material-icons info-icon">info_outline</i></Link>
-      </span>
-    </>;
     
     return (
       <header className="site-header" id="site-header">
-          <div className="navbar-container black" id="header-container">
+          <div className="navbar-container" id="header-container">
             <Link className="navbar-brand container" to={headerLink} id="header-link-container">
               <div className="header-img-container" id="header-img-container">
                 <img
@@ -72,12 +69,9 @@ const Header = () =>  {
                   alt={siteName ? siteName+" Logo" : "Website Logo"} />
               </div>
             </Link>
-            {userData.walletAddress?<></>
-            :<div id="notification-bar"><NotificationBar text={notification} link={notificationLink} /></div>
-            }
+            {userData.walletAddress?<></>:<div id="notification-bar"><NotificationBar text={notifyEl} link={notificationLink} /></div>}
           </div>
       </header>
-      
     );
 }
 

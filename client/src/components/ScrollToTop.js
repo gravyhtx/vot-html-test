@@ -12,5 +12,4 @@ export default function ScrollToTop() {
   }, [pathname]);
 
   return null;
-  
 }

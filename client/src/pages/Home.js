@@ -22,7 +22,7 @@ const Home = () => {
         containerClasses: "thick shadow dark-gradient",
         textClasses: "col s12 index-main gravy-font",
         p1: <>
-            <div className="row">
+            <div className="row img-main_container">
               <div className="col m12 l6 justify-text desktop only">
                 <br/>
                 <div><span className="weight-6 special-text">Village of Thousands</span> is a Web 3.0 ready, skateboard culture lifestyle
@@ -33,7 +33,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="col m12 l6 p-style index-main_row">
-                <ImageContainer width={"400px"} imgClasses={""} description={"Hope"} src={Hope} />
+                <ImageContainer width={"400px"} imgClasses={"index-main_img"} description={"Hope"} src={Hope} />
               </div>
             </div>
             <div className="row index-main_row">
